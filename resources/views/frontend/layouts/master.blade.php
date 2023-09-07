@@ -25,7 +25,7 @@
 
     <div class="boxed_wrapper">
 
-        {{-- <div class="top-bar">
+        <div class="top-bar">
             <div class="container">
                 <div class="clearfix">
 
@@ -60,14 +60,14 @@
 
 
             </div>
-        </div> --}}
+        </div>
 
         @include('frontend.layouts.navbar')
 
 
         @yield('content')
 
-        
+
         @include('frontend.layouts.footer')
 
         <!-- preloader  -->
