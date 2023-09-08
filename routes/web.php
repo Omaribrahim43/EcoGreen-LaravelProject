@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,5 +39,6 @@ Route::controller(FacebookController::class)->group(function () {
     Route::get('auth/facebook/callback', 'handleFacebookCallback');
 });
 
+Route::get('admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
 
 Route::resource('users', UserController::class);
