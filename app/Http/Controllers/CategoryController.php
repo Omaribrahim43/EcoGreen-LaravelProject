@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\CategoryDataTable;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,11 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(CategoryDataTable $dataTables)
     {
-        //
+        // return view("admin.category.index");
+        return $dataTables->render('admin.category.index');
+
     }
 
     /**
@@ -24,7 +27,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.category.create');
     }
 
     /**
@@ -35,7 +38,20 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'max:20'],
+            'description' => ['required', 'max:1000'],
+            // 'image' => ['required', 'digits:10'],
+        ]);
+
+        $category = new Category();
+
+        $category->name = $request->name;
+        $category->description = $request->description;
+        $category->image = $request->image;
+        $category->save();
+
+        return redirect()->route('category.index');
     }
 
     /**
