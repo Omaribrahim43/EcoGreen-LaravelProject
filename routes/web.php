@@ -22,3 +22,16 @@ Route::get('/about', function () {
     return view('frontend.about.about');
 });
 
+
+Route::get('/home', function () {
+    return view('frontend.home.home');
+});
+
+
+
+Route::get('/contact', function () {
+    return view('frontend.contact.contact');
+});
+
+Route::get('/contact', [ContactController::class, 'show'])->name('contact');
+Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
