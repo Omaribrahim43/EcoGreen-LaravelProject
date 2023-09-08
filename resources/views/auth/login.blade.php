@@ -58,7 +58,7 @@
                                     <button type="submit" class="thm-btn thm-tran-bg">login now</button>
                                 </div>
                                 <div class="form-group social-links-two padd-top-5 pull-right">
-                                    Or login with <a href="#" class="img-circle facebook"><span
+                                    Or login with <a href="{{ url('auth/facebook') }}" class="img-circle facebook"><span
                                             class="fa fa-facebook-f"></span></a>
                                     <a href="{{ url('authorized/google') }}" class="img-circle google-plus"><span
                                             class="fa fa-google-plus"></span></a>
