@@ -25,7 +25,7 @@
 
     <div class="boxed_wrapper">
 
-        {{-- <div class="top-bar">
+        <div class="top-bar"> 
             <div class="container">
                 <div class="clearfix">
 
@@ -60,7 +60,7 @@
 
 
             </div>
-        </div> --}}
+        </div>
 
         @include('frontend.layouts.navbar')
 
@@ -108,6 +108,20 @@
         <script src="{{ asset('frontend/js/rev-slider/revolution.extension.video.min.js') }}"></script>
 
         <script src="{{ asset('frontend/js/custom.js') }}"></script>
+
+
+
+            <!-- google map js -->
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRvBPo3-t31YFk588DpMYS6EqKf-oGBSI"></script> 
+ 
+    <script src="{{ asset('frontend/js/gmap.js') }}"></script>
+
+    <script id="map-script" src="{{ asset('frontend/js/default-map.js') }}"></script>
+    <script src="{{ asset('frontend/js/custom.js') }}"></script>
+
+
+
+
 
     </div>
 
