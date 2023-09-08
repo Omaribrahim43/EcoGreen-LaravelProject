@@ -32,7 +32,6 @@
                             <div class="button">
                                 <a class="thm-btn" href="#">read more</a>
                             </div>
-                        </div>
                     </div>
                     <div class="tp-caption tp-resizeme" data-x="left" data-hoffset="200" data-y="top" data-voffset="480"
                         data-transform_idle="o:1;"
