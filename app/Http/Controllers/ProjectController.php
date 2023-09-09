@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\DataTables\ProjectsDataTable;
 use App\Models\Project;
+use App\Traits\ImageUploadTrait;
 use Illuminate\Http\Request;
 use App\Models\Category;
 
@@ -12,6 +13,7 @@ use App\Models\Category;
 
 class ProjectController extends Controller
 {
+    use ImageUploadTrait;
     /**
      * Display a listing of the resource.
      *
@@ -34,7 +36,6 @@ class ProjectController extends Controller
 
         $category = Category::all();
         return view('admin.projects.create', compact('category'));
-
     }
 
     /**
@@ -64,16 +65,14 @@ class ProjectController extends Controller
         //     'equipments' => ['required'],
         // ]);
 
-        // $filename = '';
-        // if ($request->hasFile('image')) {
-        //     $filename = $request->getSchemeAndHttpHost() . '/backend/assets/img/' . time() . '.' . $request->image->extension();
-        //     $request->image->move(public_path('/backend/assets/img/'), $filename);
-        // }
-
         $project = new Project();
 
+
+        $imagePath = $this->uploadImage($request, 'image', 'uploads');
+
+        $project->image = $imagePath;
         $project->title = $request->name;
-        $project->location= $request->location;
+        $project->location = $request->location;
         $project->start_day = $request->startday;
         $project->end_day = $request->endday;
         $project->volunteering_hours_start = $request->starthour;
@@ -147,6 +146,9 @@ class ProjectController extends Controller
 
 
         $project = Project::findOrFail($id);
+        $imagePath = $this->updateImage($request, 'image', 'uploads', $project->image);
+
+        $project->image = empty(!$imagePath) ? $imagePath : $project->image;
 
         $project->title = $request->name;
         $project->location = $request->location;
@@ -157,7 +159,6 @@ class ProjectController extends Controller
         $project->volunteering_days = $request->volunteeringdays;
         $project->status = $request->input('status');
         $project->description = $request->description;
-        $project->image = $request->image;
         $project->category_id = $request->input('category');
         $project->user_id = $request->input('category');
         $project->volunteering_number = $request->volunteeringnumber;
@@ -180,8 +181,10 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        Project::destroy($id);
+        $project = Project::findOrFail($id);
+        $this->deleteImage($project->image);
+        $project->delete();
 
-        return redirect()->route('projects.index');
+        return response(['status' => 'success', 'message' => 'Deleted Successfully!']);
     }
 }

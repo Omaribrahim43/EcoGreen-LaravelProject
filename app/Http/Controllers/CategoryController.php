@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\DataTables\CategoryDataTable;
 use App\Models\Category;
+use App\Traits\ImageUploadTrait;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+    use ImageUploadTrait;
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +19,6 @@ class CategoryController extends Controller
     {
         // return view("admin.category.index");
         return $dataTables->render('admin.category.index');
-
     }
 
     /**
@@ -39,22 +40,18 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'image' => ['required', 'image', 'max:4192'],
             'name' => ['required', 'max:20'],
             'description' => ['required', 'max:1000'],
-            // 'image' => ['required'],
         ]);
-
-        // $filename = '';
-        // if ($request->hasFile('image')) {
-        //     $filename = $request->getSchemeAndHttpHost() . '/assets/img/' . time() . '.' . $request->image->extension();
-        //     $request->image->move(public_path('/assets/img/'), $filename);
-        // }
 
         $category = new Category();
 
+        $imagePath = $this->uploadImage($request, 'image', 'uploads');
+
+        $category->image =  $imagePath;
         $category->name = $request->name;
         $category->description = $request->description;
-        $category->image = $request->image;
         $category->save();
 
         return redirect()->route('category.index');
@@ -93,13 +90,15 @@ class CategoryController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
+            'image' => ['required', 'image', 'max:4192'],
             'name' => ['required', 'max:20'],
             'description' => ['required', 'max:1000'],
-            // 'image' => ['required', 'digits:10'],
         ]);
 
         $category = Category::findOrFail($id);
+        $imagePath = $this->updateImage($request, 'image', 'uploads', $category->image);
 
+        $category->image = empty(!$imagePath) ? $imagePath : $category->image;
         $category->name = $request->name;
         $category->description = $request->description;
         // $category->image = $request->image;
@@ -115,11 +114,12 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(string $id)
     {
-        Category::destroy($id);
+        $category = Category::findOrFail($id);
+        $this->deleteImage($category->image);
+        $category->delete();
 
-        return redirect()->route('category.index');
-
+        return response(['status' => 'success', 'message' => 'Deleted Successfully!']);
     }
 }
