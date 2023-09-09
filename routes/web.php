@@ -61,6 +61,8 @@ Route::post('loginprocess', [AdminLoginController::class, 'login'])->name('login
 
 // Route::resource('admin/login', AdminLoginController::class);
 
-Route::get('admin/profile', function () {
-    return view('admin.profile.profile');
-});
+// Route::get('admin/profile', function () {
+//     return view('admin.profile.profile');
+// })-> name('profile');
+
+Route::get('admin/profile', [AdminController::class, 'show'])->name('profile');

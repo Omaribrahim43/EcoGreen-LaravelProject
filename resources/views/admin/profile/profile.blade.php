@@ -54,7 +54,7 @@
                                             <div class="row">
                                                 <div class="form-group col-md-7 col-12">
                                                     <label for="name">Name</label>
-                                                    <input type="text" name="name" id="name" class="form-control" value=""
+                                                    <input type="text" name="name" id="name" class="form-control" value="{{ $admin->name }}"
                                                         required="">
                                                     <div class="invalid-feedback">
                                                         Please fill in the name
@@ -66,7 +66,7 @@
                                             <div class="row">
                                                 <div class="form-group col-md-7 col-12">
                                                     <label for="email">Email</label>
-                                                    <input type="email" name="email" id="email" class="form-control" value=""
+                                                    <input type="email" name="email" id="email" class="form-control" value="{{ $admin->email }}"
                                                         required="">
                                                     <div class="invalid-feedback">
                                                         Please fill in the email
@@ -77,7 +77,7 @@
                                             <div class="row">
                                                 <div class="form-group col-md-7 col-12">
                                                     <label for="phone">Phone</label>
-                                                    <input type="tel" name="phone" id="phone" class="form-control" value=""
+                                                    <input type="tel" name="phone" id="phone" class="form-control" value="{{ $admin->phone }}"
                                                         required="">
                                                     <div class="invalid-feedback">
                                                         Please fill in the phone
