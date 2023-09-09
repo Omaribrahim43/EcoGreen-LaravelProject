@@ -45,12 +45,17 @@ class UserController extends Controller
 
         return redirect()->route('users.index');
     }
+
+
+
     public function edit(string $id)
     {
         $user = User::findOrFail($id);
         return view('admin.users.edit', compact('user'));
     }
 
+
+    
     public function update(Request $request, string $id)
     {
         $request->validate([
