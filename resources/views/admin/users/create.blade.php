@@ -21,17 +21,22 @@
                                 <h4>Create User</h4>
                             </div>
                             <div class="card-body p-0">
-                                <form action="{{ route('users.store') }}" method="POST">
+                                <form action="{{ route('users.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="form-row">
-                                                <div class="form-group col-md-6">
+                                                <div class="form-group col-md-4">
+                                                    <label for="name">Image</label>
+                                                    <input type="file" name="image" class="form-control"
+                                                        id="inputEmail4">
+                                                </div>
+                                                <div class="form-group col-md-4">
                                                     <label for="name">name</label>
                                                     <input type="name" name="name" class="form-control"
                                                         id="inputEmail4" placeholder="Name">
                                                 </div>
-                                                <div class="form-group col-md-6">
+                                                <div class="form-group col-md-4">
                                                     <label for="email">Email</label>
                                                     <input type="email" name="email" class="form-control"
                                                         id="inputEmail4" placeholder="email">
