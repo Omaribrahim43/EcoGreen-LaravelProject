@@ -42,7 +42,8 @@ class UserController extends Controller
         $user->phone = $request->phone;
         $user->password = bcrypt($request->password);
         $user->save();
-
+        
+        toastr('Updated Successfully', 'success');
         return redirect()->route('users.index');
     }
 
@@ -55,7 +56,7 @@ class UserController extends Controller
     }
 
 
-    
+
     public function update(Request $request, string $id)
     {
         $request->validate([
@@ -74,7 +75,7 @@ class UserController extends Controller
         $user->phone = $request->phone;
         $user->save();
 
-        // toastr('Updated Successfully', 'success');
+        toastr('Updated Successfully', 'success');
 
         return redirect()->route('users.index');
     }

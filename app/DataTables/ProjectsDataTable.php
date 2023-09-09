@@ -24,18 +24,17 @@ class ProjectsDataTable extends DataTable
     {
         return (new EloquentDataTable($query))
             ->addColumn('action', function ($query) {
-            $editBtn = "<a href='" . route('projects.edit', $query->id) . "' class='btn btn-primary'><i class='far fa-edit'></i></a>";
-            // $deleteBtn = "<a href='" . route('projects.destroy', $query->id) . "' class='btn btn-danger ml-2 delete-item'><i class='fas fa-trash-alt'></i></a>";
-            $deleteBtn = '<form action="' . route('projects.destroy', $query->id) . '" method="POST">
-                ' . csrf_field() . '
-                ' . method_field('DELETE') . '
-                <button type="submit" class="btn btn-danger">Delete</button>
-            </form>';
+                $editBtn = "<a href='" . route('projects.edit', $query->id) . "' class='btn btn-primary'><i class='far fa-edit'></i></a>";
+                $deleteBtn = "<a href='" . route('projects.destroy', $query->id) . "' class='btn btn-danger ml-2 delete-item'><i class='fas fa-trash-alt'></i></a>";
 
-            $viewBtn = "<a href='" . route('projects.destroy', $query->id) . "' class='btn btn-light ml-2 view-item'><i class='fas fa-eye'></i></a>";
+                $viewBtn = "<a href='" . route('projects.destroy', $query->id) . "' class='btn btn-light ml-2 view-item'><i class='fas fa-eye'></i></a>";
 
                 return  $editBtn . $deleteBtn . $viewBtn;
-            })            
+            })
+            ->addColumn('image', function ($query) {
+                return $img = "<img width='100px' src='" . asset($query->image) . "'></img>";
+            })
+            ->rawColumns(['action', 'image'])
             ->setRowId('id');
     }
 
@@ -58,20 +57,20 @@ class ProjectsDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('projects-table')
-                    ->columns($this->getColumns())
-                    ->minifiedAjax()
-                    //->dom('Bfrtip')
-                    ->orderBy(0)
-                    ->selectStyleSingle()
-                    ->buttons([
-                        Button::make('excel'),
-                        Button::make('csv'),
-                        Button::make('pdf'),
-                        Button::make('print'),
-                        Button::make('reset'),
-                        Button::make('reload')
-                    ]);
+            ->setTableId('projects-table')
+            ->columns($this->getColumns())
+            ->minifiedAjax()
+            //->dom('Bfrtip')
+            ->orderBy(0)
+            ->selectStyleSingle()
+            ->buttons([
+                Button::make('excel'),
+                Button::make('csv'),
+                Button::make('pdf'),
+                Button::make('print'),
+                Button::make('reset'),
+                Button::make('reload')
+            ]);
     }
 
     /**
