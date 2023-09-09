@@ -41,8 +41,14 @@ class CategoryController extends Controller
         $request->validate([
             'name' => ['required', 'max:20'],
             'description' => ['required', 'max:1000'],
-            // 'image' => ['required', 'digits:10'],
+            // 'image' => ['required'],
         ]);
+
+        // $filename = '';
+        // if ($request->hasFile('image')) {
+        //     $filename = $request->getSchemeAndHttpHost() . '/assets/img/' . time() . '.' . $request->image->extension();
+        //     $request->image->move(public_path('/assets/img/'), $filename);
+        // }
 
         $category = new Category();
 
@@ -71,9 +77,10 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit(string $id)
     {
-        //
+        $category = Category::findOrFail($id);
+        return view('admin.category.edit', compact('category'));
     }
 
     /**
@@ -83,9 +90,23 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'max:20'],
+            'description' => ['required', 'max:1000'],
+            // 'image' => ['required', 'digits:10'],
+        ]);
+
+        $category = Category::findOrFail($id);
+
+        $category->name = $request->name;
+        $category->description = $request->description;
+        // $category->image = $request->image;
+        $category->save();
+
+
+        return redirect()->route('category.index');
     }
 
     /**
@@ -94,8 +115,11 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy($id)
     {
-        //
+        Category::destroy($id);
+
+        return redirect()->route('category.index');
+
     }
 }

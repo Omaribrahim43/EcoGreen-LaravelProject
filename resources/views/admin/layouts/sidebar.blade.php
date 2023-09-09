@@ -1,10 +1,10 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="index.html">Stisla</a>
+            <a href="index.html"><img src="{{asset('backend/assets/img/logo/logo.png')}}" alt="Ecogreen" style="width: 80%"></a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">St</a>
+            <a href="index.html"><img src="{{asset('backend/assets/img/logo/logo2.png')}}" alt="Ecogreen" style="width: 80%"></a>
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
@@ -13,6 +13,7 @@
             </li>
             <li><a class="nav-link" href="{{ route('users.index') }}"><i class="far fa-square"></i> <span>Users</span></a></li>
             <li><a class="nav-link" href="{{ route('category.index') }}"><i class="far fa-square"></i> <span>Categories</span></a></li>
+            <li><a class="nav-link" href="{{ route('projects.index') }}"><i class="far fa-square"></i> <span>Projects</span></a></li>
             {{-- <li class="dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i>
                     <span>Forms</span></a>
