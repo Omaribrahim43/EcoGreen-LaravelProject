@@ -29,7 +29,7 @@ use App\Http\Controllers\AdminLoginController;
 
 // Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+// Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
