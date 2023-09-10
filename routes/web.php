@@ -1,6 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\FacebookController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\LoginWithGoogleController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Profile2Controller;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\PayPalController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\AllProjectController;
 use App\Http\Controllers\SingelProjectController;
 
@@ -51,9 +63,7 @@ Route::get('/projects', [AllProjectController::class, 'show'])->name('projects')
 // Route::post('/Donation.storeform', [SingelProjectController::class, 'storeformDonation'])->name('DFS');
 // Route::post('/item.storeform', [SingelProjectController::class, 'storeformitem'])->name('IFS');
 // Route::post('/service.storeform', [SingelProjectController::class, 'storeformservice'])->name('SFS');
-Route::get('/', function(){
-    return view('frontend.home.home');
-});
+
 
 
 
@@ -64,7 +74,7 @@ Route::get('/service_project.singelProject/{id}', [SingelProjectController::clas
 
 Route::post('/service.form', [SingelProjectController::class, 'checkformservice'])->name('form.service');
 Route::post('/item.form', [SingelProjectController::class, 'checkformitem'])->name('form.item');
-Route::get('/form.Donation', [SingelProjectController::class, 'checkformDonation'])->name('Donation.form');
+Route::post('/form.Donation', [SingelProjectController::class, 'checkformDonation'])->name('Donation.form');
 
 // Route::get('/fDonation', [SingelProjectController::class, 'showDonation'])->name('SD');
 
@@ -72,8 +82,6 @@ Route::get('/form.Donation', [SingelProjectController::class, 'checkformDonation
 Route::get('/Donation.storeform/{id}', [SingelProjectController::class, 'storeformDonation'])->name('store.donation');
 Route::get('/item.storeform/{id}', [SingelProjectController::class, 'storeformitem'])->name('store.item');
 Route::get('/service.storeform/{id}', [SingelProjectController::class, 'storeformservice'])->name('sorte.service');
-
-// Route::get('/service.storeform/{id}',)->name('donation.popup');
 
 
 
