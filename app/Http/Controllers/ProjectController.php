@@ -90,6 +90,8 @@ class ProjectController extends Controller
         $project->equipments = $request->equipments;
         $project->save();
 
+        toastr('Created Successfully!', 'success');
+
         return redirect()->route('projects.index');
     }
 
@@ -168,7 +170,7 @@ class ProjectController extends Controller
         $project->equipments = $request->equipments;
         $project->save();
 
-        // toastr('Updated Successfully', 'success');
+        toastr('Updated Successfully', 'success');
 
         return redirect()->route('projects.index');
     }

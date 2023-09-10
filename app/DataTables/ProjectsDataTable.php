@@ -34,6 +34,9 @@ class ProjectsDataTable extends DataTable
             ->addColumn('image', function ($query) {
                 return $img = "<img width='100px' src='" . asset($query->image) . "'></img>";
             })
+            ->addColumn('category', function ($query) {
+                return $query->Category->name;
+            })
             ->rawColumns(['action', 'image'])
             ->setRowId('id');
     }
@@ -85,7 +88,7 @@ class ProjectsDataTable extends DataTable
             Column::make('image'),
             Column::make('title'),
             Column::make('location'),
-            Column::make('category_id'),
+            Column::make('category'),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)

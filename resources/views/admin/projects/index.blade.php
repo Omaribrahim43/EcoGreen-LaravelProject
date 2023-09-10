@@ -31,6 +31,9 @@
                 </div>
             </div>
         </section>
-        {{ $dataTable->scripts(attributes: ['type' => 'module']) }}
     </div>
 @endsection
+
+@push('scripts')
+    {{ $dataTable->scripts(attributes: ['type' => 'module']) }}
+@endpush

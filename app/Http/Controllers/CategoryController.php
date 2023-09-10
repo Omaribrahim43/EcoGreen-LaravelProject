@@ -53,6 +53,8 @@ class CategoryController extends Controller
         $category->name = $request->name;
         $category->description = $request->description;
         $category->save();
+        
+        toastr('Created Successfully!', 'success');
 
         return redirect()->route('category.index');
     }
@@ -104,6 +106,7 @@ class CategoryController extends Controller
         // $category->image = $request->image;
         $category->save();
 
+        toastr('Updated Successfully!', 'success');
 
         return redirect()->route('category.index');
     }
