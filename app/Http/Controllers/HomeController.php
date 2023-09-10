@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Category;
 use App\Models\Project;
 
 use Illuminate\Http\Request;
@@ -9,7 +10,9 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('frontend.home.home');
+        $data = Category::all();
+        $project = Project::all();
+        return view('frontend.home.home', compact(['data', 'project']));
     }
 
     public function about()
