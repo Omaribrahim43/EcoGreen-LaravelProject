@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('title');
             $table->text('image');
             $table->string('location');
-            $table->string('description');
+            $table->string('short_description');
+            $table->string('long_description');
             $table->float('budget')->nullable();
             $table->date('start_day');
             $table->date('end_day');

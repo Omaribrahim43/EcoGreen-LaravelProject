@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AllProjectController;
+use App\Http\Controllers\SingelProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +15,70 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.home.home');
-});
+// Route::get('/', function () {
+//     return view('frontend.home.home');
+// });
 
 
 Route::get('/about', function () {
     return view('frontend.about.about');
 });
+
+// Route::get('/sara', function () {
+//     return view('sara');
+// });
+
+// *******************Sara**********************
+
+Route::get('/projects', [AllProjectController::class, 'show'])->name('projects');
+Route::get('/projects', [AllProjectController::class, 'show'])->name('projects');
+
+
+
+
+
+
+// ----------singelproject----------
+// Route::get('/', [SingelProjectController::class, 'showDonation']);
+// Route::get('/Item_Project.singelProject', [SingelProjectController::class, 'showitem']);
+// Route::get('/service_project.singelProject', [SingelProjectController::class, 'showservice']);
+
+// Route::post('/service.form', [SingelProjectController::class, 'checkformservice']);
+// Route::post('/item.form', [SingelProjectController::class, 'checkformitem']);
+// Route::post('/Donation.form', [SingelProjectController::class, 'checkformDonation']);
+
+
+// Route::post('/Donation.storeform', [SingelProjectController::class, 'storeformDonation'])->name('DFS');
+// Route::post('/item.storeform', [SingelProjectController::class, 'storeformitem'])->name('IFS');
+// Route::post('/service.storeform', [SingelProjectController::class, 'storeformservice'])->name('SFS');
+Route::get('/', function(){
+    return view('frontend.home.home');
+});
+
+
+
+// ----------singelproject----------
+Route::get('/Donation.singelProject/{id}', [SingelProjectController::class, 'showDonation'])->name('show.Donation');
+Route::get('/Item_Project.singelProject/{id}', [SingelProjectController::class, 'showitem'])->name('show.item');
+Route::get('/service_project.singelProject/{id}', [SingelProjectController::class, 'showservice'])->name('show.service');
+
+Route::post('/service.form', [SingelProjectController::class, 'checkformservice'])->name('form.service');
+Route::post('/item.form', [SingelProjectController::class, 'checkformitem'])->name('form.item');
+Route::get('/form.Donation', [SingelProjectController::class, 'checkformDonation'])->name('Donation.form');
+
+// Route::get('/fDonation', [SingelProjectController::class, 'showDonation'])->name('SD');
+
+
+Route::get('/Donation.storeform/{id}', [SingelProjectController::class, 'storeformDonation'])->name('store.donation');
+Route::get('/item.storeform/{id}', [SingelProjectController::class, 'storeformitem'])->name('store.item');
+Route::get('/service.storeform/{id}', [SingelProjectController::class, 'storeformservice'])->name('sorte.service');
+
+// Route::get('/service.storeform/{id}',)->name('donation.popup');
+
+
+
+
+
+
+
 

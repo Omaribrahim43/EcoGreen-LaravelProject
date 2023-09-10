@@ -25,7 +25,7 @@
 
     <div class="boxed_wrapper">
 
-        {<div class="top-bar">
+        {{-- <div class="top-bar">
             <div class="container">
                 <div class="clearfix">
 
@@ -60,16 +60,16 @@
 
 
             </div>
-        </div>
+        </div> --}}
 
-        @include('frontend.layouts.navbar')
+        {{-- @include('frontend.layouts.navbar') --}}
 
 
         @yield('content')
 
-        @include('frontend.layouts.donationPopUp')
+        {{-- @include('frontend.layouts.donationPopUp') --}}
         
-        @include('frontend.layouts.footer')
+        {{-- @include('frontend.layouts.footer') --}}
 
         <!-- preloader  -->
         <div class="preloader"></div>

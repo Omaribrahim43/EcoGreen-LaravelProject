@@ -1,4 +1,3 @@
-
 <section class="theme_menu stricky">
     <div class="container">
         <div class="row">

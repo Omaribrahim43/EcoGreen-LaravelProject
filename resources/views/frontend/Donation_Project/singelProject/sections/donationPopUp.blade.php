@@ -1,5 +1,4 @@
-
-
+@extends('frontend.layouts.master')
 
         <div class="container">
             <div class="donate-form-area">
@@ -10,7 +9,7 @@
                 <h4>How much would you like to donate:</h4>
 
                 <form action="{{route('store.donation',1) }}" class="donate-form default-form" method="post">
-                   @csrf
+                @csrf
                     <ul class="chicklet-list clearfix">
                         <li>
                             <input type="radio" id="donate_amount-1" name="donate_amount" />
@@ -38,8 +37,8 @@
                             <input type="radio" id="donate_amount-4" name="donate_amount" />
                             <label for="donate_amount-4" value="300 JD"required=""> 300 JD</label>
                         </li>
-                       
-    
+                    
+
                     </ul>
 
                     <h3>Donor Information</h3>
@@ -58,23 +57,23 @@
                                 <div class="form-group">
                                     <p>Your Email</p>
                                     <input type="email" class="form-control required email"   required="" aria-required="true"
-                                     {{-- value="{{$user->email}}" readonly>  --}}
+                                    {{-- value="{{$user->email}}" readonly>  --}}
                                 </div>
                             </div>
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-group">
                                     <p>Phone</p>
                                     <input type="text" class="form-control"  required="" 
-                                     {{-- value="{{$user->phone}}" readonly>  --}}
+                                    {{-- value="{{$user->phone}}" readonly>  --}}
             
                                 </div>
                             </div>
-             
+            
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group">
                                     <p>Address*</p>
                                     <input type="text" name="address" placeholder="" required=""
-                                     {{-- value="{{$user->address}}" readonly>  --}}
+                                    {{-- value="{{$user->address}}" readonly>  --}}
                                 </div>
                             </div>
                             
@@ -85,7 +84,7 @@
                     <ul class="payment-option">
                         
                         
-                           
+                        
 
                         <li>
                             <h4>Choose your payment method:</h4>
