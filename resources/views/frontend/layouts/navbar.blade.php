@@ -7,6 +7,7 @@
                 </div>
             </div>
             <div class="col-md-9 menu-column">
+
                 <nav class="menuzord" id="main_menu">
                     <ul class="menuzord-menu">
                         <li><a href="index.html">Home</a></li>
@@ -43,14 +44,6 @@
                             </ul>
                         </li>
 
-                        <li><a href="gallery-1.html">Gallery</a>
-                            <ul class="dropdown">
-                                <li><a href="gallery-1.html">gallery Grid View</a></li>
-                                <li><a href="gallery-3.html">gallery manasory</a></li>
-                                <li><a href="single-gallery.html">Single gallery</a></li>
-                            </ul>
-                        </li>
-
                         <li><a href="#">Shop</a>
                             <ul class="dropdown">
                                 <li><a href="shop.html">Shop Products</a></li>
@@ -64,22 +57,33 @@
                         <li><a href="contact.html">contact</a></li>
 
 
+                        @if (Route::has('login'))
+                            @auth
+                                <li><a>My Account</a>
+                                    <ul class="dropdown">
+                                        <li><a href="{{ route('profile.show') }}">Profile</a></li>
+                                        <form method="POST" action="{{ route('logout') }}" x-data>
+                                            @csrf
+                                            <li><a href="{{ route('logout') }}">Logout</a></li>
+                                        </form>
+                                    </ul>
+                                </li>
+                            @else
+                                <li><a href="{{ route('login') }}" class="">Login</a></li>
+
+                                @if (Route::has('register'))
+                                    <li><a href="{{ route('register') }}" class="">Register</a></li>
+                                @endif
+                            @endauth
+                        @endif
+
+
                     </ul>
                 </nav>
             </div>
             <div class="right-column">
                 <div class="right-area">
-                    <div class="nav_side_content">
-                        <div class="search_option">
-                            <button class="search tran3s dropdown-toggle color1_bg" id="searchDropdown"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
-                                    class="fa fa-search" aria-hidden="true"></i></button>
-                            <form action="#" class="dropdown-menu" aria-labelledby="searchDropdown">
-                                <input type="text" placeholder="Search...">
-                                <button><i class="fa fa-search" aria-hidden="true"></i></button>
-                            </form>
-                        </div>
-                    </div>
+
                 </div>
 
             </div>

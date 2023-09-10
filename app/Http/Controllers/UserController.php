@@ -12,6 +12,7 @@ class UserController extends Controller
     use ImageUploadTrait;
     public function profile()
     {
+
         return view('profile.edit');
     }
     public function index(UsersDataTable $dataTable)
