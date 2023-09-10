@@ -61,7 +61,7 @@ Route::get('authorized/google/callback', [LoginWithGoogleController::class, 'han
 
 
 //*******************Rania********************* */
-Route::get('/home', [CategoryController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/aboutus', [AboutUsController::class, 'home'])->name('home');
 //*******************Rania********************* */
@@ -83,7 +83,7 @@ Route::get('admin/dashboard', [AdminController::class, 'index'])->name('admin.da
 
 Route::resource('users', UserController::class);
 
-Route::resource( 'category', CategoryController::class);
+Route::resource('category', CategoryController::class);
 
 Route::resource('projects', ProjectController::class);
 
