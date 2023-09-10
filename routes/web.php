@@ -1,9 +1,12 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\LoginWithGoogleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PayPalController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,3 +38,18 @@ Route::get('user/profile', [UserController::class, 'profile'])->middleware('auth
 
 Route::get('authorized/google', [LoginWithGoogleController::class, 'redirectToGoogle']);
 Route::get('authorized/google/callback', [LoginWithGoogleController::class, 'handleGoogleCallback']);
+
+
+//*******************Rania********************* */
+Route::get('/home', [CategoryController::class, 'index']);
+Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/aboutus', [AboutUsController::class, 'home'])->name('home');
+//*******************Rania********************* */
+
+// Route::get('/pay', function () {
+//     return view('frontend.home.paybal');});
+ // Route::get('payment', [PayPalController::class, 'payment'])->name('payment');
+ // Route::get('cancel', [PayPalController::class, 'payment'])->name('payment.cancel');
+ // Route::get('payment/success', [PayPalController::class, 'success'])->name('payment.success');
+
+

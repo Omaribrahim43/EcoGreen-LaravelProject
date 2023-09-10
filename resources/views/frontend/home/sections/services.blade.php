@@ -1,50 +1,35 @@
-        <section class="service sec-padd3">
-            <div class="container">
-                <div class="section-title center">
-                    <h2>We are ECO Green, Our Mission is <span class="thm-color">save water, animals and
-                            environment</span>our activities are taken around the world.</h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-3 col-sm-6 col-x-12">
-                        <div class="service-item center">
-                            <div class="icon-box">
-                                <span class="icon-can"></span>
-                            </div>
-                            <h4>Recycling</h4>
-                            <p>Praising pain was born & I will give you a complete ac of the all systems, expound the
-                                actual great.</p>
+<section class="service sec-padd3" id="services">
+    <div class="container">
+        {{-- <div class="section-title center">
+            <h2 > <span class="thm-color" > We are ECO Green , </span>  a passionate community dedicated to preserving and enhancing our planet's green spaces. </h2>
+        </div> --}}
+        <br>
+        <div class="section-title center">
+            <h1 > <span class="thm-color" > Our Categories </span>   </h1>
+        </div>
+      
+                    <div class="container">
+                        <div class="row">
+                            @foreach ($data as $item)
+                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                    <div class="service-item text-center">
+
+                                        <div class="image">
+                                           
+                                            {{--<a > <img src="{{asset($item->image)}}" style="height:150 px; width:150px"> </a> --}}
+                                            <a ><img src="frontend/images/service/item.jpg" style="height:150 px; width:150px"></a>
+
+                                        </div>
+                                       <br>
+
+                                        <h3>{{ $item->name }}</h3> <br> 
+                                     {{-- </a> --}}
+                                        <p>{{ $item->description }}</p>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-6 col-x-12">
-                        <div class="service-item center">
-                            <div class="icon-box">
-                                <span class="icon-tool"></span>
-                            </div>
-                            <h4>Eco System</h4>
-                            <p>Praising pain was born & I will give you a complete ac of the all systems, expound the
-                                actual great.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-x-12">
-                        <div class="service-item center">
-                            <div class="icon-box">
-                                <span class="icon-nature-1"></span>
-                            </div>
-                            <h4>Save Water</h4>
-                            <p>Praising pain was born & I will give you a complete ac of the all systems, expound the
-                                actual great.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-x-12">
-                        <div class="service-item center">
-                            <div class="icon-box">
-                                <span class="icon-deer"></span>
-                            </div>
-                            <h4>Save Animals</h4>
-                            <p>Praising pain was born & I will give you a complete ac of the all systems, expound the
-                                actual great.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    </div>
+</section>
+

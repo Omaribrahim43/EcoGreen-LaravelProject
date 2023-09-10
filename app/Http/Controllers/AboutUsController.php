@@ -4,17 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Project;
+
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class AboutUsController extends Controller
 {
-
-    public function index()
+    public function home()
     {
+       
         $data = Category::all();
         $project= Project::all();
-        return view('frontend.home.home', compact(['data', 'project']) /*['data'=>$data , 'project'=>$project]*/);
-
+        return view('frontend.home.home', compact(['data', 'project']));
     }
 
+    
 }

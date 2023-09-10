@@ -1,117 +1,151 @@
-    <div class="border-bottom"></div>
-    <section class="our-team sec-padd2">
-        <div class="container">
-            <div class="section-title">
-                <h2>Meat Our team</h2>
-                <a href="#" class="thm-btn style-2">VIEW ALL</a>
-            </div>
-            <div class="row">
-                <article class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="single-team-member">
-                        <figure class="img-box">
-                            <a href="#"><img src="{{ asset('frontend/images/team/t1.jpg') }}" alt=""></a>
-                            <div class="overlay">
-                                <div class="inner-box">
-                                    <ul class="social">
-                                        <li><a href="#"><i class="fa fa-link"></i></a></li>
-                                    </ul>
-                                </div>
-
-                            </div>
-                        </figure>
-                        <div class="author-info">
-                            <a href="#">
-                                <h4>Felicity BNovak</h4>
-                            </a>
-                            <p>CEO & Founder</p>
-                            <ul>
-                                <li><i class="fa fa-phone-square"></i>Phone: +123-456-7890</li>
-                                <li><i class="fa fa-envelope-square"></i><a href="#">Felicity@Experts.com</a></li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </article>
-                <article class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="single-team-member">
-                        <figure class="img-box">
-                            <a href="#"><img src="{{ asset('frontend/images/team/t2.jpg') }}" alt=""></a>
-                            <div class="overlay">
-                                <div class="inner-box">
-                                    <ul class="social">
-                                        <li><a href="#"><i class="fa fa-link"></i></a></li>
-                                    </ul>
-                                </div>
-
-                            </div>
-                        </figure>
-                        <div class="author-info">
-                            <a href="#">
-                                <h4>Mark Richarson</h4>
-                            </a>
-                            <p>Board of Trustee</p>
-                            <ul>
-                                <li><i class="fa fa-phone-square"></i>Phone: +123-456-7890</li>
-                                <li><i class="fa fa-envelope-square"></i><a href="#">Felicity@Experts.com</a></li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </article>
-                <article class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="single-team-member">
-                        <figure class="img-box">
-                            <a href="#"><img src="{{ asset('frontend/images/team/t3.jpg') }}" alt=""></a>
-                            <div class="overlay">
-                                <div class="inner-box">
-                                    <ul class="social">
-                                        <li><a href="#"><i class="fa fa-link"></i></a></li>
-                                    </ul>
-                                </div>
-
-                            </div>
-                        </figure>
-                        <div class="author-info">
-                            <a href="#">
-                                <h4>Jom Caraleno</h4>
-                            </a>
-                            <p>Board of Trustee</p>
-                            <ul>
-                                <li><i class="fa fa-phone-square"></i>Phone: +123-456-7890</li>
-                                <li><i class="fa fa-envelope-square"></i><a href="#">Felicity@Experts.com</a></li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </article>
-                <article class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="single-team-member">
-                        <figure class="img-box">
-                            <a href="#"><img src="{{ asset('frontend/images/team/t4.jpg') }}" alt=""></a>
-                            <div class="overlay">
-                                <div class="inner-box">
-                                    <ul class="social">
-                                        <li><a href="#"><i class="fa fa-link"></i></a></li>
-                                    </ul>
-                                </div>
-
-                            </div>
-                        </figure>
-                        <div class="author-info">
-                            <a href="#">
-                                <h4>Asahtan Marsh</h4>
-                            </a>
-                            <p>Board of Advisor</p>
-                            <ul>
-                                <li><i class="fa fa-phone-square"></i>Phone: +123-456-7890</li>
-                                <li><i class="fa fa-envelope-square"></i><a href="#">Felicity@Experts.com</a></li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </article>
-
-            </div>
+<div class="border-bottom"></div>
+<section class="our-team sec-padd2">
+    
+    <div class="container">
+        <div class="section-title">
+            <h2>Meat Our team</h2>
         </div>
+        <div class="row">
+            <article class="col-md-3 col-sm-6 col-xs-12">
+                <div class="single-team-member">
+                    <figure class="img-box">
+                        <img src="{{ asset('frontend/images/team/rania.png') }}" alt="" width="270px" height="210px">
+                     
+                    </figure>
+                    <div class="author-info">
+                        <a >
+                            <h4>Sami Alnajadat</h4>
+                        </a>
+                        <p>CEO & Founder</p>
+                        <ul>
+                            <li><i class="fa fa-phone-square"></i>Phone: +962-794523689</li>
+                            <li><i class="fa fa-envelope-square"></i>sami_najadat@gmail.com</li>
+                        </ul>
+                    </div>
 
-    </section>
+                </div>
+            </article>
+
+
+            <article class="col-md-3 col-sm-6 col-xs-12">
+                <div class="single-team-member">
+                    <figure class="img-box">
+                        <img src="{{ asset('frontend/images/team/leena.jpg') }}" alt=""
+                        width="270px" height="210px">
+                     
+                    </figure>
+                    <div class="author-info">
+                        <a >
+                            <h4>Leena Rababah</h4>
+                        </a>
+                        <p>CEO & Founder</p>
+                        <ul>
+                            <li><i class="fa fa-phone-square"></i>Phone: +962-774503481</li>
+                            <li><i class="fa fa-envelope-square"></i>leena_rababah@gmail.com</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </article>
+
+
+
+
+            <article class="col-md-3 col-sm-6 col-xs-12">
+                <div class="single-team-member">
+                    <figure class="img-box">
+                        <img src="{{ asset('frontend/images/team/rania.png') }}" alt=""
+                        width="270px" height="210px">
+                     
+                    </figure>
+                    <div class="author-info">
+                        <a >
+                            <h4>Omar Migdadi</h4>
+                        </a>
+                        <p>CEO & Founder</p>
+                        <ul>
+                            <li><i class="fa fa-phone-square"></i>Phone: +962-796523222</li>
+                            <li><i class="fa fa-envelope-square"></i>omar.migdadi@gmail.com</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </article>
+
+
+
+
+            <article class="col-md-3 col-sm-6 col-xs-12">
+                <div class="single-team-member">
+                    <figure class="img-box">
+                        <img src="{{ asset('frontend/images/team/sara.jpg') }}" alt="" width="270px" height="210px">
+                     
+                    </figure>
+                    <div class="author-info">
+                        <a >
+                            <h4>Sara Ababneh</h4>
+                        </a>
+                        <p>CEO & Founder</p>
+                        <ul>
+                            <li><i class="fa fa-phone-square"></i>Phone: +962-774523600</li>
+                            <li><i class="fa fa-envelope-square"></i>ababneh-sara@gmail.com</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </article>
+
+
+
+
+
+        <article class="col-md-3 col-md-offset-3 col-sm-6 col-xs-12">
+                <div class="single-team-member">
+                    <figure class="img-box">
+                        <img src="{{ asset('frontend/images/team/rania.png') }}" alt=""
+                        width="270px" height="210px">
+                     
+                    </figure>
+                    <div class="author-info">
+                        <a >
+                            <h4>Yousef Jaradat</h4>
+                        </a>
+                        <p>CEO & Founder</p>
+                        <ul>
+                            <li><i class="fa fa-phone-square"></i>Phone: +962-796753688</li>
+                            <li><i class="fa fa-envelope-square"></i>yousef_jaradat@gmail.com</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </article>
+
+
+
+
+
+            <article class="col-md-3 col-sm-6 col-xs-12">
+                <div class="single-team-member">
+                    <figure class="img-box">
+                        <img src="{{ asset('frontend/images/team/rania.png') }}" alt="" width="270px" height="210px">
+                     
+                    </figure>
+                    <div class="author-info">
+                        <a >
+                            <h4>Rania Taha</h4>
+                        </a>
+                        <p>CEO & Founder</p>
+                        <ul>
+                            <li><i class="fa fa-phone-square"></i>Phone: +962-794523689</li>
+                            <li><i class="fa fa-envelope-square"></i>rania.taha@gmail.com</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </article>
+       
+
+        </div>
+    </div>
+ 
+</section>
