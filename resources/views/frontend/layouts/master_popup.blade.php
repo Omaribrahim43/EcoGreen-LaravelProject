@@ -45,60 +45,61 @@
 
 
 </head>
+
 <body>
 
-@yield('content')
+    @yield('content')
 
-        <!-- jQuery -->
-        <script src="{{ asset('frontend/js/jquery.js') }}"></script>
-        <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
-        <script src="{{ asset('frontend/js/menu.js') }}"></script>
-        <script src="{{ asset('frontend/js/owl.carousel.min.js') }}"></script>
-        <script src="{{ asset('frontend/js/jquery.mixitup.min.js') }}"></script>
-        <script src="{{ asset('frontend/js/jquery.fancybox.pack.js') }}"></script>
-        <script src="{{ asset('frontend/js/imagezoom.js') }}"></script>
-        <script src="{{ asset('frontend/js/jquery.magnific-popup.min.js') }}"></script>
-        <script src="{{ asset('frontend/js/jquery.polyglot.language.switcher.js') }}"></script>
-        <script src="{{ asset('frontend/js/SmoothScroll.js') }}"></script>
-        <script src="{{ asset('frontend/js/jquery.appear.js') }}"></script>
-        <script src="{{ asset('frontend/js/jquery.countTo.js') }}"></script>
-        <script src="{{ asset('frontend/js/validation.js') }}"></script>
-        <script src="{{ asset('frontend/js/wow.js') }}"></script>
-        <script src="{{ asset('frontend/js/jquery.fitvids.js') }}"></script>
-        <script src="{{ asset('frontend/js/nouislider.js') }}"></script>
-        <script src="{{ asset('frontend/js/isotope.js') }}"></script>
-        <script src="{{ asset('frontend/js/pie-chart.js') }}"></script>
+    <!-- jQuery -->
+    <script src="{{ asset('frontend/js/jquery.js') }}"></script>
+    <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('frontend/js/menu.js') }}"></script>
+    <script src="{{ asset('frontend/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('frontend/js/jquery.mixitup.min.js') }}"></script>
+    <script src="{{ asset('frontend/js/jquery.fancybox.pack.js') }}"></script>
+    <script src="{{ asset('frontend/js/imagezoom.js') }}"></script>
+    <script src="{{ asset('frontend/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('frontend/js/jquery.polyglot.language.switcher.js') }}"></script>
+    <script src="{{ asset('frontend/js/SmoothScroll.js') }}"></script>
+    <script src="{{ asset('frontend/js/jquery.appear.js') }}"></script>
+    <script src="{{ asset('frontend/js/jquery.countTo.js') }}"></script>
+    <script src="{{ asset('frontend/js/validation.js') }}"></script>
+    <script src="{{ asset('frontend/js/wow.js') }}"></script>
+    <script src="{{ asset('frontend/js/jquery.fitvids.js') }}"></script>
+    <script src="{{ asset('frontend/js/nouislider.js') }}"></script>
+    <script src="{{ asset('frontend/js/isotope.js') }}"></script>
+    <script src="{{ asset('frontend/js/pie-chart.js') }}"></script>
 
-        <!-- revolution slider js -->
-        <script src="{{ asset('frontend/js/rev-slider/jquery.themepunch.tools.min.js') }}"></script>
-        <script src="{{ asset('frontend/js/rev-slider/jquery.themepunch.revolution.min.js') }}"></script>
-        <script src="{{ asset('frontend/js/rev-slider/revolution.extension.actions.min.js') }}"></script>
-        <script src="{{ asset('frontend/js/rev-slider/revolution.extension.carousel.min.js') }}"></script>
-        <script src="{{ asset('frontend/js/rev-slider/revolution.extension.kenburn.min.js') }}"></script>
-        <script src="{{ asset('frontend/js/rev-slider/revolution.extension.layeranimation.min.js') }}"></script>
-        <script src="{{ asset('frontend/js/rev-slider/revolution.extension.migration.min.js') }}"></script>
-        <script src="{{ asset('frontend/js/rev-slider/revolution.extension.navigation.min.js') }}"></script>
-        <script src="{{ asset('frontend/js/rev-slider/revolution.extension.parallax.min.js') }}"></script>
-        <script src="{{ asset('frontend/js/rev-slider/revolution.extension.slideanims.min.js') }}"></script>
-        <script src="{{ asset('frontend/js/rev-slider/revolution.extension.video.min.js') }}"></script>
+    <!-- revolution slider js -->
+    <script src="{{ asset('frontend/js/rev-slider/jquery.themepunch.tools.min.js') }}"></script>
+    <script src="{{ asset('frontend/js/rev-slider/jquery.themepunch.revolution.min.js') }}"></script>
+    <script src="{{ asset('frontend/js/rev-slider/revolution.extension.actions.min.js') }}"></script>
+    <script src="{{ asset('frontend/js/rev-slider/revolution.extension.carousel.min.js') }}"></script>
+    <script src="{{ asset('frontend/js/rev-slider/revolution.extension.kenburn.min.js') }}"></script>
+    <script src="{{ asset('frontend/js/rev-slider/revolution.extension.layeranimation.min.js') }}"></script>
+    <script src="{{ asset('frontend/js/rev-slider/revolution.extension.migration.min.js') }}"></script>
+    <script src="{{ asset('frontend/js/rev-slider/revolution.extension.navigation.min.js') }}"></script>
+    <script src="{{ asset('frontend/js/rev-slider/revolution.extension.parallax.min.js') }}"></script>
+    <script src="{{ asset('frontend/js/rev-slider/revolution.extension.slideanims.min.js') }}"></script>
+    <script src="{{ asset('frontend/js/rev-slider/revolution.extension.video.min.js') }}"></script>
 
-        <script src="{{ asset('frontend/js/custom.js') }}"></script>
-
-
-
-        <!-- google map js -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRvBPo3-t31YFk588DpMYS6EqKf-oGBSI"></script>
-
-        <script src="{{ asset('frontend/js/gmap.js') }}"></script>
-
-        <script id="map-script" src="{{ asset('frontend/js/default-map.js') }}"></script>
-        <script src="{{ asset('frontend/js/custom.js') }}"></script>
+    <script src="{{ asset('frontend/js/custom.js') }}"></script>
 
 
 
+    <!-- google map js -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRvBPo3-t31YFk588DpMYS6EqKf-oGBSI"></script>
+
+    <script src="{{ asset('frontend/js/gmap.js') }}"></script>
+
+    <script id="map-script" src="{{ asset('frontend/js/default-map.js') }}"></script>
+    <script src="{{ asset('frontend/js/custom.js') }}"></script>
 
 
-    
+
+
+
+
 
 </body>
 
