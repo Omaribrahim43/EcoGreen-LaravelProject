@@ -31,38 +31,60 @@
     </div>
 </div>
 
-    {{-- start img-box --}}
-    @include('frontend.Item_Project.singelProject.sections.img-box')
-    {{-- End img-box --}}
-
-    {{-- start content --}}
-    @include('frontend.Item_Project.singelProject.sections.content')
-    {{-- End content --}}
-
-    {{-- start share clearfix --}}
-    @include('frontend.Item_Project.singelProject.sections.share clearfix')
-    {{-- End share clearfix --}}
+    <section class="event-section style-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="single-event sec-padd">
+                        @include('frontend.Item_Project.singelProject.sections.img-box')
 
 
+                        <div class="content">
+                            @include('frontend.Item_Project.singelProject.sections.content')
 
-    {{-- start default-event-filter --}}
-    @include('frontend.Item_Project.singelProject.sections.event-filter')
-    {{-- End default-event-filter --}}
+                        
+                            <br>
+                            <br><br>
+                            <div class="section-title style-2">
+                                <h3>Our Sponsors</h3>
+                            </div>
+                            <ul class="brand-carousel2">
+                                <li><a href="#"><img src="images/event/b1.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="images/event/b2.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="images/event/b3.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="images/event/b4.jpg" alt=""></a></li>
+                            </ul>
+                        </div>
+                        <div class="share clearfix">
+                        
+                            <div class="float_right">
+                                <a href="{{route('open.Iform')}}" class="thm-btn style-2 donate-box-btn">Donate Now </a>
+                            </div>
 
- 
-    {{-- start feed-area --}}
-    @include('frontend.Item_Project.singelProject.sections.feed-area')
-    {{-- End feed-area --}}
+                    
+                    
 
-    {{-- start default-form-area --}}
-    @include('frontend.Item_Project.singelProject.sections.default-form-area')
-    {{-- End default-form-area --}}
-    
-    {{-- start popup --}}
-    @include('frontend.Item_Project.singelProject.sections.popup')
-    {{-- End popup --}}
-    
+                    </div>
 
+
+                </div>
+            
+            </div>
+        </div>
+    </section>
+
+
+    <section class="call-out">
+        <div class="container">
+            <div class="float_left">
+                <h4>Join Our Mission to Improve a Child's Feature, Pet’s Life and Our Planet.</h4>
+            </div>
+            <div class="float_right">
+                <a href="#" class="thm-btn style-3">Get Involeved</a>
+            </div>
+
+        </div>
+    </section>
 
 
 

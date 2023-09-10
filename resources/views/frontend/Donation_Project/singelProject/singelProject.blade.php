@@ -58,10 +58,9 @@
                             <div class="share clearfix">
                                
                                 <div class="float_right">
-                                    <a href="{{route('Donation.form')}}" class="thm-btn style-2 donate-box-btn">Donate Now </a>
+                                    <a href="{{route('open.form')}}" class="thm-btn style-2 donate-box-btn">Donate Now </a>
                                 </div>
 
-                                {{-- @include('frontend.Donation_Project.singelProject.sections.donationPopUp') --}}
                           
                          
 

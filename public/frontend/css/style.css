@@ -932,7 +932,7 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
     height: 100%;
     background: rgba(0, 0, 0, 0.8);
     z-index: 99999999;
-    visibility: hidden;
+    /* visibility: hidden; */
     opacity: 0;
     overflow: auto;
     transition: all 700ms ease;
@@ -964,6 +964,8 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
 .donate-popup .close-donate:hover {
     opacity: 0.7;
 }
+
+
 
 /*============= donate form area =================*/
 

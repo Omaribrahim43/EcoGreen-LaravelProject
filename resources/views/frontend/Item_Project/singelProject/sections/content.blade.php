@@ -39,10 +39,7 @@
                         </div><br>
 
                       <br><br>
-                      {{--start Sponsors --}}
-                      @include('frontend.singelProject.sections.Sponsors')
-                      {{--start Sponsors --}}
-
+           
 
                     </div>
                

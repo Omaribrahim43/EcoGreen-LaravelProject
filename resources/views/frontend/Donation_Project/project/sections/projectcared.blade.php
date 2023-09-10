@@ -38,15 +38,10 @@
                                 </ul>
                             </div>
                         </div>
-                        }
+                    @endforeach
 
 
-                        {{-- <ul class="page_pagination">
-                        <li><a href="#" class="tran3s"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
-                        <li><a href="#" class="active tran3s">1</a></li>
-                        <li><a href="#" class="tran3s">2</a></li>
-                        <li><a href="#" class="tran3s"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                    </ul> --}}
+                        
 
                 </div>
             </div>

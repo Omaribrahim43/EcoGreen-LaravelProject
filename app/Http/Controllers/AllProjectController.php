@@ -14,8 +14,8 @@ class AllProjectController extends Controller
     {
        
         
-        $projects = Project::where('categoty_id', $id)->get();
-        return view('frontend.project.sections.projectcared')->with('projects', $projects);
+        $project = Project::where('categoty_id', $id)->get();
+        return view('frontend.project.project')->with('project', $project);
     }
 }
 

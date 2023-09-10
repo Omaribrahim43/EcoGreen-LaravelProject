@@ -2,7 +2,6 @@
 
 @section('content')
 
- 
 
 <div class="inner-banner has-base-color-overlay text-center" style="background: url(images/background/4.jpg);">
     <div class="container">
@@ -21,7 +20,7 @@
                 <li>
                     <a href="#">Pages</a>
                 </li>
-                
+
                 <li>
                     Events Grid View
                 </li>
@@ -32,22 +31,24 @@
         </div>
     </div>
 </div>
+@include('frontend.project.sections.projectcared')
 
 
- {{-- start projectcared --}}
- @include('frontend.project.sections.projectcared')
- {{-- End projectcared --}}
+<section class="call-out">
+    <div class="container">
+        <div class="float_left">
+            <h4>Join Our Mission to Improve a Child's Feature, Pet’s Life and Our Planet.</h4>
+        </div>
+        <div class="float_right">
+            <a href="#" class="thm-btn style-3">Get Involeved</a>
+        </div>
+
+    </div>
+</section>
 
 
- {{-- start default-event-filter --}}
- @include('frontend.singelProject.sections.default-event-filter')
- {{-- End default-event-filter --}}
 
- 
 
- {{-- start feed-area --}}
- @include('frontend.singelProject.sections.feed-area')
- {{-- End feed-area --}}
 
 @endsection
 

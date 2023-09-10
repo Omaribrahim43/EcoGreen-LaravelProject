@@ -11,21 +11,49 @@ use App\Models\User;
 
 class SingelProjectController extends Controller
 {
+
+    public function openForm()
+    
+    {
+        // $id= auth()->user()->id;
+        $id=1;
+        $user = user::findOrFail($id);
+        return view('frontend.layouts.donationPopUp', ['user' => $user]);
+    }
+
+    public function openFormservice()
+    
+    {
+        // $id= auth()->user()->id;
+        $id=1;
+        $user = user::findOrFail($id);
+        return view('frontend.service_project.singelProject.sections.service-popup', ['user' => $user]);
+    }
+
+    public function openFormitem()
+    
+    {
+        // $id= auth()->user()->id;
+        $id=1;
+        $project = user::findOrFail($id);
+        $user = user::findOrFail($id);
+        return view('frontend.Item_Project.singelProject.sections.item-popup', ['project' => $project],['user' => $user]);
+    }
     public function showDonation($id)
     {
         $project = Project::findOrFail($id);
         // return view('frontend.Donation_Project.singelProject.singelProject',);
-        return view('frontend.Donation_Project.singelProject.singelProject',['project'=>$project] );
+        return view('frontend.Donation_Project.singelProject.singelProject', ['project' => $project]);
     }
     public function showitem($id)
     {
         $project = Project::findOrFail($id);
-        return view('frontend.Item_Project.singelProject.singelProject', compact('project') );
+        return view('frontend.Item_Project.singelProject.singelProject', compact('project'));
     }
     public function showservice($id)
     {
         $project = Project::findOrFail($id);
-        return view('frontend.service_project.singelProject.singelProject',compact('project') );
+        return view('frontend.service_project.singelProject.singelProject', compact('project'));
     }
 
     public function checkformservice(Request $request)
@@ -49,20 +77,20 @@ class SingelProjectController extends Controller
     public function checkformDonation()
     {
         // dd('hi');
-        $user = User::where('id',1);
-        return view('frontend.Donation_Project.singelProject.sections.donationPopUp', ['user' => $user]);   
+        $user = User::where('id', 1);
+        return view('frontend.Donation_Project.singelProject.sections.donationPopUp', ['user' => $user]);
 
 
         // dd($user);
         // if (auth()->user()->check) {
         //    $iduser= auth()->user()->id;
-          
+
         //     return view('frontend.layouts.donationPopUp', ['user' => $user]);   
         // } else {
-         
+
         //     return redirect('login');
         // }
-        
+
     }
 
     public function viewformservice($id)
@@ -77,9 +105,9 @@ class SingelProjectController extends Controller
         return view('Item_Project.singelProject.popup', ['user' => $user]);
     }
 
-    public function viewformDonation($id=1)
+    public function viewformDonation($id = 1)
     {
-        $user = User::where('id',$id);
+        $user = User::where('id', $id);
         return view('frontend.layouts.donationPopUp', ['user' => $user]);
     }
 

@@ -1,6 +1,12 @@
-{{-- <div id="donate-popup" class="donate-popup">
+
+@extends('frontend.layouts.master_popup')
+
+@section('content')
+
+{{-- <div id="donate-popup-item" class="donate-popup">
     <div class="close-donate theme-btn"><span class="fa fa-close"></span></div>
-    <div class="popup-inner">
+    <div class="popup-inner"> --}}
+
 
 
         <div class="container">
@@ -8,9 +14,6 @@
                 <div class="section-title center">
                     <h2>Donation Information</h2>
                 </div>
-
-                <h4>How much would you like to donate:</h4>
-
                 
                 <form id="contact-form" class="default-form" action="{{ route('store.item') }}" method="post" novalidate="novalidate">
                     @csrf
@@ -70,5 +73,6 @@
 
 
 
-    </div>
+    {{-- </div>
 </div> --}}
+@endsection

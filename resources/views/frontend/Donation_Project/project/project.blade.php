@@ -21,31 +21,35 @@
                 <li>
                     <a href="#">Pages</a>
                 </li>
-                
+
                 <li>
                     Events Grid View
                 </li>
             </ul>
         </div>
-       
+        <div class="pull-right">
+            <a href="#" class="get-qoute"><i class="fa fa-arrow-circle-right"></i>Become a Volunteer</a>
+        </div>
     </div>
 </div>
+@include('frontend.project.sections.projectcared')
 
 
- {{-- start projectcared --}}
- @include('frontend.Donation_Project.project.sections.projectcared')
- {{-- End projectcared --}}
+<section class="call-out">
+    <div class="container">
+        <div class="float_left">
+            <h4>Join Our Mission to Improve a Child's Feature, Pet’s Life and Our Planet.</h4>
+        </div>
+        <div class="float_right">
+            <a href="#" class="thm-btn style-3">Get Involeved</a>
+        </div>
+
+    </div>
+</section>
 
 
- {{-- start default-event-filter --}}
- @include('frontend.Donation_Project.singelProject.sections.default-event-filter')
- {{-- End default-event-filter --}}
 
- 
 
- {{-- start feed-area --}}
- @include('frontend.Donation_Project.singelProject.sections.feed-area')
- {{-- End feed-area --}}
 
 @endsection
 
