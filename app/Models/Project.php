@@ -11,4 +11,8 @@ class Project extends Model
     protected $table="projects";
     protected $fillable=[
         'id','title','description','budget','start_day'];
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

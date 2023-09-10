@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('image');
             $table->string('location');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->float('budget')->nullable();
             $table->date('start_day');
             $table->date('end_day');
@@ -27,12 +27,19 @@ return new class extends Migration
             $table->string('fertilizer')->nullable();
             $table->string('equipments')->nullable();
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('categoty_id');
+            $table->unsignedBigInteger('category_id');
             $table->string('volunteering_days')->nullable();
             $table->time('volunteering_hours_start')->nullable();
             $table->time('volunteering_hours_end')->nullable();
             $table->integer('volunteering_number')->nullable();
             $table->timestamps();
+
+            // // make relation between projects table and category table:
+            // $table->foreign('category_id')
+            //     ->references('id')
+            //     ->on('categories')
+            //     ->onDelete('cascade')
+            //     ->onUpdate('cascade');
         });
     }
 

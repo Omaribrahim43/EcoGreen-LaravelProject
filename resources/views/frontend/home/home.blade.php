@@ -5,7 +5,6 @@
     <section class="rev_slider_wrapper">
         <div id="slider1" class="rev_slider" data-version="5.0">
             <ul>
-
                 <li data-transition="fade">
                     <img src="https://bighearts.wgl-demo.net/wp-content/uploads/2023/08/h14-s1-1.jpg" alt=""
                         width="1920" height="888" data-bgposition="top center" data-bgfit="cover" data-bgrepeat="no-repeat"

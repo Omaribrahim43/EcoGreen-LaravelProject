@@ -53,16 +53,18 @@
                                         </x-dropdown-link>
                                     @endcan
 
-                                    <div class="border-t border-gray-200"></div>
-
                                     <!-- Team Switcher -->
-                                    <div class="block px-4 py-2 text-xs text-gray-400">
-                                        {{ __('Switch Teams') }}
-                                    </div>
+                                    @if (Auth::user()->allTeams()->count() > 1)
+                                        <div class="border-t border-gray-200"></div>
 
-                                    @foreach (Auth::user()->allTeams() as $team)
-                                        <x-switchable-team :team="$team" />
-                                    @endforeach
+                                        <div class="block px-4 py-2 text-xs text-gray-400">
+                                            {{ __('Switch Teams') }}
+                                        </div>
+
+                                        @foreach (Auth::user()->allTeams() as $team)
+                                            <x-switchable-team :team="$team" />
+                                        @endforeach
+                                    @endif
                                 </div>
                             </x-slot>
                         </x-dropdown>
@@ -96,7 +98,7 @@
                                 {{ __('Manage Account') }}
                             </div>
 
-                            <x-dropdown-link href="{{ route('profile') }}">
+                            <x-dropdown-link href="{{ route('profile.show') }}">
                                 {{ __('Profile') }}
                             </x-dropdown-link>
 
@@ -159,7 +161,7 @@
 
             <div class="mt-3 space-y-1">
                 <!-- Account Management -->
-                <x-responsive-nav-link href="{{ route('profile') }}" :active="request()->routeIs('profile')">
+                <x-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
                     {{ __('Profile') }}
                 </x-responsive-nav-link>
 
@@ -198,16 +200,18 @@
                         </x-responsive-nav-link>
                     @endcan
 
-                    <div class="border-t border-gray-200"></div>
-
                     <!-- Team Switcher -->
-                    <div class="block px-4 py-2 text-xs text-gray-400">
-                        {{ __('Switch Teams') }}
-                    </div>
+                    @if (Auth::user()->allTeams()->count() > 1)
+                        <div class="border-t border-gray-200"></div>
 
-                    @foreach (Auth::user()->allTeams() as $team)
-                        <x-switchable-team :team="$team" component="responsive-nav-link" />
-                    @endforeach
+                        <div class="block px-4 py-2 text-xs text-gray-400">
+                            {{ __('Switch Teams') }}
+                        </div>
+
+                        @foreach (Auth::user()->allTeams() as $team)
+                            <x-switchable-team :team="$team" component="responsive-nav-link" />
+                        @endforeach
+                    @endif
                 @endif
             </div>
         </div>
