@@ -8422,6 +8422,24 @@ article.slide-item.center {}
   margin-bottom: 30px;
 }
 
+/* sara added  */
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px; 
+  border: 2px solid #333; 
+  border-radius: 3px;
+  margin-right: 5px; 
+}
+
+
+input[type="radio"]:checked {
+  background-color: #333;
+}
+
 
 
 

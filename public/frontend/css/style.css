@@ -932,7 +932,7 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
     height: 100%;
     background: rgba(0, 0, 0, 0.8);
     z-index: 99999999;
-    visibility: hidden;
+    /* visibility: hidden; */
     opacity: 0;
     overflow: auto;
     transition: all 700ms ease;
@@ -964,6 +964,8 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
 .donate-popup .close-donate:hover {
     opacity: 0.7;
 }
+
+
 
 /*============= donate form area =================*/
 
@@ -8433,3 +8435,42 @@ article.slide-item.center {
     margin-top: 160px;
     margin-bottom: 30px;
 }
+
+/* sara added */
+  /* Style the radio buttons as squares */
+  input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px; 
+    height: 20px; 
+    border: 2px solid #333; 
+    border-radius: 3px;
+    margin-right: 5px;
+    position: relative; 
+}
+
+/* Style the checked radio buttons with a checkmark */
+input[type="radio"]:checked::before {
+    content: '\2713'; /* Unicode checkmark character */
+    position: absolute;
+    top: -4px;
+    left: 2px;
+    color: #333; 
+    font-size: 16px;
+    color:green;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -45,64 +45,9 @@
 
 
 </head>
-
 <body>
 
-    <div class="boxed_wrapper">
-
-        <div class="top-bar">
-            <div class="container">
-                <div class="clearfix">
-
-                    <ul class="float_left top-bar-info">
-                        <li><i class="icon-phone-call"></i>Phone: (123) 0200 12345</li>
-                        <li><i class="icon-e-mail-envelope"></i>Supportus@Ecogreen.com</li>
-                    </ul>
-                    <div class="right-column float_right">
-                        <div id="polyglotLanguageSwitcher" class="">
-                            <form action="#">
-                                <select id="polyglot-language-options">
-                                    <option id="en" value="en" selected>Eng</option>
-                                    <option id="fr" value="fr">Fre</option>
-                                    <option id="de" value="de">Ger</option>
-                                    <option id="it" value="it">Ita</option>
-                                    <option id="es" value="es">Spa</option>
-                                </select>
-                            </form>
-                        </div>
-                        <ul class="social list_inline">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-feed"></i></a></li>
-                        </ul>
-                        <form action="{{ route('open.form') }}" method="POST">
-                            @csrf
-                            <a type="submit" class="thm-btn donate-box-btn">donate now</a>
-                        </form>
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-        </div>
-
-        @include('frontend.layouts.navbar')
-
-
-        @yield('content')
-
-
-        @include('frontend.layouts.footer')
-
-        <!-- preloader  -->
-        <div class="preloader"></div>
-
-        @include('frontend.layouts.donationPopUp')
-
+@yield('content')
 
         <!-- jQuery -->
         <script src="{{ asset('frontend/js/jquery.js') }}"></script>
@@ -153,7 +98,7 @@
 
 
 
-    </div>
+    
 
 </body>
 

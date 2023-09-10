@@ -16,9 +16,16 @@ return new class extends Migration
             $table->text('image')->default('');
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('phone')->unique();
+            $table->string('address');
             $table->string('password');
-            $table->string('phone')->nullable();
+            $table->string('donate_amount')->nullable();
+            $table->string('donate_method')->nullable();
+            $table->string('donate_tree')->nullable();
+            $table->string('donate_fertilizer')->nullable();
+            $table->string('donate_equipments')->nullable();
+            $table->string('choosen_shift')->nullable();
+            $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();

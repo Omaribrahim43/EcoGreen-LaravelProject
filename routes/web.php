@@ -1,6 +1,5 @@
 <?php
 
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FacebookController;
@@ -14,6 +13,8 @@ use App\Http\Controllers\PayPalController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\AdminLoginController;
+use App\Http\Controllers\AllProjectController;
+use App\Http\Controllers\SingelProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +22,8 @@ use App\Http\Controllers\AdminLoginController;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
 |
 */
 
@@ -98,3 +99,35 @@ Route::post('loginprocess', [AdminLoginController::class, 'login'])->name('login
 // })-> name('profile');
 
 Route::get('admin/profile', [AdminController::class, 'show'])->name('profile');
+
+
+
+// *******************Sara**********************
+
+Route::get('/projects', [AllProjectController::class, 'show'])->name('projects');
+
+// ----------singelproject----------
+Route::get('/open/form', [SingelProjectController::class, 'openForm'])->name('open.form');
+Route::get('/open/service/form', [SingelProjectController::class, 'openFormservice'])->name('open.Sform');
+Route::get('/open/item/form', [SingelProjectController::class, 'openFormitem'])->name('open.Iform');
+
+Route::get('/Donation.singelProject/{id}', [SingelProjectController::class, 'showDonation'])->name('show.Donation');
+Route::get('/Item_Project.singelProject/{id}', [SingelProjectController::class, 'showitem'])->name('show.item');
+Route::get('/service_project.singelProject/{id}', [SingelProjectController::class, 'showservice'])->name('show.service');
+
+Route::post('/service.form', [SingelProjectController::class, 'checkformservice'])->name('form.service');
+Route::post('/item.form', [SingelProjectController::class, 'checkformitem'])->name('form.item');
+Route::post('/form.Donation', [SingelProjectController::class, 'checkformDonation'])->name('Donation.form');
+
+
+Route::post('/Donation.storeform/{id}', [SingelProjectController::class, 'storeformDonation'])->name('store.donation');
+Route::get('/item.storeform/{id}', [SingelProjectController::class, 'storeformitem'])->name('store.item');
+Route::get('/service.storeform/{id}', [SingelProjectController::class, 'storeformservice'])->name('sorte.service');
+
+
+
+
+
+
+
+
