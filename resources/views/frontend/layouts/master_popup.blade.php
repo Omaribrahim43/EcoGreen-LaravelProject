@@ -97,60 +97,6 @@
     <script src="{{ asset('frontend/js/custom.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <script>
-        $(document).ready(function() {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
-            $('body').on('click', '.sbmt-btn', function(event) {
-                event.preventDefault()
-                let sbmtbtn = $('form').attr('action');
-
-                Swal.fire({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-
-                        $.ajax({
-                            type: 'DELETE',
-                            url: deleteUrl,
-                            success: function(data) {
-                                if (data.status == 'success') {
-                                    Swal.fire(
-                                        'Deleted!',
-                                        data.message,
-                                        'success'
-                                    )
-                                    window.location.reload()
-                                } else if (data.status == 'error') {
-                                    Swal.fire(
-                                        'Cant Delete!',
-                                        data.message,
-                                        'error'
-                                    )
-                                }
-
-                            },
-                            error: function(xhr, status, error) {
-                                console.log(error);
-                            }
-                        })
-
-
-                    }
-                })
-            })
-        })
-    </script>
 
 
 
