@@ -119,10 +119,6 @@ Route::get('/user2', function () {
     return view('frontend.profile2.profile', compact('users'));
 });
 
-
-
-
-
 // *******************Sara**********************
 
 Route::get('/Allprojects/{id?}', [AllProjectController::class, 'show'])->name('All.projects');
