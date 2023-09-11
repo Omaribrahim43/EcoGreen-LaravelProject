@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master')
 
 @section('content')
-    <div class="inner-banner has-base-color-overlay text-center" style="background: url({{ asset('frontend/images/background/4.jpg') }});">
+    <div class="inner-banner has-base-color-overlay text-center" style="background: url({{ asset('frontend/images/team/tree2.jpeg') }});">
         <div class="container">
             <div class="box">
                 <h1>About Us</h1>
@@ -14,7 +14,7 @@
             <div class="pull-left">
                 <ul class="list-inline link-list">
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="{{ route('home') }}">Home</a>
                     </li>
 
                     <li>
@@ -35,7 +35,7 @@
 
     @include('frontend.about.sections.whyChooseUs')
 
-    @include('frontend.about.sections.reviews')
+    {{-- @include('frontend.about.sections.reviews') --}}
 
     @include('frontend.about.sections.partners')
 

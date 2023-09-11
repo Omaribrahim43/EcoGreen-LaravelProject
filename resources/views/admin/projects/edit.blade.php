@@ -108,8 +108,8 @@
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
                                                     <label for="description">Description</label>
-                                                    <textarea class="summernote-simple" name="description" value="{{ $project->description }}" id="description"
-                                                        placeholder="Enter a description"></textarea>
+                                                    <textarea class="summernote-simple" name="long_description" id="description"
+                                                        placeholder="Enter a description">{{ $project->long_description }}</textarea>
                                                 </div>
                                             </div>
 
@@ -162,7 +162,7 @@
                                                 <div class="form-group col-md-6">
                                                     <label for="fertilizer">Fertilizer</label>
                                                     <input type="text" name="fertilizer"
-                                                        value="{{ $project->equipments }}" class="form-control"
+                                                        value="{{ $project->fertilizer }}" class="form-control"
                                                         id="inputEmail4" placeholder="Enter Fertilizer">
                                                 </div>
                                             </div>
@@ -171,7 +171,7 @@
                                                 <div class="form-group col-md-6">
                                                     <label for="equipments">Equipments</label>
                                                     <input type="text" name="equipments" class="form-control"
-                                                        id="inputEmail4" placeholder="Enter Equipments">
+                                                        id="inputEmail4" placeholder="Enter Equipments" value="{{ $project->equipments }}">
                                                 </div>
                                             </div>
 

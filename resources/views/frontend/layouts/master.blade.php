@@ -14,11 +14,34 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css') }}">
 
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('frontend/images/fav-icon/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" href="{{ asset('frontend/images/fav-icon/favicon-32x32.png') }}" sizes="32x32">
-    <link rel="icon" type="image/png" href="{{ asset('frontend/images/fav-icon/favicon-16x16.png') }}" sizes="16x16">
-    
+    <link rel="icon" type="image/png" href="{{ asset('frontend/images/fav-icon/favicon-32x32.png') }}"
+        sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ asset('frontend/images/fav-icon/favicon-16x16.png') }}"
+        sizes="16x16">
+    <link rel="stylesheet" href="{{ asset('frontend/css/css/player.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/css/bootstrap-select.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/css/flexslider.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/css/font-awesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/css/icomoon.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/css/imagehover.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/css/jquery-ui.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/css/jquery-ui.theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/css/jquery.bootstrap-touchspin.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/css/jquery.bxslider.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/css/layers.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/css/menu.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/css/navigation.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/css/nouislider.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/css/nouislider.pips.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/css/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/css/polyglot-language-switcher.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/css/settings.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/css/style.css') }}">
 
-    
 
 
 </head>
@@ -53,7 +76,9 @@
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="#"><i class="fa fa-feed"></i></a></li>
                         </ul>
-                        <button class="thm-btn donate-box-btn">donate now</button>
+                        
+                            <a href="{{route('open.form')}}" class="thm-btn donate-box-btn">donate now</a>
+                        
 
                     </div>
 
@@ -74,7 +99,9 @@
 
         <!-- preloader  -->
         <div class="preloader"></div>
-        @include('frontend.layouts.donationPopUp')
+
+        {{-- @include('frontend.layouts.donationPopUp') --}}
+
 
         <!-- jQuery -->
         <script src="{{ asset('frontend/js/jquery.js') }}"></script>
@@ -113,13 +140,13 @@
 
 
 
-            <!-- google map js -->
-     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRvBPo3-t31YFk588DpMYS6EqKf-oGBSI"></script> 
- 
-    <script src="{{ asset('frontend/js/gmap.js') }}"></script>
+        <!-- google map js -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRvBPo3-t31YFk588DpMYS6EqKf-oGBSI"></script>
 
-    <script id="map-script" src="{{ asset('frontend/js/default-map.js') }}"></script>
-    <script src="{{ asset('frontend/js/custom.js') }}"></script>
+        <script src="{{ asset('frontend/js/gmap.js') }}"></script>
+
+        <script id="map-script" src="{{ asset('frontend/js/default-map.js') }}"></script>
+        <script src="{{ asset('frontend/js/custom.js') }}"></script>
 
 
 

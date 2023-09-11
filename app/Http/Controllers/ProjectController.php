@@ -90,6 +90,8 @@ class ProjectController extends Controller
         $project->equipments = $request->equipments;
         $project->save();
 
+        toastr('Created Successfully!', 'success');
+
         return redirect()->route('projects.index');
     }
 
@@ -158,7 +160,7 @@ class ProjectController extends Controller
         $project->volunteering_hours_end = $request->endhour;
         $project->volunteering_days = $request->volunteeringdays;
         $project->status = $request->input('status');
-        $project->description = $request->description;
+        $project->long_description = $request->long_description;
         $project->category_id = $request->input('category');
         $project->user_id = $request->input('category');
         $project->volunteering_number = $request->volunteeringnumber;
@@ -168,7 +170,7 @@ class ProjectController extends Controller
         $project->equipments = $request->equipments;
         $project->save();
 
-        // toastr('Updated Successfully', 'success');
+        toastr('Updated Successfully', 'success');
 
         return redirect()->route('projects.index');
     }

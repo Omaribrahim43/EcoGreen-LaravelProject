@@ -1,17 +1,20 @@
 <?php
 
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\LoginWithGoogleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Profile2Controller;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PayPalController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\AdminLoginController;
+use App\Http\Controllers\AllProjectController;
+use App\Http\Controllers\SingelProjectController;
 use App\Models\User;
 
 /*
@@ -20,15 +23,15 @@ use App\Models\User;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
 |
 */
 
 
 // Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+// Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -62,6 +65,30 @@ require __DIR__ . '/auth.php';
 Route::get('authorized/google', [LoginWithGoogleController::class, 'redirectToGoogle']);
 Route::get('authorized/google/callback', [LoginWithGoogleController::class, 'handleGoogleCallback']);
 
+
+//*******************Rania********************* */
+Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/aboutus', [AboutUsController::class, 'home'])->name('home');
+//*******************Rania********************* */
+
+Route::get('/contact', function(){
+    return view('frontend.contact.contact');
+})->name('contact');
+
+Route::get('/testimonial', function(){
+    return view('frontend.testimonial');
+})->name('testimonial');
+
+
+// Route::get('/pay', function () {
+//     return view('frontend.home.paybal');});
+// Route::get('payment', [PayPalController::class, 'payment'])->name('payment');
+// Route::get('cancel', [PayPalController::class, 'payment'])->name('payment.cancel');
+// Route::get('payment/success', [PayPalController::class, 'success'])->name('payment.success');
+
+
+
 Route::controller(FacebookController::class)->group(function () {
     Route::get('auth/facebook', 'redirectToFacebook')->name('auth.facebook');
     Route::get('auth/facebook/callback', 'handleFacebookCallback');
@@ -71,7 +98,7 @@ Route::get('admin/dashboard', [AdminController::class, 'index'])->name('admin.da
 
 Route::resource('users', UserController::class);
 
-Route::resource( 'category', CategoryController::class);
+Route::resource('category', CategoryController::class);
 
 Route::resource('projects', ProjectController::class);
 
@@ -93,3 +120,36 @@ Route::get('/user2', function () {
 });
 
 
+
+
+
+// *******************Sara**********************
+
+Route::get('/Allprojects/{id?}', [AllProjectController::class, 'show'])->name('All.projects');
+
+// Route::get('/All/service/projects/2',function()
+// {return view('frontend.project.project');})->name('All.SProject');
+
+// Route::get('/All/item/projects/3', function()
+// {return view('frontend.project.project');})->name('All.IProject');
+
+// Route::get('/All/donation/projects/1', function()
+// {return view('frontend.project.project');})->name('All.DProject');
+
+// ----------singelproject----------
+Route::get('/open/form', [SingelProjectController::class, 'openForm'])->name('open.form');
+Route::get('/open/service/form', [SingelProjectController::class, 'openFormservice'])->name('open.Sform');
+Route::get('/open/item/form', [SingelProjectController::class, 'openFormitem'])->name('open.Iform');
+
+Route::get('/Donation.singelProject/{id}', [SingelProjectController::class, 'showDonation'])->name('show.Donation');
+Route::get('/Item_Project.singelProject/{id}', [SingelProjectController::class, 'showitem'])->name('show.item');
+Route::get('/service_project.singelProject/{id}', [SingelProjectController::class, 'showservice'])->name('show.service');
+
+Route::post('/service.form', [SingelProjectController::class, 'checkformservice'])->name('form.service');
+Route::post('/item.form', [SingelProjectController::class, 'checkformitem'])->name('form.item');
+Route::post('/form.Donation', [SingelProjectController::class, 'checkformDonation'])->name('Donation.form');
+
+
+Route::post('/Donation.storeform', [SingelProjectController::class, 'storeformDonation'])->name('store.donation');
+Route::get('/item.storeform', [SingelProjectController::class, 'storeformitem'])->name('store.item');
+Route::get('/service.storeform', [SingelProjectController::class, 'storeformservice'])->name('sorte.service');

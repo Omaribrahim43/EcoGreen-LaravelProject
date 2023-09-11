@@ -42,7 +42,7 @@ class UserController extends Controller
         $user->phone = $request->phone;
         $user->password = bcrypt($request->password);
         $user->save();
-        
+
         toastr('Updated Successfully', 'success');
         return redirect()->route('users.index');
     }

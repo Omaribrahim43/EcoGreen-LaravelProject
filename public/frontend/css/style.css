@@ -932,7 +932,7 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
     height: 100%;
     background: rgba(0, 0, 0, 0.8);
     z-index: 99999999;
-    visibility: hidden;
+    /* visibility: hidden; */
     opacity: 0;
     overflow: auto;
     transition: all 700ms ease;
@@ -964,6 +964,8 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
 .donate-popup .close-donate:hover {
     opacity: 0.7;
 }
+
+
 
 /*============= donate form area =================*/
 
@@ -1764,10 +1766,10 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
     line-height: 40px;
 }
 .service .service-item {
-    margin-bottom: 30px;
-    border: 1px solid #f4f4f4;
-    padding: 28px 14px 25px;
-    position: relative;
+  margin-bottom: 30px;
+  border: 1px solid #8dc63f;
+  padding: 28px 14px 25px;
+  position: relative;
 }
 .service .service-item:before {
     position: absolute;
@@ -8433,3 +8435,64 @@ article.slide-item.center {
     margin-top: 160px;
     margin-bottom: 30px;
 }
+
+/* sara added */
+  /* Style the radio buttons as squares */
+  input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px; 
+    height: 20px; 
+    border: 2px solid #333; 
+    border-radius: 3px;
+    margin-right: 5px;
+    position: relative; 
+}
+
+/* Style the checked radio buttons with a checkmark */
+input[type="radio"]:checked::before {
+    content: '\2713'; /* Unicode checkmark character */
+    position: absolute;
+    top: -4px;
+    left: 2px;
+    color: #333; 
+    font-size: 16px;
+    color:green;
+}
+
+/* thanks message */
+.container-thanks {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.h2-thanks {
+    color: #333;
+    font-size: 24px;
+}
+
+.p-thanks {
+    color: #555;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
