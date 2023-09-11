@@ -16,14 +16,13 @@
         <div class="pull-left">
             <ul class="list-inline link-list">
                 <li>
-                    <a href="index.html">Home</a>
+                    <a href="{{route('index')}}">Home</a>
                 </li>
                 <li>
-                    <a href="event-1.html">event</a>
+                    <a href="{{route('All.projects',2)}}"> Item Projects </a>
                 </li>
-                
                 <li>
-                    Project Details
+                    Single Item Project
                 </li>
             </ul>
         </div>
@@ -49,23 +48,15 @@
                                 <h3>Our Sponsors</h3>
                             </div>
                             <ul class="brand-carousel2">
-                                <li><a href="#"><img src="images/event/b1.jpg" alt=""></a></li>
-                                <li><a href="#"><img src="images/event/b2.jpg" alt=""></a></li>
-                                <li><a href="#"><img src="images/event/b3.jpg" alt=""></a></li>
-                                <li><a href="#"><img src="images/event/b4.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="{{asset('frontend/images/partners/logo.png')}}" alt="Awesome Image" style="width: 60px"></a></li>
+                                <li><a href="#"><img src="{{asset('frontend/images/partners/farm.png')}}" alt="Awesome Image"></a></li>
+                                <li><a href="#"><img src="{{asset('frontend/images/partners/env.png')}}" alt="Awesome Image">
+                                </a></li>
+                                <li><a href="#"><img src="{{asset('frontend/images/partners/work.png')}}" alt="Awesome Image" style="width: 90px"></a></li>
+                                <li><a href="#"><img src="{{asset('frontend/images/partners/irbid.png')}}" alt="Awesome Image"></a></li>
                             </ul>
                         </div>
-                        <div class="share clearfix">
-                        
-                            <div class="float_right">
-                                <a href="{{route('open.Iform')}}" class="thm-btn style-2 donate-box-btn">Donate Now </a>
-                            </div>
-
-                    
-                    
-
-                    </div>
-
+                   
 
                 </div>
             

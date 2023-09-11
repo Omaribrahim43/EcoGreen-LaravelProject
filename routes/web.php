@@ -62,16 +62,25 @@ Route::get('authorized/google/callback', [LoginWithGoogleController::class, 'han
 
 
 //*******************Rania********************* */
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/aboutus', [AboutUsController::class, 'home'])->name('home');
 //*******************Rania********************* */
 
+Route::get('/contact', function(){
+    return view('frontend.contact.contact');
+})->name('contact');
+
+Route::get('/testimonial', function(){
+    return view('frontend.testimonial');
+})->name('testimonial');
+
+
 // Route::get('/pay', function () {
 //     return view('frontend.home.paybal');});
- // Route::get('payment', [PayPalController::class, 'payment'])->name('payment');
- // Route::get('cancel', [PayPalController::class, 'payment'])->name('payment.cancel');
- // Route::get('payment/success', [PayPalController::class, 'success'])->name('payment.success');
+// Route::get('payment', [PayPalController::class, 'payment'])->name('payment');
+// Route::get('cancel', [PayPalController::class, 'payment'])->name('payment.cancel');
+// Route::get('payment/success', [PayPalController::class, 'success'])->name('payment.success');
 
 
 
@@ -104,7 +113,16 @@ Route::get('admin/profile', [AdminController::class, 'show'])->name('profile');
 
 // *******************Sara**********************
 
-Route::get('/projects', [AllProjectController::class, 'show'])->name('projects');
+Route::get('/Allprojects/{id?}', [AllProjectController::class, 'show'])->name('All.projects');
+
+// Route::get('/All/service/projects/2',function()
+// {return view('frontend.project.project');})->name('All.SProject');
+
+// Route::get('/All/item/projects/3', function()
+// {return view('frontend.project.project');})->name('All.IProject');
+
+// Route::get('/All/donation/projects/1', function()
+// {return view('frontend.project.project');})->name('All.DProject');
 
 // ----------singelproject----------
 Route::get('/open/form', [SingelProjectController::class, 'openForm'])->name('open.form');
@@ -120,14 +138,6 @@ Route::post('/item.form', [SingelProjectController::class, 'checkformitem'])->na
 Route::post('/form.Donation', [SingelProjectController::class, 'checkformDonation'])->name('Donation.form');
 
 
-Route::post('/Donation.storeform/{id}', [SingelProjectController::class, 'storeformDonation'])->name('store.donation');
-Route::get('/item.storeform/{id}', [SingelProjectController::class, 'storeformitem'])->name('store.item');
-Route::get('/service.storeform/{id}', [SingelProjectController::class, 'storeformservice'])->name('sorte.service');
-
-
-
-
-
-
-
-
+Route::post('/Donation.storeform', [SingelProjectController::class, 'storeformDonation'])->name('store.donation');
+Route::get('/item.storeform', [SingelProjectController::class, 'storeformitem'])->name('store.item');
+Route::get('/service.storeform', [SingelProjectController::class, 'storeformservice'])->name('sorte.service');

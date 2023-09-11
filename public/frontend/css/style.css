@@ -8461,6 +8461,28 @@ input[type="radio"]:checked::before {
     color:green;
 }
 
+/* thanks message */
+.container-thanks {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.h2-thanks {
+    color: #333;
+    font-size: 24px;
+}
+
+.p-thanks {
+    color: #555;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
 
 
 

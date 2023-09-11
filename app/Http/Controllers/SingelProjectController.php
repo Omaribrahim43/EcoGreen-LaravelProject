@@ -42,7 +42,6 @@ class SingelProjectController extends Controller
     public function showDonation($id)
     {
         $project = Project::findOrFail($id);
-        // return view('frontend.Donation_Project.singelProject.singelProject',);
         return view('frontend.Donation_Project.singelProject.singelProject', ['project' => $project]);
     }
     public function showitem($id)
@@ -53,7 +52,8 @@ class SingelProjectController extends Controller
     public function showservice($id)
     {
         $project = Project::findOrFail($id);
-        return view('frontend.service_project.singelProject.singelProject', compact('project'));
+        return view('frontend.Item_Project.singelProject.singelProject', compact('project'));
+        //sara comment 
     }
 
     public function checkformservice(Request $request)
@@ -112,8 +112,11 @@ class SingelProjectController extends Controller
     }
 
 
-    public function storeformDonation(Request $request, $id)
+    public function storeformDonation(Request $request)
     {
+            // $id= auth()->user()->id;
+         $id=1;
+
         $user = User::find($id);
         $user->donate_amount = $request->donate_amount;
         $user->donate_method = $request->donate_method;
@@ -122,7 +125,7 @@ class SingelProjectController extends Controller
 
     }
 
-    public function storeformitem(Request $request, $id)
+    public function storeformitem(Request $request)
     {
         $validatedData = $request->validate([
 
@@ -130,7 +133,9 @@ class SingelProjectController extends Controller
             'fertilizer_checkbox' => 'sometimes|required_without_all:tree_checkbox,equipments_checkbox',
             'equipments_checkbox' => 'sometimes|required_without_all:tree_checkbox,fertilizer_checkbox',
         ]);
-
+                
+        // $id= auth()->user()->id;
+        $id=1;
         $user = User::find($id);
 
         $user->donate_tree = $request->donate_tree;
@@ -142,8 +147,11 @@ class SingelProjectController extends Controller
 
     }
 
-    public function storeformservice(Request $request, $id)
+    public function storeformservice(Request $request)
     {
+            // $id= auth()->user()->id;
+            $id=1;
+
         $user = User::find($id);
 
         $user->choosen_shift = $request->choosen_shift;

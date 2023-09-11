@@ -8,7 +8,7 @@
                     <div class="content">
                             
                         <div class="text">
-                            {{-- <p>Organizer: Tom Maddy</p> --}}
+                           
                             {{-- <h3>{{$project->title}}</h3> --}}
                             <p>{{$project->long_description}}</p>
                         </div><br><br>

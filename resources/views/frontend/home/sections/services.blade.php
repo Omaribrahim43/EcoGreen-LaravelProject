@@ -11,16 +11,20 @@
                     <div class="container">
                         <div class="row">
                             @foreach ($data as $item)
+                           
                                 <div class="col-md-4 col-sm-6 col-xs-12">
                                     <div class="service-item text-center">
-
+                                        
                                         <div class="image">
+                                            <a href="{{route('All.projects',$item->id)}}">
                                            
-                                            {{--<a > <img src="{{asset($item->image)}}" style="height:150 px; width:150px"> </a> --}}
-                                            <a ><img src="frontend/images/service/item.jpg" style="height:150 px; width:150px"></a>
+                                            {{-- <a > <img src="{{asset($item->image)}}" style="height:150 px; width:150px"> </a> --}}
+                                            <img src="frontend/images/service/item.jpg" style="height:150 px; width:150px">
 
+                                        </a>
                                         </div>
                                        <br>
+                                        
 
                                         <h3>{{ $item->name }}</h3> <br> 
                                      {{-- </a> --}}

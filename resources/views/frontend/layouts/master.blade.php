@@ -76,10 +76,9 @@
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="#"><i class="fa fa-feed"></i></a></li>
                         </ul>
-                        <form action="{{ route('open.form') }}" method="POST">
-                            @csrf
-                            <a type="submit" class="thm-btn donate-box-btn">donate now</a>
-                        </form>
+                        
+                            <a href="{{route('open.form')}}" class="thm-btn donate-box-btn">donate now</a>
+                        
 
                     </div>
 
