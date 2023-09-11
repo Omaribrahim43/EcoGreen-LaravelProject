@@ -16,21 +16,6 @@ use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\AllProjectController;
 use App\Http\Controllers\SingelProjectController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-
-// Route::get('/', [HomeController::class, 'index'])->name('home');
-
-// Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -47,6 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile2/{user->id}/edit', [Profile2Controller::class, 'update'])->name('profile2.profile.update');
     Route::delete('/profile2', [Profile2Controller::class, 'destroy'])->name('profile2.destroy');
 });
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -56,9 +42,6 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__ . '/auth.php';
 
-
-Route::get('authorized/google', [LoginWithGoogleController::class, 'redirectToGoogle']);
-Route::get('authorized/google/callback', [LoginWithGoogleController::class, 'handleGoogleCallback']);
 
 
 //*******************Rania********************* */
