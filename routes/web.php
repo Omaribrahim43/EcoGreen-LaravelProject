@@ -1,21 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\FacebookController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AboutUsController;
-use App\Http\Controllers\LoginWithGoogleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Profile2Controller;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\PayPalController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ProjectController;
-use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\AllProjectController;
 use App\Http\Controllers\SingelProjectController;
-use App\Models\User;
+
 
 
 Route::get('/dashboard', function () {
@@ -34,7 +24,6 @@ Route::delete('/user/delete', [Profile2Controller::class, 'destroy'])->name('use
 Route::middleware('auth')->group(function () {
     Route::get('/profile2', [Profile2Controller::class, 'index'])->name('profile2.profile.index');
     Route::get('/profile2/edit', [Profile2Controller::class, 'edit'])->name('profile2.profile.edit');
-    
     Route::delete('/profile2', [Profile2Controller::class, 'destroy'])->name('profile2.destroy');
 });
 
@@ -43,25 +32,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-// Route::get('user/profile', [UserController::class, 'profile'])->middleware('auth')->name('profile');
 
 require __DIR__ . '/auth.php';
 
 
-
-//*******************Rania********************* */
-Route::get('/', [HomeController::class, 'index'])->name('index');
-Route::get('/about', [HomeController::class, 'about'])->name('about');
-Route::get('/aboutus', [AboutUsController::class, 'home'])->name('home');
-//*******************Rania********************* */
-
-Route::get('/contact', function(){
-    return view('frontend.contact.contact');
-})->name('contact');
-
-Route::get('/testimonial', function(){
-    return view('frontend.testimonial');
-})->name('testimonial');
 
 
 // Route::get('/pay', function () {
@@ -72,30 +46,12 @@ Route::get('/testimonial', function(){
 
 
 
-Route::controller(FacebookController::class)->group(function () {
-    Route::get('auth/facebook', 'redirectToFacebook')->name('auth.facebook');
-    Route::get('auth/facebook/callback', 'handleFacebookCallback');
-});
-
-Route::get('admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
-
-Route::resource('users', UserController::class);
-
-Route::resource('category', CategoryController::class);
-
-Route::resource('projects', ProjectController::class);
-
-Route::get('admin/login', [AdminLoginController::class, 'index'])->name('admin.login');
-Route::post('loginprocess', [AdminLoginController::class, 'login'])->name('loginprocess');
-
-
 // Route::resource('admin/login', AdminLoginController::class);
 
 // Route::get('admin/profile', function () {
 //     return view('admin.profile.profile');
 // })-> name('profile');
 
-Route::get('admin/profile', [AdminController::class, 'show'])->name('profile');
 
 Route::get('/user2', function () {
     $users = \App\Models\User::with('projects')->get(); // Replace \App\Models\User with your actual User model namespace.
