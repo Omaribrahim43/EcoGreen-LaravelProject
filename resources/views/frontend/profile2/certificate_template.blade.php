@@ -73,7 +73,7 @@
                     <li class="project-item">
                         <div class="project-title">{{ $project->title }}</div>
                         <div class="project-location">Location: {{ $project->location }}</div>
-                        <div class="project-description">Description: {{ $project->description }}</div>
+                        <div class="project-description">Description: {{ $project->long_description }}</div>
                         <div class="project-info">
                             <p><strong>Budget:</strong> ${{ number_format($project->budget, 2) }}</p>
                             <p><strong>Start Date:</strong> {{ $project->start_day }}</p>

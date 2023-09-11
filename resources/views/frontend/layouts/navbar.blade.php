@@ -31,6 +31,7 @@
                         <li><a href="#">Pages</a>
                             <ul class="dropdown">
                                 <li><a href="{{route('testimonial')}}">Testimonials</a></li>
+                                <li><a href="{{route('about')}}">About Us</a></li>
                                 <li><a href="error.html">404 Page</a></li>
                             </ul>
                         </li>
