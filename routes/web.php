@@ -1,79 +1,41 @@
 <?php
-use Illuminate\Support\Facades\Route;
+ 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Profile2Controller;
+use App\Http\Controllers\AllProjectController;
+use App\Http\Controllers\SingelProjectController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\LoginWithGoogleController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ProjectController;
-use App\Http\Controllers\AdminLoginController;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/profile2', function () {
+    return view('frontend.profile2.profile');
+})->name('profile2');
+
+Route::get('/certificate/download', [Profile2Controller::class, 'download'])->name('certificate.download');
+Route::post('/profile2/edit', [Profile2Controller::class, 'update'])->name('profile2/');
+Route::post('/profile2/edit-update', [Profile2Controller::class, 'updatePassword'])->name('updatePassword');
+Route::delete('/user/delete', [Profile2Controller::class, 'destroy'])->name('user.delete');
+
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/profile2', [Profile2Controller::class, 'index'])->name('profile2.profile.index');
+    Route::get('/profile2/edit', [Profile2Controller::class, 'edit'])->name('profile2.profile.edit');
+    Route::delete('/profile2', [Profile2Controller::class, 'destroy'])->name('profile2.destroy');
 });
 
 require __DIR__ . '/auth.php';
 
-Route::get('user/profile', [UserController::class, 'profile'])->middleware('auth')->name('profile');
+// Route::get('/pay', function () {
+//     return view('frontend.home.paybal');});
+// Route::get('payment', [PayPalController::class, 'payment'])->name('payment');
+// Route::get('cancel', [PayPalController::class, 'payment'])->name('payment.cancel');
+// Route::get('payment/success', [PayPalController::class, 'success'])->name('payment.success');
 
-Route::get('authorized/google', [LoginWithGoogleController::class, 'redirectToGoogle']);
-Route::get('authorized/google/callback', [LoginWithGoogleController::class, 'handleGoogleCallback']);
-
-Route::controller(FacebookController::class)->group(function () {
-    Route::get('auth/facebook', 'redirectToFacebook')->name('auth.facebook');
-    Route::get('auth/facebook/callback', 'handleFacebookCallback');
-});
-
-// Route::get('admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
-// Route::get('admin/dashboard', function(){
-//     return view('admin.dashboard');
-// })->name('admin.dashboard');
-
-
-Route::resource('users', UserController::class);
-
-Route::resource( 'category', CategoryController::class);
-
-Route::resource('projects', ProjectController::class);
-
-Route::get('admin/login', [AdminLoginController::class, 'index'])->name('admin.login');
-Route::post( 'loginprocess', [AdminLoginController::class, 'login'])->name('loginprocess');
-Route::get('admin/dashboard', [AdminLoginController::class, 'dashboard'])->name('admin.dashboard')->middleware('isLoggedIn');
-
-
-// Route::resource('admin/login', AdminLoginController::class);
-
-// Route::get('admin/profile', function () {
-//     return view('admin.profile.profile');
-// })-> name('profile');
-
-Route::get( 'admin/profile', [AdminController::class, 'show'])->name('admin.profile');
-Route::post('admin/profile/update/{id}', [AdminController::class, 'update'])->name('admin.profile.update');
-Route::get('admin/profile/reset', [AdminController::class, 'resetPasswordPage'])->name('admin.profile.reset');
-Route::post('admin/profile/resetpassword', [AdminController::class, 'resetPassword'])->name('admin.profile.resetpassword');
-
-
-Route::get('admin/logout', [AdminLoginController::class, 'logout'])->name('logoutprocess');
 
 

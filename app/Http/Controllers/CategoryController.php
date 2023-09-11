@@ -65,6 +65,8 @@ class CategoryController extends Controller
         $category->name = $request->name;
         $category->description = $request->description;
         $category->save();
+        
+        toastr('Created Successfully!', 'success');
 
         return redirect()->route('category.index');
     }
@@ -102,7 +104,7 @@ class CategoryController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'image' => ['required', 'image', 'max:4192'],
+            'image' => ['image', 'max:4192'],
             'name' => ['required', 'max:20'],
             'description' => ['required', 'max:1000'],
         ]);
@@ -116,6 +118,7 @@ class CategoryController extends Controller
         // $category->image = $request->image;
         $category->save();
 
+        toastr('Updated Successfully!', 'success');
 
         return redirect()->route('category.index');
     }

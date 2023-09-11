@@ -45,6 +45,7 @@
                     <!--Login Form-->
                     <div class="styled-form login-form">
                         <form method="post" action="{{ route('login') }}">
+                            @csrf
                             <div class="form-group">
                                 <span class="adon-icon"><span class="fa fa-envelope-o"></span></span>
                                 <input type="email" name="email" value="{{ old('email') }}" placeholder="Enter Email">
