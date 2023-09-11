@@ -107,7 +107,7 @@ class Profile2Controller extends Controller
         Auth::logout();
 
         // Redirect to a confirmation page or wherever you want
-        return redirect()->route('home')->with('success', 'Your account has been deleted.');
+        return redirect()->route('/')->with('success', 'Your account has been deleted.');
     }
 
 

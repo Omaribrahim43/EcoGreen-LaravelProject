@@ -114,12 +114,16 @@ class SingelProjectController extends Controller
 
     public function storeformDonation(Request $request)
     {
-            // $id= auth()->user()->id;
-         $id=1;
+            $id= auth()->user()->id;
+        //  $id=1;
 
         $user = User::find($id);
         $user->donate_amount = $request->donate_amount;
         $user->donate_method = $request->donate_method;
+
+            $user->update([
+                'donate_amount' => $request->donate_amount+$user->donate_amount,
+            ]);
 
         return view('frontend.layouts.thankyouPopUp');
 
@@ -134,8 +138,8 @@ class SingelProjectController extends Controller
             'equipments_checkbox' => 'sometimes|required_without_all:tree_checkbox,fertilizer_checkbox',
         ]);
                 
-        // $id= auth()->user()->id;
-        $id=1;
+        $id= auth()->user()->id;
+        // $id=1;
         $user = User::find($id);
 
         $user->donate_tree = $request->donate_tree;

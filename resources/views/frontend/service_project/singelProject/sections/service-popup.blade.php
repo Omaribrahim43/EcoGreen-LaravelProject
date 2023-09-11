@@ -41,17 +41,18 @@
 
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <fieldset>
-                                    <legend>Number of Participating Hours</legend>
-                                    <div class="form-group">
+                                    <legend>Choose the Donation Service:</legend>
                                         <label>
-                                            <input type="radio" name="choosen_shift" value="Full_day" required>
-                                            Full Day
+                                            <input type="radio" name="choosen_shift" value="Transportation" required>
+                                            Transportation
                                         </label>
-                                    </div>
-                                    <div class="form-group">
                                         <label>
-                                            <input type="radio" name="choosen_shift" value="Part_time" required>
-                                            Part time
+                                            <input type="radio" name="choosen_shift" value="Planting" required>
+                                            Planting
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="choosen_shift" value="Organizing" required>
+                                            Organizing
                                         </label>
 
                                 </fieldset>

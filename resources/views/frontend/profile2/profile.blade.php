@@ -290,11 +290,11 @@ use App\Controllers\UserController;
                                         </tbody>
                                     </table>
 
-                                    {{-- @if (!$user->projects == 'null') --}}
+                                    @if (!$user->projects->isEmpty())
                                         <a href="{{ route('certificate.download') }}"
                                             class="btn btn-primary">Download
                                             Participation Certificate</a>
-                                    {{-- @endif --}}
+                                    @endif
                                     {{-- <img src="{{ asset('assets/img/1694206033.jpg') }}" alt=""> --}}
                                 </div>
                             </div>
