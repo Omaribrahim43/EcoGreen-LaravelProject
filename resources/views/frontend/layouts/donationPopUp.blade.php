@@ -107,7 +107,7 @@
 
                  <div class="center">
 
-                     <button class="thm-btn" type="submit">Donate Now</button>
+                     <button class="thm-btn sbmt-btn" type="submit">Donate Now</button>
                  </div>
 
 

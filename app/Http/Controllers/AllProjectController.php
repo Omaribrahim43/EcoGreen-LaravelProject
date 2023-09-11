@@ -13,7 +13,7 @@ class AllProjectController extends Controller
     public function show($id = null)
 {
     if($id != null){
-        $project = Project::where('categoty_id', $id)->get();
+        $project = Project::where('category_id', $id)->get();
         return view('frontend.project.project')->with('project', $project);
     } else {
         $project = Project::all();
