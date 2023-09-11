@@ -27,6 +27,9 @@ class DatabaseSeeder extends Seeder
             Category::class,
         ]);
         $this->call([
+            Admin::class,
+        ]);
+        $this->call([
             ProjectSeeder::class,
         ]);
     }

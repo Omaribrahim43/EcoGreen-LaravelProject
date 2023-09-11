@@ -11,20 +11,20 @@
                 <nav class="menuzord" id="main_menu">
                     <ul class="menuzord-menu">
                         <li><a href="{{ route('index') }}">Home</a></li>
-                        <li><a href="">About</a></li>
+                        <li><a href="{{ route('about') }}">About</a></li>
                         <li><a href="#">Services</a>
                             <ul class="dropdown">
                                 <li><a href="{{ route('All.projects') }}">All Project</a></li>
+                               
                                 <li><a href="{{ route('All.projects', 1) }}">Donation Project</a></li>
                                 <li><a href="{{ route('All.projects', 2) }}">Item Project</a></li>
                                 <li><a href="{{ route('All.projects', 3) }}">Service Project</a></li>
-                                <li><a href="error.html">404 Page</a></li>
                             </ul>
                         </li>
                         <li><a href="#">Pages</a>
                             <ul class="dropdown">
                                 <li><a href="{{ route('testimonial') }}">Testimonials</a></li>
-                                <li><a href="error.html">404 Page</a></li>
+                                <li><a href="{{ route('about') }}">About Us</a></li>
                             </ul>
                         </li>
                         <li><a href="{{ route('show.contact') }}">contact</a></li>

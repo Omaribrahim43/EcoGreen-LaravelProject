@@ -14,6 +14,8 @@
                         <div class="card-header">
                             <h4>Total Orders</h4>
                         </div>
+                        {{-- <h1>{{ $admin->name }}</h1> --}}
+
                         <div class="card-body">
                             59
                         </div>

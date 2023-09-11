@@ -15,6 +15,7 @@ class Profile2Controller extends Controller
     {
         $user = User::all();
         return view('frontend.profile2.profile', compact('user'));
+        
     }
 
     public function edit(User $user)
@@ -43,7 +44,6 @@ class Profile2Controller extends Controller
         $id = Auth::id();
         $user = User::find($id); // Replace $userId with the user's ID
         $projects = $user->projects; // This will fetch all posts associated with the user
-
 
         User::where(['id' => $id])->update($data);
         return redirect()->route('profile2.profile.index')->with([

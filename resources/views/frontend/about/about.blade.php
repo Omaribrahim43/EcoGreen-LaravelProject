@@ -14,7 +14,7 @@
             <div class="pull-left">
                 <ul class="list-inline link-list">
                     <li>
-                        <a href="{{ route('home') }}">Home</a>
+                        <a href="{{ route('index') }}">Home</a>
                     </li>
 
                     <li>
