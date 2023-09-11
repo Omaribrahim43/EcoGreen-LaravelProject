@@ -17,7 +17,7 @@
                     <h4>How much would you like to donate:</h4>
 
 
-                    <form id="contact-form" class="default-form" action="{{ route('store.item', 1) }}"
+                    <form id="contact-form" class="default-form" action="{{ route('store.item',1) }}"
                         method="post" novalidate="novalidate">
                         @csrf
                         <div class="col-md-12 col-sm-12 col-xs-12">

@@ -11,51 +11,36 @@
 
                 <nav class="menuzord" id="main_menu">
                     <ul class="menuzord-menu">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="{{route('index')}}">Home</a></li>
 
-                        <li><a href="service.html">Service</a>
-                            <ul class="dropdown">
-                                <li><a href="service.html">All Services</a></li>
-                                <li><a href="recycling.html">Recycling</a></li>
-                                <li><a href="Eco-System.html">Eco System</a></li>
-                                <li><a href="Save-Water.html">Save Water</a></li>
-                                <li><a href="Save-Animals.html">Save Animals</a></li>
-                                <li><a href="Organic-Living.html">Organic Living</a></li>
-                                <li><a href="Good-Nature.html">Good Nature</a></li>
+                      
+                            
+                            <li><a href="#">Donation Project</a>
+                                <ul class="dropdown">
+                                <li><a href="{{route('All.projects')}}">All Project</a></li>
+                                <li><a href="{{route('All.projects',1)}}">Donation Project</a></li>
+                                <li><a href="{{route('All.projects',2)}}">Item Project</a></li>
+                                <li><a href="{{route('All.projects',3)}}">Service Project</a></li>
+                                <li><a href="error.html">404 Page</a></li>
                             </ul>
+                        </li>
+                                
+                           
                         </li>
 
                         <li><a href="#">Pages</a>
                             <ul class="dropdown">
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="Campaign-Grid-View.html">Campaign Grid View</a></li>
-                                <li><a href="Campaign-List-View.html">Campaign List View</a></li>
-                                <li><a href="Events.html">Events</a></li>
-                                <li><a href="testimonial.html">Testimonials</a></li>
-                                <li><a href="faq.html">FAQ’s</a></li>
+                                <li><a href="{{route('testimonial')}}">Testimonials</a></li>
                                 <li><a href="error.html">404 Page</a></li>
                             </ul>
                         </li>
 
-                        <li><a href="blog-1.html">blog</a>
-                            <ul class="dropdown">
-                                <li><a href="blog-1.html">Blog Grid View</a></li>
-                                <li><a href="blog-large.html">Blog With Sidebar</a></li>
-                                <li><a href="blog-details.html">Single Post</a></li>
-                            </ul>
-                        </li>
 
-                        <li><a href="#">Shop</a>
-                            <ul class="dropdown">
-                                <li><a href="shop.html">Shop Products</a></li>
-                                <li><a href="shop-single.html">Single Shop</a></li>
-                                <li><a href="shop-cart.html">Shopping Cart</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
-                                <li><a href="account.html">My Account</a></li>
-                            </ul>
-                        </li>
+                         {{-- <li><a href="account.html">My Account</a></li> --}}
 
-                        <li><a href="contact.html">contact</a></li>
+
+
+                        <li><a href="{{route('contact')}}">contact</a></li>
 
 
                         @if (Route::has('login'))

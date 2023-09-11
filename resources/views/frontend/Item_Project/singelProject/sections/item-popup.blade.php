@@ -3,10 +3,6 @@
 
 @section('content')
 
-{{-- <div id="donate-popup-item" class="donate-popup">
-    <div class="close-donate theme-btn"><span class="fa fa-close"></span></div>
-    <div class="popup-inner"> --}}
-
 
 
         <div class="container">
@@ -15,64 +11,67 @@
                     <h2>Donation Information</h2>
                 </div>
                 
-                <form id="contact-form" class="default-form" action="{{ route('store.item') }}" method="post" novalidate="novalidate">
+                <form class="default-form" action="{{ route('store.item') }}" method="post" novalidate="novalidate">
                     @csrf
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="form-group">
-                            <p>Name</p>
-                            <input type="text"  class="form-control"  required="" aria-required="true" value="{{$user->name}}" readonly> 
+                    <div class="form-bg">
+                        <div class="row clearfix">
+
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <p>Name</p>
+                                    <input type="text" class="form-control" required="" aria-required="true"
+                                        value="{{ $user->name }}" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <p>Your Email</p>
+                                    <input type="email" class="form-control required email" required=""
+                                        aria-required="true" value="{{ $user->email }}" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <p>Phone</p>
+                                    <input type="text" class="form-control" required=""
+                                        value="{{ $user->phone }}"readonly>
+                                </div>
+                            </div>
+   
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <p>Address*</p>
+                                    <input type="text" name="address" placeholder="" required="" value="{{ $user->address }}" readonly>
+                                </div>
+                            </div>
+   
+   
                         </div>
                     </div>
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="form-group">
-                            <p>Your Email</p>
-                            <input type="email" class="form-control required email"   required="" aria-required="true" value="{{$user->email}}" readonly> 
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="form-group">
-                            <p>Phone</p>
-                            <input type="text" class="form-control"  required=""  value="{{$user->phone}}" readonly> 
+
+                    <ul class="payment-option">
+
+                        <li>
+                            <h4>Choose Items for Donation:</h4>
+                        </li>
     
-                        </div>
+                     </ul>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" name="donate_tree" value="yes">{{ $project->tree_type}}                        
+                    </div>
+            
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" name="donate_tree" value="yes">{{ $project->tree_type}}
                     </div>
 
-                            <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" name="donate_equipments" value="yes"> {{$project->equipments}}
+                    </div>
 
-                                <br><br>
-                                <label>Choose Items for Donation:</label>
-                                <br><br>
-
-
-                                <div class="form-group">
-                                    <input type="checkbox" name="donate_tree" value="yes">{{ $project->tree_type}}
-                                </div>
-                            </div>
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-group">
-                                    <input type="checkbox" name="donate_fertilizer" value="yes">{{ $project->fertilizer}}
-                                </div>
-                            </div>
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-group">
-                                    <input type="checkbox" name="donate_equipments" value="yes"> {{$project->equipments}}
-                                </div>
-                            </div>
-                            <br><br>
-
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-group">
-                                    <button class="thm-btn" type="submit" data-loading-text="Please wait...">submit now</button>
-                                </div>
-                            </div>   
-
+                           
                         </div>
                 </form>
             </div>
         </div>
 
-
-
-    {{-- </div>
-</div> --}}
 @endsection

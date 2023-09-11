@@ -15,14 +15,11 @@
         <div class="pull-left">
             <ul class="list-inline link-list">
                 <li>
-                    <a href="index.html">Home</a>
+                    <a href="{{route('index')}}">Home</a>
                 </li>
+                
                 <li>
-                    <a href="#">Pages</a>
-                </li>
-
-                <li>
-                    Events Grid View
+                    All Project
                 </li>
             </ul>
         </div>
