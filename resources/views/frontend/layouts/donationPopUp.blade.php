@@ -1,12 +1,10 @@
-@extends('frontend.layouts.master_popup')
+ @extends('frontend.layouts.master_popup')  
 
 @section('content')
 
 
 
-{{-- <div id="donate-popup" class="donate-popup">
-    <div class="close-donate theme-btn"><span class="fa fa-close"></span></div>
-    <div class="popup-inner"> --}}
+
 
         <div class="container">
             <div class="donate-form-area">
@@ -94,23 +92,15 @@
                                             <h4>Choose your payment method:</h4>
                                         </li>
 
-                                        <li>
-                                            <div class="form-group">
-                                                <label>
-                                                    <input type="radio" name="donate_method" value="Cash" required>
-                                                    Cash
-                                                </label>
-                                            </div>
-                                        </li>
-
-                                        <li>
-                                            <div class="form-group">
-                                                <label>
-                                                    <input type="radio" name="donate_method" value="PayPal" required>
-                                                    PayPal
-                                                </label>
-                                            </div>
-                                        </li>
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="form-check-input" name="donate_method" value="Cash" required>
+                                            <label class="form-check-label">Cash</label>
+                                        </div>
+                                
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="form-check-input" name="donate_method" value="PayPal" required>
+                                            <label class="form-check-label">PayPal</label>
+                                        </div>
 
                                     </ul>
 
@@ -125,8 +115,6 @@
             </div>
         </div>
 
-    {{-- </div>
-</div> --}}
 
 @endsection
-
+ 

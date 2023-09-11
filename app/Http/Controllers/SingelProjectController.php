@@ -42,7 +42,6 @@ class SingelProjectController extends Controller
     public function showDonation($id)
     {
         $project = Project::findOrFail($id);
-        // return view('frontend.Donation_Project.singelProject.singelProject',);
         return view('frontend.Donation_Project.singelProject.singelProject', ['project' => $project]);
     }
     public function showitem($id)
