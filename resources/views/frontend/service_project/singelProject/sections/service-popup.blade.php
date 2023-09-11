@@ -13,7 +13,7 @@
                 </div> 
 
 
-                <form id="contact-form" name="contact_form" class="default-form"
+                <form name="contact_form" class="default-form"
                     action="{{ route('sorte.service', 1) }}" method="post" novalidate="novalidate">
                     @csrf
                     <div class="row clearfix">

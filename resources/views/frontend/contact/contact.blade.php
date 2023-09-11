@@ -30,7 +30,6 @@
 
 
      <!--Start contact area-->
-     @include('frontend.contact.sections.touchArea')
      <!--Start contact area-->
      @include('frontend.contact.sections.touchArea')
 
@@ -93,7 +92,7 @@
                                  </div>
                                  <div class="col-md-12 col-sm-12 col-xs-12">
                                      <div class="form-group center">
-                                         <button type="submit" id="submit-button" class="thm-btn style-2">Send Message</button>
+                                         <button type="submit" id="submit-button" class="thm-btn style-2" >Send Message</button>
 
                                      </div>
                                  </div>
@@ -106,25 +105,7 @@
 
 
 
-                 {{-- <div class="col-md-4">
-                     <div class="form-right-box text-center">
-                         <div class="img-box">
-                             <img src="images/resource/contact-form-right.png" alt="Awesome Image">
-                         </div>
-                         <h4>Brown Angelino</h4>
-                         <span>Hr Manager</span>
-                         <p>How all this mistaken idea of denouncing <br>pleasure and praising pain was born and I will
-                             <br>complete account of the system.
-                         </p>
-                         <div class="border"></div>
-                         <ul class="social-links">
-                             <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                             <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                             <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                             <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                         </ul>
-                     </div> --}}
-                 {{-- </div> --}}
+              
 
              </div>
          </div>

@@ -68,8 +68,10 @@
                         <input type="checkbox" name="donate_equipments" value="yes"> {{$project->equipments}}
                     </div>
 
-                           
-                        </div>
+                    <div class="center">
+
+                        <button class="thm-btn sbmt-btn" type="submit">Donate Now</button>
+                    </div>
                 </form>
             </div>
         </div>

@@ -79,7 +79,8 @@ class ProjectController extends Controller
         $project->volunteering_hours_end = $request->endhour;
         $project->volunteering_days = $request->volunteeringdays;
         $project->status = $request->input('status');
-        $project->description = $request->description;
+        $project->short_description = $request->short_description;
+        $project->long_description = $request->long_description;
         $project->image = $request->image;
         $project->category_id = $request->input('category');
         $project->user_id = $request->input('category');
