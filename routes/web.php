@@ -1,14 +1,7 @@
 <?php
  
-use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Profile2Controller;
-use App\Http\Controllers\AllProjectController;
-use App\Http\Controllers\SingelProjectController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\FacebookController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProfileController;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
