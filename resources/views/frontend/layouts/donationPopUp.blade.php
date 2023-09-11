@@ -97,18 +97,10 @@
                      <input type="radio" class="form-check-input" name="donate_method" value="PayPal" required>
                      <label class="form-check-label">PayPal</label>
                  </div>
-
-
-
-
-
                  <div class="center">
 
                      <button class="thm-btn" type="submit">Donate Now</button>
                  </div>
-
-
-
              </form>
          </div>
      </div>
