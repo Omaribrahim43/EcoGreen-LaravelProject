@@ -84,11 +84,16 @@
                                             </div>
 
 
-
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
-                                                    <label for="description">Description</label>
-                                                    <textarea class="summernote-simple" name="description" id="description" placeholder="Enter a description"></textarea>
+                                                    <label for="short_description">Short Description</label>
+                                                    <input type="text" class="form-control" name="short_description" >
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-12">
+                                                    <label for="long_description">Long Description</label>
+                                                    <textarea class="summernote-simple" name="long_description" placeholder="Enter a description"></textarea>
                                                 </div>
                                             </div>
 
