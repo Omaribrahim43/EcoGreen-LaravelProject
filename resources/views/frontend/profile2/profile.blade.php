@@ -165,7 +165,7 @@ use App\Controllers\UserController;
             <div class="row no-gutters row-bordered row-border-light">
                 <div class="col-md-3 pt-0">
                     <div class="list-group list-group-flush account-settings-links">
-                        <a class="list-group-item list-group-item-action" href="{{ route('home') }}">Home Page</a>
+                        <a class="list-group-item list-group-item-action" href="{{ route('index') }}">Home Page</a>
                         <a class="list-group-item list-group-item-action" data-toggle="list"
                             href="#account-general">General</a>
                         <a class="list-group-item list-group-item-action" data-toggle="list"

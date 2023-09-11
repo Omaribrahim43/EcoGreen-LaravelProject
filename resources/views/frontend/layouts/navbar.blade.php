@@ -27,7 +27,7 @@
                                 <li><a href="error.html">404 Page</a></li>
                             </ul>
                         </li>
-                        <li><a href="{{ route('contact') }}">contact</a></li>
+                        <li><a href="{{ route('show.contact') }}">contact</a></li>
                         @if (Route::has('login'))
                             @auth
                                 <li><a>My Account</a>
