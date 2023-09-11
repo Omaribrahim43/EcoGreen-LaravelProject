@@ -3,10 +3,10 @@
 @section('content')
 
 
-<div class="inner-banner has-base-color-overlay text-center" style="background: url(images/background/4.jpg);">
+<div class="inner-banner has-base-color-overlay text-center" style="background-image: url({{ asset('frontend/images/background/back.jpg') }});">
     <div class="container">
         <div class="box">
-            <h1>Events Grid View</h1>
+            <h1>Our Projects</h1>
         </div>
     </div>
 </div>
@@ -34,10 +34,10 @@
 <section class="call-out">
     <div class="container">
         <div class="float_left">
-            <h4>Join Our Mission to Improve a Child's Feature, Pet’s Life and Our Planet.</h4>
+            <h4>Join Our Mission to create a greener and more sustainable future for our beautiful country</h4>
         </div>
         <div class="float_right">
-            <a href="#" class="thm-btn style-3">Get Involeved</a>
+            <a href="{{ route('login') }}" class="thm-btn style-3">Get Involeved</a>
         </div>
 
     </div>

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\AllProjectController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SingelProjectController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -30,7 +31,7 @@ Route::get('/open/form', [SingelProjectController::class, 'openForm'])->name('op
 Route::get('/open/service/form', [SingelProjectController::class, 'openFormservice'])->name('open.Sform');
 Route::get('/open/item/form', [SingelProjectController::class, 'openFormitem'])->name('open.Iform');
 
-Route::get('/Donation.singelProject/{id}', [SingelProjectController::class, 'showDonation'])->name('show.Donation');
+Route::get('/Donation/singelProject/{id}', [SingelProjectController::class, 'showDonation'])->name('show.Donation');
 Route::get('/Item_Project.singelProject/{id}', [SingelProjectController::class, 'showitem'])->name('show.item');
 Route::get('/service_project.singelProject/{id}', [SingelProjectController::class, 'showservice'])->name('show.service');
 

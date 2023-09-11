@@ -282,16 +282,20 @@ use App\Controllers\UserController;
                                                     <td>{{ $project->title }}</td>
                                                     <td>{{ $project->location }}</td>
                                                     <td>${{ number_format($project->budget, 2) }}</td>
-                                                    <td>{{ $project->description }}</td>
+                                                    <td>{{ $project->long_description }}</td>
                                                     <td>{{ $project->start_day }}</td>
                                                     <td>{{ $project->end_day }}</td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
                                     </table>
+
+                                    {{-- @if (!$user->projects == 'null') --}}
+                                        <a href="{{ route('certificate.download') }}"
+                                            class="btn btn-primary">Download
+                                            Participation Certificate</a>
+                                    {{-- @endif --}}
                                     {{-- <img src="{{ asset('assets/img/1694206033.jpg') }}" alt=""> --}}
-                                    <a href="{{ route('certificate.download') }}" class="btn btn-primary">Download
-                                        Participation Certificate</a>
                                 </div>
                             </div>
                         </div>
@@ -322,19 +326,19 @@ use App\Controllers\UserController;
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <script>
-    // Check if there's a previously selected tab in localStorage
-    var selectedTab = localStorage.getItem('selectedTab');
-    
-    // If a tab was previously selected, activate it
-    if (selectedTab) {
-        $('.list-group-item[href="' + selectedTab + '"]').tab('show');
-    }
-    
-    // Listen for tab change events and store the selected tab in localStorage
-    $('.list-group-item').on('shown.bs.tab', function (e) {
-        localStorage.setItem('selectedTab', $(e.target).attr('href'));
-    });
-</script>
+        // Check if there's a previously selected tab in localStorage
+        var selectedTab = localStorage.getItem('selectedTab');
+
+        // If a tab was previously selected, activate it
+        if (selectedTab) {
+            $('.list-group-item[href="' + selectedTab + '"]').tab('show');
+        }
+
+        // Listen for tab change events and store the selected tab in localStorage
+        $('.list-group-item').on('shown.bs.tab', function(e) {
+            localStorage.setItem('selectedTab', $(e.target).attr('href'));
+        });
+    </script>
 
 </body>
 

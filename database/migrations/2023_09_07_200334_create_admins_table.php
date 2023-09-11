@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('admins', function (Blueprint $table) {
             $table->id();
+            $table->string('image')->default('http://127.0.0.1:8000/backend/assets/img/avatar/avatar-4.png');
             $table->string('name');
             $table->string('email')->unique();
             $table->string('phone')->nullable();

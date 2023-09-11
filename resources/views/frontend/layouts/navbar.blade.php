@@ -11,7 +11,7 @@
                 <nav class="menuzord" id="main_menu">
                     <ul class="menuzord-menu">
                         <li><a href="{{ route('index') }}">Home</a></li>
-                        <li><a href="">About</a></li>
+                        <li><a href="{{ route('about') }}">About</a></li>
                         <li><a href="#">Services</a>
                             <ul class="dropdown">
                                 <li><a href="{{ route('All.projects') }}">All Project</a></li>
@@ -23,7 +23,8 @@
                         </li>
                         <li><a href="#">Pages</a>
                             <ul class="dropdown">
-                                <li><a href="{{ route('testimonial') }}">Testimonials</a></li>
+                                <li><a href="{{route('testimonial')}}">Testimonials</a></li>
+                                <li><a href="{{route('about')}}">About Us</a></li>
                                 <li><a href="error.html">404 Page</a></li>
                             </ul>
                         </li>
