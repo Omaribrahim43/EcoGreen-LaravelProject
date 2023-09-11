@@ -25,5 +25,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             Category::class,
         ]);
+
+        $this->call([
+            Admin::class,
+        ]);
     }
 }

@@ -1,6 +1,4 @@
 <?php
-
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FacebookController;
@@ -47,7 +45,11 @@ Route::controller(FacebookController::class)->group(function () {
     Route::get('auth/facebook/callback', 'handleFacebookCallback');
 });
 
-Route::get('admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+// Route::get('admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+// Route::get('admin/dashboard', function(){
+//     return view('admin.dashboard');
+// })->name('admin.dashboard');
+
 
 Route::resource('users', UserController::class);
 
@@ -56,7 +58,8 @@ Route::resource( 'category', CategoryController::class);
 Route::resource('projects', ProjectController::class);
 
 Route::get('admin/login', [AdminLoginController::class, 'index'])->name('admin.login');
-Route::post('loginprocess', [AdminLoginController::class, 'login'])->name('loginprocess');
+Route::post( 'loginprocess', [AdminLoginController::class, 'login'])->name('loginprocess');
+Route::get('admin/dashboard', [AdminLoginController::class, 'dashboard'])->name('admin.dashboard')->middleware('isLoggedIn');
 
 
 // Route::resource('admin/login', AdminLoginController::class);
@@ -65,4 +68,12 @@ Route::post('loginprocess', [AdminLoginController::class, 'login'])->name('login
 //     return view('admin.profile.profile');
 // })-> name('profile');
 
-Route::get('admin/profile', [AdminController::class, 'show'])->name('profile');
+Route::get( 'admin/profile', [AdminController::class, 'show'])->name('admin.profile');
+Route::post('admin/profile/update/{id}', [AdminController::class, 'update'])->name('admin.profile.update');
+Route::get('admin/profile/reset', [AdminController::class, 'resetPasswordPage'])->name('admin.profile.reset');
+Route::post('admin/profile/resetpassword', [AdminController::class, 'resetPassword'])->name('admin.profile.resetpassword');
+
+
+Route::get('admin/logout', [AdminLoginController::class, 'logout'])->name('logoutprocess');
+
+

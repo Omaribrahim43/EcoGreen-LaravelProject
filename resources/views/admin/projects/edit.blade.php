@@ -119,11 +119,11 @@
                                                     <select id="category" name="category" class="form-control">
                                                         <option value="">Select a category:</option>
                                                         <option @if ($project->category_id == '1') selected @endif
-                                                            value="1">category1</option>
+                                                            value="{{ $category->name }}">{{ $category->name }}</option>
                                                         <option @if ($project->category_id == '2') selected @endif
-                                                            value="2">category2</option>
+                                                            value="{{ $category->name }}">{{ $category->name }}</option>
                                                         <option @if ($project->category_id == '3') selected @endif
-                                                            value="3">category2</option>
+                                                            value=""{{ $category->name }}>{{ $category->name }}</option>
                                                         <!-- Add more status options as needed -->
                                                     </select>
                                                 </div>

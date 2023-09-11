@@ -6,6 +6,8 @@ use App\DataTables\CategoryDataTable;
 use App\Models\Category;
 use App\Traits\ImageUploadTrait;
 use Illuminate\Http\Request;
+use App\Models\Admin;
+
 
 class CategoryController extends Controller
 {
@@ -18,7 +20,17 @@ class CategoryController extends Controller
     public function index(CategoryDataTable $dataTables)
     {
         // return view("admin.category.index");
-        return $dataTables->render('admin.category.index');
+        if (session('loginId')) {
+            // dd(session('admin_id'));
+            // return 'hh';
+            $id =  session('loginId');
+            $admin = Admin::find($id);
+            // dd($admin->name);
+            // return view('admin.profile.profile', ['admin' => $admin]);
+        
+        
+        return $dataTables->render('admin.category.index', ['admin' => $admin]);
+        }
     }
 
     /**
