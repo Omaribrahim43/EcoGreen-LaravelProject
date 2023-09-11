@@ -12,6 +12,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\AdminLoginController;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,11 +38,15 @@ Route::get('/profile2', function () {
     return view('frontend.profile2.profile');
 })->name('profile2');
 
+Route::get('/certificate/download', [Profile2Controller::class, 'download'])->name('certificate.download');
+Route::post('/profile2/edit', [Profile2Controller::class, 'update'])->name('profile2/');
+Route::post('/profile2/edit-update', [Profile2Controller::class, 'updatePassword'])->name('updatePassword');
+Route::delete('/user/delete', [Profile2Controller::class, 'destroy'])->name('user.delete');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile2', [Profile2Controller::class, 'index'])->name('profile2.profile.index');
     Route::get('/profile2/edit', [Profile2Controller::class, 'edit'])->name('profile2.profile.edit');
-    Route::patch('/profile2/{user->id}/edit', [Profile2Controller::class, 'update'])->name('profile2.profile.update');
+    
     Route::delete('/profile2', [Profile2Controller::class, 'destroy'])->name('profile2.destroy');
 });
 Route::middleware('auth')->group(function () {
@@ -81,3 +86,10 @@ Route::post('loginprocess', [AdminLoginController::class, 'login'])->name('login
 // })-> name('profile');
 
 Route::get('admin/profile', [AdminController::class, 'show'])->name('profile');
+
+Route::get('/user2', function () {
+    $users = \App\Models\User::with('projects')->get(); // Replace \App\Models\User with your actual User model namespace.
+    return view('frontend.profile2.profile', compact('users'));
+});
+
+

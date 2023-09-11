@@ -61,7 +61,7 @@
                             @auth
                                 <li><a>My Account</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ route('profile.show') }}">Profile</a></li>
+                                        <li><a href="{{ route('profile2.profile.index') }}">Profile</a></li>
                                         <form method="POST" action="{{ route('logout') }}" x-data>
                                             @csrf
                                             <li><a href="{{ route('logout') }}">Logout</a></li>
