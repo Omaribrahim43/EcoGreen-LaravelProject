@@ -1,11 +1,16 @@
 <?php
-
+ 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FacebookController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginWithGoogleController;
+use App\Http\Controllers\ProfileController;
 use App\Mail\TestMail;
 use Illuminate\Support\Facades\Mail;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +24,9 @@ use Illuminate\Support\Facades\Mail;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/welcome', function () {
+    return view('welcome');
+})->name('welcome');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -48,13 +56,11 @@ Route::resource('users', UserController::class);
 
 
 
-// // contacts routs
 
-// Route::get('/contact', function () {
-//     return view('frontend.contact.contact');
+Route::get('returncontact', function(){
+    return view('frontend.contact.contact');
+});
+Route::get('contact', [ContactController::class, 'showContact'])->name('show.contact');
+Route::post('store-contact', [ContactController::class,'store'])->name('store.contact');
 
-// });
-
-
-Route::get('/contact', [ContactController::class, 'show'])->name('contact.show');
-Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
+ 
