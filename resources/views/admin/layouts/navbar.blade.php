@@ -135,7 +135,7 @@
         <li class="dropdown"><a href="#" data-toggle="dropdown"
                 class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                 
-                <img alt="image" src="{{(session('loginimage'))}}" class="circle mr-1" style="width: 50px; height: 50px; border-radius: 50%;" >
+                <img alt="image" src="{{ asset(session('loginimage')) }}" style="width: 50px; height: 50px; border-radius: 50%;" >
                 <div class="d-sm-none d-lg-inline-block" style="font-size: larger">{{session('loginname')}}</div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">

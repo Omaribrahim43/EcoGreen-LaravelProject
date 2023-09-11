@@ -23,7 +23,7 @@
 
                             {{-- <form method="POST" action="{{ route('admin.profile.update', $admin->id) }}">
                                 @csrf --}}
-                            <form method="POST" action="{{ route('admin.profile.update', $admin->id) }}">
+                            <form method="POST" action="{{ route('admin.profile.update', $admin->id) }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="card-body">
                                     <div class="d-flex align-items-start align-items-sm-center gap-10">

@@ -55,8 +55,7 @@ class AdminLoginController extends Controller
                 session()->put('loginname', $admin->name);
                 session()->put('loginimage', $admin->image);
 
-                // $name =  session('loginimage');
-                // dd($name);
+               
                 return redirect('admin/dashboard');
             } else {
                 return back()->with('fail', 'Password incorrect');
