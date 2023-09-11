@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->text('image')->default('');
+            $table->text('image')->nullable();
             $table->string('name');
+            $table->string('username')->nullable();
             $table->string('email')->unique();
-            $table->string('phone')->unique();
-            $table->string('address');
+            $table->string('phone')->nullable();
+            $table->string('address')->nullable();
             $table->string('password');
             $table->string('donate_amount')->nullable();
             $table->string('donate_method')->nullable();

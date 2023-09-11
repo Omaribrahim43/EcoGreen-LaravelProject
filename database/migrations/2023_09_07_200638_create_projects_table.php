@@ -27,13 +27,17 @@ return new class extends Migration
             $table->string('tree_type')->nullable();
             $table->string('fertilizer')->nullable();
             $table->string('equipments')->nullable();
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id'); // Remove the foreignId declaration here
             $table->unsignedBigInteger('category_id');
             $table->string('volunteering_days')->nullable();
             $table->time('volunteering_hours_start')->nullable();
             $table->time('volunteering_hours_end')->nullable();
             $table->integer('volunteering_number')->nullable();
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // Add this foreign key constraint
+
+
 
             // // make relation between projects table and category table:
             // $table->foreign('category_id')
