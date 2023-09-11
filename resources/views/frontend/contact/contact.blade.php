@@ -31,7 +31,10 @@
 
      <!--Start contact area-->
      @include('frontend.contact.sections.touchArea')
+     <!--Start contact area-->
+     @include('frontend.contact.sections.touchArea')
 
+     <!--End contact area-->
      <!--End contact area-->
 
 

@@ -18,21 +18,33 @@ return new class extends Migration
             $table->string('title');
             $table->text('image');
             $table->string('location');
-            $table->string('description');
+            $table->string('short_description')->nullable();
+            $table->string('long_description')->nullable();
             $table->float('budget')->nullable();
-            $table->date('start_day');
-            $table->date('end_day');
-            $table->boolean('status');
+            $table->date('start_day')->nullable();
+            $table->date('end_day')->nullable();
+            $table->boolean('status')->default('1');
             $table->string('tree_type')->nullable();
             $table->string('fertilizer')->nullable();
             $table->string('equipments')->nullable();
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('categoty_id');
+            $table->unsignedBigInteger('user_id'); // Remove the foreignId declaration here
+            $table->unsignedBigInteger('category_id');
             $table->string('volunteering_days')->nullable();
             $table->time('volunteering_hours_start')->nullable();
             $table->time('volunteering_hours_end')->nullable();
             $table->integer('volunteering_number')->nullable();
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // Add this foreign key constraint
+
+
+
+            // // make relation between projects table and category table:
+            // $table->foreign('category_id')
+            //     ->references('id')
+            //     ->on('categories')
+            //     ->onDelete('cascade')
+            //     ->onUpdate('cascade');
         });
     }
 

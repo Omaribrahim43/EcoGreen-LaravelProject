@@ -15,6 +15,7 @@ class AdminController extends Controller
     public function index()
     {
         return view('admin.dashboard');
+
     }
 
     /**
@@ -44,9 +45,18 @@ class AdminController extends Controller
      * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function show(Admin $admin)
+    public function show(Request $request)
     {
-        //
+        $admin = new Admin;
+        dd($admin);
+        return view('admin.profile.profile', compact('admin'));
+
+        // $admin = Admin::where('id', $id)->first();
+        // dd($admin);
+        // return view('admin.profile.profile', ['admin' => $admin]);
+
+
+
     }
 
     /**

@@ -2,33 +2,30 @@
         <div class="container">
             <div class="section-title center">
                 <h2>Words About Us</h2>
-                <p>We are ECO Green, Our Mission is save water, animals, power energy, natutre and our environment
-                    <br>our activities are taken around the world.
+                <p>At ECO Green, our mission is to make a complete difference. We are dedicated to safeguarding <br>the environment and ensuring the well-being of our planet. 
                 </p>
             </div>
             <div class="row">
                 <div class="col-md-6 col-sm-12">
-                    <iframe src="https://player.vimeo.com/video/9519939" width="570" height="350" frameborder="0"
-                        webkitallowfullscreen mozallowfullscreen allowfullscreen autoplay></iframe>
+                    <img src="{{ asset('frontend/images/team/us.jpg') }}" width="570" height="460" />
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="content">
-                        <h2>Together we can make a difference</h2>
+                        <br>
+                        <br>
+                        <h2 class="thm-color">Together we can make a difference</h2> <br>
                         <div class="text">
-                            <p>When you give to Our Ecogreen, you know your donation is making a difference. Whether
-                                you are supporting one of our Signature Programs or our carefully curated list of
-                                Gifts That Give More, our professional staff works hard every day <br>to ensure
-                                every dollar has impact for the cause of your choice. </p>
+                            <p style="font-size: 17px">
+                                We are your gateway to making a positive impact on our environment and community. Our volunteer-driven platform is dedicated to preserving and enhancing green spaces across Jordan, and we offer various ways for you to get involved.
+                                When you give to Our Ecogreen, you know your donation is making a difference. Our professional staff works hard every day to ensure that every dinar , every tree has impact for the cause of your choice. </p>
                         </div>
-                        <h4>Our Partner</h4>
-                        <div class="text">
-                            <p>We partner with over 320 amazing projects worldwide, and have given over $150 million
-                                in cash and product grants to other groups since 2011. We also operate our own
-                                dynamic suite of Signature Programs.</p>
-                        </div>
+                       <p style="font-size: 17px">
+                        Join us today in our mission to protect and nurture our planet. Together, we can turn our green dreams into a thriving reality.</p><br>
                         <div class="link"><a href="#" class="thm-btn style-2">Join With Us</a></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    

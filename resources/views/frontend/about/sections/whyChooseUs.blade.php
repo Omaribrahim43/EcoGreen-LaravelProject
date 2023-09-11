@@ -1,4 +1,4 @@
-    <section class="why-chooseus style-2 sec-padd-top" style="background-image: url({{ asset('frontend/images/background/9.jpg') }});">
+    <section class="why-chooseus style-2 sec-padd-top" style="background-image: url({{ asset('frontend/images/team/why.jpg') }});">
         <div class="container">
 
             <div class="col-md-8 col-md-offset-4 col-sm-12">
@@ -18,8 +18,8 @@
                                 </a>
                             </div>
                             <div class="text">
-                                <p>Your contrbution used locally to help charitable causes and support the
-                                    organization, Support only for good causes. </p>
+                                <p>
+                                    Eco Green is recognized as one of the most trusted and respected organizations in Jordan. Your donation used to help our community. </p>
                             </div>
                         </div>
                     </div>
@@ -35,8 +35,7 @@
                                 </a>
                             </div>
                             <div class="text">
-                                <p>Your contrbution used locally to help charitable causes and support the
-                                    organization, Support only for good causes. </p>
+                                <p>we are proud to have a dedicated team of Goodwill Volunteers who bring their passion, expertise, and commitment to every project. </p>
                             </div>
                         </div>
                     </div>
@@ -48,12 +47,11 @@
                                     <span class="icon-medal"></span>
                                 </div>
                                 <a href="3">
-                                    <h4>Certified Campaign</h4>
+                                    <h4>Certified Projects</h4>
                                 </a>
                             </div>
                             <div class="text">
-                                <p>Your contrbution used locally to help charitable causes and support the
-                                    organization, Support only for good causes. </p>
+                                <p>Each Project we undertake adheres to rigorous standards and is certified to ensure transparency, accountability, and the highest level of impact.  </p>
                             </div>
                         </div>
                     </div>
@@ -65,12 +63,11 @@
                                     <span class="icon-shapes"></span>
                                 </div>
                                 <a href="#">
-                                    <h4>20 Years Experince</h4>
+                                    <h4>Our Partners</h4>
                                 </a>
                             </div>
                             <div class="text">
-                                <p>Your contrbution used locally to help charitable causes and support the
-                                    organization, Support only for good causes. </p>
+                                <p>We are proud to have established strong and trusted partnerships with organizations that share our vision for a better world.  </p>
                             </div>
                         </div>
                     </div>

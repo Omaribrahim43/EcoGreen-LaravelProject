@@ -159,6 +159,7 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
+        Barryvdh\DomPDF\ServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
@@ -210,8 +211,24 @@ return [
     |
     */
 
+    // 'aliases' => Facade::defaultAliases()->merge([
+    //     // 'ExampleClass' => App\Example\ExampleClass::class,
+    // ])->toArray(),
+
+
+    // 'aliases' => [
+    //     // ...
+    //     'PDF' => Barryvdh\DomPDF\Facade::class,
+    // ],
     'aliases' => Facade::defaultAliases()->merge([
-        // 'ExampleClass' => App\Example\ExampleClass::class,
+        // Add the alias for Dompdf here
+        'PDF' => Barryvdh\DomPDF\Facade::class,
     ])->toArray(),
+    // 'providers' => [
+    //     Barryvdh\DomPDF\ServiceProvider::class,
+    // ],
+    // 'aliases' => [
+    //     'PDF' => Barryvdh\DomPDF\Facade::class,
+    // ],
 
 ];

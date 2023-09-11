@@ -1,60 +1,91 @@
-<x-guest-layout>
-    <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
+@extends('frontend.layouts.master')
 
-        <x-validation-errors class="mb-4" />
-
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
-
-            <div>
-                <x-label for="name" value="{{ __('Name') }}" />
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+@section('content')
+    <div class="inner-banner has-base-color-overlay text-center" style="background: url(images/background/4.jpg);">
+        <div class="container">
+            <div class="box">
+                <h1>Register</h1>
             </div>
-
-            <div class="mt-4">
-                <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
+        </div>
+    </div>
+    <div class="breadcumb-wrapper">
+        <div class="container">
+            <div class="pull-left">
+                <ul class="list-inline link-list">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="shop.html">shop</a>
+                    </li>
+                    <li>
+                        Register
+                    </li>
+                </ul>
             </div>
-
-            <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+            <div class="pull-right">
+                <a href="#" class="get-qoute"><i class="fa fa-arrow-circle-right"></i>Become a Volunteer</a>
             </div>
+        </div>
+    </div>
 
-            <div class="mt-4">
-                <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
-            </div>
 
-            @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-                <div class="mt-4">
-                    <x-label for="terms">
-                        <div class="flex items-center">
-                            <x-checkbox name="terms" id="terms" required />
 
-                            <div class="ml-2">
-                                {!! __('I agree to the :terms_of_service and :privacy_policy', [
-                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">'.__('Terms of Service').'</a>',
-                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">'.__('Privacy Policy').'</a>',
-                                ]) !!}
+    <section class="register-section sec-padd-top">
+        <div class="container">
+            <div class="row" style="display: flex; justify-content:center">
+
+                <!--Form Column-->
+                <div class="form-column column col-lg-6 col-md-8 col-sm-12 col-xs-12">
+
+                    <div class="section-title style-2">
+                        <h3>Register Now</h3>
+                    </div>
+
+                    <!--Login Form-->
+                    <div class="styled-form login-form">
+                        <form method="post" action="{{ route('register') }}">
+                            @csrf
+                            <div class="form-group">
+                                <span class="adon-icon"><span class="fa fa-envelope-o"></span></span>
+                                <input type="text" name="name" placeholder="Enter Name">
                             </div>
-                        </div>
-                    </x-label>
+                            <div class="form-group">
+                                <span class="adon-icon"><span class="fa fa-envelope-o"></span></span>
+                                <input type="email" name="email" placeholder="Enter Email">
+                            </div>
+                            <div class="form-group">
+                                <span class="adon-icon"><span class="fa fa-unlock-alt"></span></span>
+                                <input type="password" name="password" required placeholder="Enter Password">
+                            </div>
+                            <div class="form-group">
+                                <span class="adon-icon"><span class="fa fa-unlock-alt"></span></span>
+                                <input type="password" name="password_confirmation" required placeholder="Confirm Password">
+                            </div>
+                            <div class="clearfix">
+                                <div class="form-group pull-left">
+                                    <button type="submit" class="thm-btn thm-tran-bg">login now</button>
+                                </div>
+                                <div class="form-group social-links-two padd-top-5 pull-right">
+                                    Or login with <a href="#" class="img-circle facebook"><span
+                                            class="fa fa-facebook-f"></span></a>
+                                    <a href="{{ url('authorized/google') }}" class="img-circle google-plus"><span
+                                            class="fa fa-google-plus"></span></a>
+                                </div>
+                            </div>
+
+                            <div class="clearfix">
+                                <div class="pull-left">
+                                    <input type="checkbox" id="remember-me"><label for="remember-me">&nbsp; Remember
+                                        Me</label>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
                 </div>
-            @endif
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-button class="ml-4">
-                    {{ __('Register') }}
-                </x-button>
             </div>
-        </form>
-    </x-authentication-card>
-</x-guest-layout>
+        </div>
+    </section>
+@endsection
