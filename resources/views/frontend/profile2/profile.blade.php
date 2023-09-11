@@ -262,6 +262,7 @@ use App\Controllers\UserController;
                         <div class="tab-pane fade" id="account-info">
                             <div class="card-body pb-2">
                                 <?php
+                                $user = auth()->user();
                                 $projects = $user->projects;
                                 ?>
                                 <div class="container">
@@ -277,23 +278,23 @@ use App\Controllers\UserController;
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($projects as $project)
-                                                <tr>
-                                                    <td>{{ $project->title }}</td>
-                                                    <td>{{ $project->location }}</td>
-                                                    <td>${{ number_format($project->budget, 2) }}</td>
-                                                    <td>{{ $project->long_description }}</td>
-                                                    <td>{{ $project->start_day }}</td>
-                                                    <td>{{ $project->end_day }}</td>
-                                                </tr>
-                                            @endforeach
+                                            @if (!$user->projects->isEmpty())
+                                                @foreach ($projects as $project)
+                                                    <tr>
+                                                        <td>{{ $project->title }}</td>
+                                                        <td>{{ $project->location }}</td>
+                                                        <td>${{ number_format($project->budget, 2) }}</td>
+                                                        <td>{{ $project->long_description }}</td>
+                                                        <td>{{ $project->start_day }}</td>
+                                                        <td>{{ $project->end_day }}</td>
+                                                    </tr>
+                                                @endforeach
                                         </tbody>
                                     </table>
 
-                                    @if (!$user->projects->isEmpty())
-                                        <a href="{{ route('certificate.download') }}"
-                                            class="btn btn-primary">Download
-                                            Participation Certificate</a>
+
+                                    <a href="{{ route('certificate.download') }}" class="btn btn-primary">Download
+                                        Participation Certificate</a>
                                     @endif
                                     {{-- <img src="{{ asset('assets/img/1694206033.jpg') }}" alt=""> --}}
                                 </div>

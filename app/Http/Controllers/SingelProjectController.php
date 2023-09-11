@@ -123,7 +123,7 @@ class SingelProjectController extends Controller
         $user->donate_method = $request->donate_method;
 
         $user->update([
-            'donate_amount' =>  $request->donate_amount,
+            'donate_amount' =>  (float)$request->donate_amount + (float)$user->donate_amount,
             'donate_method '=> $request->donate_method,
         ]);
 
