@@ -21,7 +21,8 @@
                                 <h4>Edit</h4> Project</h4>
                             </div>
                             <div class="card-body p-0">
-                                <form action="{{ route('projects.update', $project->id) }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('projects.update', $project->id) }}" method="POST"
+                                    enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
                                     <div class="card">
@@ -34,8 +35,8 @@
                                             <div class="form-row">
                                                 <div class="form-group col-md-8">
                                                     <label for="image">Image</label>
-                                                    <input type="file" name="image"
-                                                        class="form-control" id="image" placeholder="Choose an image">
+                                                    <input type="file" name="image" class="form-control" id="image"
+                                                        placeholder="Choose an image">
                                                 </div>
                                             </div>
                                             <div class="form-row">
@@ -108,8 +109,7 @@
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
                                                     <label for="description">Description</label>
-                                                    <textarea class="summernote-simple" name="long_description" id="description"
-                                                        placeholder="Enter a description">{{ $project->long_description }}</textarea>
+                                                    <textarea class="summernote-simple" name="long_description" id="description" placeholder="Enter a description">{{ $project->long_description }}</textarea>
                                                 </div>
                                             </div>
 
@@ -118,13 +118,22 @@
                                                     <label for="category">Category</label>
                                                     <select id="category" name="category" class="form-control">
                                                         <option value="">Select a category:</option>
-                                                        <option @if ($project->category_id == '1') selected @endif
-                                                            value="{{ $category->name }}">{{ $category->name }}</option>
-                                                        <option @if ($project->category_id == '2') selected @endif
+
+                                                        {{-- <option @if ($project->category_id == '2') selected @endif
                                                             value="{{ $category->name }}">{{ $category->name }}</option>
                                                         <option @if ($project->category_id == '3') selected @endif
-                                                            value=""{{ $category->name }}>{{ $category->name }}</option>
+                                                            value=""{{ $category->name }}>{{ $category->name }}
+                                                        </option>
                                                         <!-- Add more status options as needed -->
+                                                        @foreach ($category as $item)
+                                                            <option @if ($project->category_id == '1') selected @endif
+                                                                value="{{ $item->name }}">{{ $item->name }}
+                                                            </option>
+                                                        @endforeach --}}
+                                                        @foreach ($category as $categorys)
+                                                            <option value="{{ $categorys->id }}">{{ $categorys->name }}
+                                                            </option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div>
@@ -171,7 +180,8 @@
                                                 <div class="form-group col-md-6">
                                                     <label for="equipments">Equipments</label>
                                                     <input type="text" name="equipments" class="form-control"
-                                                        id="inputEmail4" placeholder="Enter Equipments" value="{{ $project->equipments }}">
+                                                        id="inputEmail4" placeholder="Enter Equipments"
+                                                        value="{{ $project->equipments }}">
                                                 </div>
                                             </div>
 

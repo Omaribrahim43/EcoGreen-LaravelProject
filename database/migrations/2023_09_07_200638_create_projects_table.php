@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('title');
             $table->text('image');
             $table->string('location');
-            $table->string('short_description')->nullable();
-            $table->string('long_description')->nullable();
+            $table->text('short_description')->nullable();
+            $table->text('long_description')->nullable();
             $table->float('budget')->nullable();
             $table->date('start_day')->nullable();
             $table->date('end_day')->nullable();
@@ -35,7 +35,6 @@ return new class extends Migration
             $table->integer('volunteering_number')->nullable();
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // Add this foreign key constraint
 
 
 

@@ -38,8 +38,8 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function projects()
+    public function userProject()
     {
-        return $this->hasMany(Project::class);
+        return $this->belongsTo(UserProject::class);
     }
 }

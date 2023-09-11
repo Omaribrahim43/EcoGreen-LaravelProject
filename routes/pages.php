@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\AllProjectController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SingelProjectController;
 use Illuminate\Support\Facades\Route;
 
 
