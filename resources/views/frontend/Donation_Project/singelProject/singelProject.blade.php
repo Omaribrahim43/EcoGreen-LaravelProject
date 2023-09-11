@@ -1,9 +1,9 @@
 @extends('frontend.layouts.master')
 @section('content')
-    <div class="inner-banner has-base-color-overlay text-center" style="background: url(images/background/4.jpg);">
+    <div class="inner-banner has-base-color-overlay text-center" style="background-image: url({{ asset('frontend/images/background/back.jpg') }});">
         <div class="container">
             <div class="box">
-                <h1>Event Single</h1>
+                <h1>Money Donation Project</h1>
             </div>
         </div>
     </div>
@@ -36,7 +36,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="single-event sec-padd">
                         @include('frontend.Donation_Project.singelProject.sections.img-box')
-                        <div class="content">
+                        <br><br><br>                        <div class="content">
                             @include('frontend.Donation_Project.singelProject.sections.content')
                             <br>
                             <br><br>

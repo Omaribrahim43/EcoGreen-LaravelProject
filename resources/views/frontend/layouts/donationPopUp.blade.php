@@ -1,10 +1,6 @@
- @extends('frontend.layouts.master_popup')
+ @extends('frontend.layouts.master')
 
  @section('content')
-     {{-- <div id="donate-popup" class="donate-popup">
-    <div class="close-donate theme-btn"><span class="fa fa-close"></span></div>
-    <div class="popup-inner"> --}}
-
      <div class="container">
          <div class="donate-form-area">
              <div class="section-title center">
@@ -76,7 +72,8 @@
                          <div class="col-md-6 col-sm-6 col-xs-12">
                              <div class="form-group">
                                  <p>Address*</p>
-                                 <input type="text" name="address" placeholder="" required="" value="{{ $user->address }}" readonly>
+                                 <input type="text" name="address" placeholder="" required=""
+                                     value="{{ $user->address }}" readonly>
                              </div>
                          </div>
 
@@ -115,11 +112,4 @@
              </form>
          </div>
      </div>
-
-
-
-
-
-     {{-- </div>
-</div> --}}
  @endsection
