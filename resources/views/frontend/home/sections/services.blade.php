@@ -10,7 +10,7 @@
       
                     <div class="container">
                         <div class="row">
-                            @foreach ($data as $item)
+                            @foreach ($categories as $item)
                            
                                 <div class="col-md-4 col-sm-6 col-xs-12">
                                     <div class="service-item text-center">

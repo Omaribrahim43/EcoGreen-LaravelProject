@@ -10,14 +10,23 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $data = Category::all();
+        $categories = Category::all();
         $project = Project::all();
-        return view('frontend.home.home', compact(['data', 'project']));
+        
+        return view('frontend.home.home', compact(['categories', 'project']));
     }
 
     public function about()
     {
         return view('frontend.about.about');
     }
+
+    public function nav()
+    {
+        $categories = Category::all();
+        // $project = Project::all();
+        return view('frontend.layouts.master', compact(['categories']));
+    }
+    }
   
-}
+

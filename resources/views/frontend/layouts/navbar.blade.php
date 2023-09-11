@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="main-logo">
-                    <a href="index.html"><img src="{{ asset('frontend/images/logo/logo.png') }}" alt=""></a>
+                    <a href="index.html"><img src="{{ asset('frontend/images/logo/green_hands_logo-removebg-preview.png') }}" alt="" style="height: 62px ; width:97px"></a>
                 </div>
             </div>
             <div class="col-md-9 menu-column">
@@ -15,17 +15,16 @@
                         <li><a href="#">Services</a>
                             <ul class="dropdown">
                                 <li><a href="{{ route('All.projects') }}">All Project</a></li>
+                               
                                 <li><a href="{{ route('All.projects', 1) }}">Donation Project</a></li>
                                 <li><a href="{{ route('All.projects', 2) }}">Item Project</a></li>
                                 <li><a href="{{ route('All.projects', 3) }}">Service Project</a></li>
-                                <li><a href="error.html">404 Page</a></li>
                             </ul>
                         </li>
                         <li><a href="#">Pages</a>
                             <ul class="dropdown">
-                                <li><a href="{{route('testimonial')}}">Testimonials</a></li>
-                                <li><a href="{{route('about')}}">About Us</a></li>
-                                <li><a href="error.html">404 Page</a></li>
+                                <li><a href="{{ route('testimonial') }}">Testimonials</a></li>
+                                <li><a href="{{ route('about') }}">About Us</a></li>
                             </ul>
                         </li>
                         <li><a href="{{ route('show.contact') }}">contact</a></li>

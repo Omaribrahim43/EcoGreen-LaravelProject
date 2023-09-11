@@ -1,4 +1,3 @@
-
 @extends('frontend.layouts.master')
 
 @section('content')
@@ -57,10 +56,17 @@
                             </ul>
                         </div>
                         <div class="share clearfix">
-
+                          
                             <div class="float_right">
-                                <a href="{{ route('open.Iform') }}" class="thm-btn style-2 donate-box-btn">Donate Now </a>
+                                <a href="{{route('open.Sform')}}" >
+                                <button class="thm-btn donate-box-btn">Donate Now</button>
+                            </a>
                             </div>
+
+
+
+
+                        </div>
                    
 
                 </div>
