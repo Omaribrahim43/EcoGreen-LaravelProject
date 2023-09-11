@@ -5965,15 +5965,14 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
 /*============ even-single ============*/
 
 .single-event {
-    border-right: 1px solid #f4f4f4;
+    
     margin-right: 37px;
     padding-right: 62px;
 }
 
 .single-event .content {
     padding: 20px 30px 40px;
-    border-left: 1px solid #f4f4f4;
-    border-right: 1px solid #f4f4f4;
+   
 }
 
 .single-event .section-title {

@@ -134,20 +134,25 @@
         </li>
         <li class="dropdown"><a href="#" data-toggle="dropdown"
                 class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                <img alt="image" src="assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
-                <div class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</div>
+                
+                <img alt="image" src="{{(session('loginimage'))}}" class="circle mr-1" style="width: 50px; height: 50px; border-radius: 50%;" >
+                <div class="d-sm-none d-lg-inline-block" style="font-size: larger">{{session('loginname')}}</div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-                {{-- <div class="dropdown-title">Logged in 5 min ago</div> --}}
-                <a href="{{ route('profile') }}" class="dropdown-item has-icon">
+                {{-- <div class="dropdown-title">{{$admin->name}}</div> --}}
+                <a href="{{ route('admin.profile') }}" class="dropdown-item has-icon">
                     <i class="far fa-user"></i> Profile
                 </a>
-                
-                
+
+
                 <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item has-icon text-danger">
-                    <i class="fas fa-sign-out-alt"></i> Logout
-                </a>
+                {{-- <form action="{{ route('logoutprocess') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">logout</button> --}}
+                    <a href="{{ route('logoutprocess') }}" class="dropdown-item has-icon text-danger">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                {{-- </form> --}}
             </div>
         </li>
     </ul>

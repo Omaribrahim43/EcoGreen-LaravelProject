@@ -21,7 +21,7 @@
                                 <h4>Create Project</h4>
                             </div>
                             <div class="card-body p-0">
-                                <form action="{{ route('projects.store') }}" method="POST"  enctype="multipart/form-data">
+                                <form action="{{ route('projects.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="card">
                                         <div class="card-body">
@@ -72,7 +72,7 @@
                                                 </div>
 
 
-                                                 <div class="form-group col-md-6">
+                                                <div class="form-group col-md-6">
                                                     <label for="status">Status</label>
                                                     <select id="status" name="status" class="form-control">
                                                         <option value="">Select a status:</option>
@@ -83,20 +83,25 @@
                                                 </div>
                                             </div>
 
-                                            
 
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
-                                                    <label for="description">Description</label>
-                                                    <textarea class="summernote-simple" name="description" id="description" placeholder="Enter a description"></textarea>
+                                                    <label for="short_description">Short Description</label>
+                                                    <input type="text" class="form-control" name="short_description" >
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-12">
+                                                    <label for="long_description">Long Description</label>
+                                                    <textarea class="summernote-simple" name="long_description" placeholder="Enter a description"></textarea>
                                                 </div>
                                             </div>
 
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                     <label for="image">Image</label>
-                                                    <input type="file" name="image" class="form-control"
-                                                        id="image" placeholder="Choose an image" accept="image/*">
+                                                    <input type="file" name="image" class="form-control" id="image"
+                                                        placeholder="Choose an image" accept="image/*">
                                                 </div>
                                             </div>
 
@@ -105,11 +110,11 @@
                                                     <label for="category">Category</label>
                                                     <select id="category" name="category" class="form-control">
                                                         <option value="">Select a category:</option>
-                                                                                                                @foreach ( $category as $category )
-
-                                                        <option value="{{ $category->id}}">{{$category->name}}</option>
+                                                        @foreach ($category as $category)
+                                                            <option value="{{ $category->id }}">{{ $category->name }}
+                                                            </option>
                                                         @endforeach
-                                                        
+
                                                         <!-- Add more status options as needed -->
                                                     </select>
                                                 </div>
@@ -124,15 +129,16 @@
                                                         id="endday" placeholder="Enter volunteering number">
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                     <label for="budget">Budget</label>
                                                     <input type="number" name="budget" class="form-control"
-                                                        id="inputEmail4" min="0" step="0.01" placeholder="EX: 200.00 ">
+                                                        id="inputEmail4" min="0" step="0.01"
+                                                        placeholder="EX: 200.00 ">
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                     <label for="treetype">Tree Type</label>
@@ -141,7 +147,7 @@
                                                 </div>
                                             </div>
 
-                                             <div class="form-row">
+                                            <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                     <label for="fertilizer">Fertilizer</label>
                                                     <input type="text" name="fertilizer" class="form-control"
@@ -161,14 +167,14 @@
                                     </div>
                                     <div class="card-footer">
                                         <button type="submit" class="btn btn-primary">Submit</button>
-                                   
+
+                                    </div>
+                                </form>
                             </div>
-                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-    </div>
-    </section>
+        </section>
     </div>
 @endsection

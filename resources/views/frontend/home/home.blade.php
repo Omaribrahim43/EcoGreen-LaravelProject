@@ -171,10 +171,10 @@
     <section class="call-out">
         <div class="container">
             <div class="float_left">
-                <h4>Join Our Mission to Improve a Child's Feature, Pet’s Life and Our Planet.</h4>
+                <h4>Join Our Mission to create a greener and more sustainable future for our beautiful country</h4>
             </div>
             <div class="float_right">
-                <a href="#" class="thm-btn style-3">Get Involeved</a>
+                <a href="{{ route('login') }}" class="thm-btn style-3">Get Involeved</a>
             </div>
 
         </div>
