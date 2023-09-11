@@ -1,12 +1,39 @@
 <?php
+ 
+use App\Http\Controllers\AdminController;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Profile2Controller;
 use App\Http\Controllers\AllProjectController;
 use App\Http\Controllers\SingelProjectController;
+use App\Models\User;
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FacebookController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginWithGoogleController;
+use App\Http\Controllers\ProfileController;
+use App\Mail\TestMail;
+use Illuminate\Support\Facades\Mail;
 
 
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/welcome', function () {
+    return view('welcome');
+})->name('welcome');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -44,6 +71,34 @@ require __DIR__ . '/auth.php';
 // Route::get('cancel', [PayPalController::class, 'payment'])->name('payment.cancel');
 // Route::get('payment/success', [PayPalController::class, 'success'])->name('payment.success');
 
+
+
+Route::controller(FacebookController::class)->group(function () {
+    Route::get('auth/facebook', 'redirectToFacebook')->name('auth.facebook');
+    Route::get('auth/facebook/callback', 'handleFacebookCallback');
+});
+
+Route::get('admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+
+Route::resource('users', UserController::class);
+
+
+
+
+Route::get('returncontact', function(){
+    return view('frontend.contact.contact');
+});
+Route::get('contact', [ContactController::class, 'showContact'])->name('show.contact');
+Route::post('store-contact', [ContactController::class,'store'])->name('store.contact');
+
+ 
+
+Route::resource('category', CategoryController::class);
+
+Route::resource('projects', ProjectController::class);
+
+Route::get('admin/login', [AdminLoginController::class, 'index'])->name('admin.login');
+Route::post('loginprocess', [AdminLoginController::class, 'login'])->name('loginprocess');
 
 
 // Route::resource('admin/login', AdminLoginController::class);

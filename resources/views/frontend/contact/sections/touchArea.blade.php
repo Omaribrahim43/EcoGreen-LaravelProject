@@ -4,8 +4,7 @@
         <div class="sec-title text-center">
             <h1>Get Touch With Us</h1>
             <span class="border"></span>
-            <p>We recently helped a small business grow from break-even to over $1m profit in less than 2 years.
-            Please find below contact details and contact us today!</p>
+            <p>"Questions, ideas, or want to join our green area volunteering efforts? Connect with us! Our dedicated team welcomes your input and participation. Together, let's nurture our natural spaces and create a greener, healthier world. Contact us via email, phone, or the provided form below."</p>
         </div>
         <div class="row">
             <!--Start single item-->
@@ -17,7 +16,7 @@
                     <div class="text-holder">
                         <h3>Come to See Us</h3>
                         <span class="border"></span>
-                        <p>241/84 Theme Name Discover Street <br>New York, NY 10012, USA</p>
+                        <p>Buliding 16 - Al-Sheikh Khalil St., Irbid <br>Irbid, center of city, HKJ </p>
                     </div>  
                 </div>
             </div>
@@ -31,7 +30,7 @@
                     <div class="text-holder">
                         <h3>Quick Contact</h3>
                         <span class="border"></span>
-                        <p>Ph: +321 456 78 9012 <br>Email: <a href="#">Info@Wesupportyou.com</a></p>
+                        <p>Ph: +962777415591 <br>Email: <a href="#">Info@Wesupportyou.com</a></p>
                     </div>  
                 </div>
             </div>
@@ -45,7 +44,7 @@
                     <div class="text-holder">
                         <h3>Office Schedule</h3>
                         <span class="border"></span>
-                        <p>Monday to Saturday: 09.00am to 18.00pm <br>Sunday <a href="#">: Closed</a></p>
+                        <p>Saturday to Thursday : 09.00am to 17.00pm <br>   Closed: Friday</p>
                     </div>  
                 </div>
             </div>
