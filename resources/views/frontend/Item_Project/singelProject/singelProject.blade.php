@@ -56,6 +56,18 @@
                                 <li><a href="#"><img src="{{asset('frontend/images/partners/irbid.png')}}" alt="Awesome Image"></a></li>
                             </ul>
                         </div>
+                        <div class="share clearfix">
+
+                            <div class="float_right">
+                                <a href="{{route('open.Sform')}}" >
+                                <button class="thm-btn donate-box-btn">Donate Now</button>
+                            </a>
+                            </div>
+
+
+
+
+                        </div>
                    
 
                 </div>

@@ -74,9 +74,7 @@ Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/aboutus', [AboutUsController::class, 'home'])->name('home');
 //*******************Rania********************* */
 
-Route::get('/contact', function(){
-    return view('frontend.contact.contact');
-})->name('contact');
+//  
 
 Route::get('/testimonial', function(){
     return view('frontend.testimonial');
@@ -103,9 +101,9 @@ Route::resource('users', UserController::class);
 
 
 
-Route::get('returncontact', function(){
-    return view('frontend.contact.contact');
-});
+// Route::get('returncontact', function(){
+//     return view('frontend.contact.contact');
+// });
 Route::get('contact', [ContactController::class, 'showContact'])->name('show.contact');
 Route::post('store-contact', [ContactController::class,'store'])->name('store.contact');
 
