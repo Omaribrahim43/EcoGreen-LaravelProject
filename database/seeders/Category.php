@@ -19,17 +19,17 @@ class Category extends Seeder
         DB::table('categories')->insert([
             'name' => 'Money Donation',
             'description' => 'This service is designed for individuals and organizations who want to contribute financially to support our green area planting initiatives. Your financial donations play a crucial role in funding our projects.',
-            'image' => 'images',
+            'image' => 'http://127.0.0.1:8000/frontend/images/money.jpg',
         ]);
         DB::table('categories')->insert([
             'name' => 'Items Denation',
             'description' => 'This service is encompasses a wide range of donations. You can choose to donate one or more of many items including trees, fertilizer, and equipment, all of which are essential to our mission of enhancing and preserving green spaces.',
-            'image' => 'images',
+            'image' => 'http://127.0.0.1:8000/frontend/images/item.jpg',
         ]);
         DB::table('categories')->insert([
             'name' => 'Service Donation',
             'description' => 'This service is designed for who want to contribute their skills, time, and services to support our green area planting initiatives. Your service donations are invaluable in helping us execute projects effectively and efficiently.',
-            'image' => 'images',
+            'image' => 'http://127.0.0.1:8000/frontend/images/service/service.PNG',
         ]);
     }
 }

@@ -20,7 +20,7 @@ class ProjectSeeder extends Seeder
         DB::table('projects')->insert([
             [
                 'title' => 'Streets Of Irbid',
-                'image' => 'C:\xampp\htdocs\EcoGreen-LaravelProject\public\frontend\images\event\project.PNG',
+                'image' => 'http://127.0.0.1:8000/frontend/images/event/project.PNG',
                 'location' => 'City of Irbid',
                 'short_description' => 'Join us in our mission to make Irbid streets greener and more sustainable.',
                 'long_description' => 'In cooperation withThe Ministry of Agriculture we are seeking to attract 

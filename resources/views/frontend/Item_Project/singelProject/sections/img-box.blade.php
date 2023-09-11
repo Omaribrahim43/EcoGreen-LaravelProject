@@ -7,7 +7,7 @@
                 <div class="single-event sec-padd">
                     <div class="img-box">
                        @if ($project->image)
-                          <img src="{{ asset('frontend/images/project/' . $project->image) }}" alt="{{ $project->name }}" width="300">
+                          <img src="{{ asset( $project->image) }}" alt="{{ $project->name }}" width="300">
                         @endif
                        
                     </div>

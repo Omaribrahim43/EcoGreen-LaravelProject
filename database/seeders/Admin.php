@@ -39,5 +39,13 @@ class Admin extends Seeder
             'password' => bcrypt('password'),
 
         ]);
+
+        DB::table('admins')->insert([
+            'name' => 'Leena Al-Rababah',
+            'email' => 'leenaalrababah@gmail.com',
+            'phone' => '0791579601',
+            'password' => bcrypt('12345Leena@'),
+
+        ]);
     }
 }
