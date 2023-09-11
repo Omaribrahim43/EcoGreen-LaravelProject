@@ -92,7 +92,7 @@ class CategoryController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'image' => ['required', 'image', 'max:4192'],
+            'image' => ['image', 'max:4192'],
             'name' => ['required', 'max:20'],
             'description' => ['required', 'max:1000'],
         ]);

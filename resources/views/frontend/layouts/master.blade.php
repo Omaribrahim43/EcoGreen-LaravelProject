@@ -100,7 +100,7 @@
         <!-- preloader  -->
         <div class="preloader"></div>
 
-        @include('frontend.layouts.donationPopUp')
+        {{-- @include('frontend.layouts.donationPopUp') --}}
 
 
         <!-- jQuery -->

@@ -18,12 +18,12 @@ return new class extends Migration
             $table->string('title');
             $table->text('image');
             $table->string('location');
-            $table->string('short_description');
-            $table->string('long_description');
+            $table->string('short_description')->nullable();
+            $table->string('long_description')->nullable();
             $table->float('budget')->nullable();
-            $table->date('start_day');
-            $table->date('end_day');
-            $table->boolean('status');
+            $table->date('start_day')->nullable();
+            $table->date('end_day')->nullable();
+            $table->boolean('status')->default('1');
             $table->string('tree_type')->nullable();
             $table->string('fertilizer')->nullable();
             $table->string('equipments')->nullable();
