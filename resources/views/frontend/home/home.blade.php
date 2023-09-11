@@ -17,7 +17,7 @@
                         data-mask_in="x:[100%];y:0;s:inherit;e:inherit;" data-splitin="none" data-splitout="none"
                         data-responsive_offset="on" data-start="700">
                         <div class="slide-content-box">
-                            <h2 class="thm-color">We are <span class="thm-color">ECO GREEN </span></h2>
+                            <h2 class="thm-color">We are <span class="thm-color">Green Hands </span></h2>
                             <p style="font-size:28px">a passionate community dedicated to preserving and enhancing <br>our
                                 planet's green spaces. </p>
 
@@ -30,7 +30,7 @@
                         data-splitout="none" data-responsive_offset="on" data-start="2300">
                         <div class="slide-content-box">
                             <div class="button">
-                                <a class="thm-btn" href="">read more</a>
+                                <a class="thm-btn" href="{{ route('about') }}">read more</a>
                             </div>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                         data-splitout="none" data-responsive_offset="on" data-start="2300">
                         <div class="slide-content-box">
                             <div class="button">
-                                <a class="thm-btn" href="">read more</a>
+                                <a class="thm-btn" href="{{ route('about') }}">read more</a>
                             </div>
                         </div>
                     </div>
@@ -115,7 +115,7 @@
                         data-splitout="none" data-responsive_offset="on" data-start="2300">
                         <div class="slide-content-box">
                             <div class="button">
-                                <a class="thm-btn" href="">read more</a>
+                                <a class="thm-btn" href="{{ route('about') }}">read more</a>
                             </div>
                         </div>
                     </div>

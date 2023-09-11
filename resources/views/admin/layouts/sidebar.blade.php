@@ -1,13 +1,14 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="index.html"><img src="{{asset('backend/assets/img/logo/logo.png')}}" alt="Ecogreen" style="width: 80%"></a>
+            <a href="index.html"><img src="{{asset('backend/assets/img/logo/logo1.png')}}" alt="Ecogreen" style="width: 30%; margin: 10px 40px 50px 0px; height:60px" ></a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
             <a href="index.html"><img src="{{asset('backend/assets/img/logo/logo2.png')}}" alt="Ecogreen" style="width: 80%"></a>
         </div>
+    
         <ul class="sidebar-menu">
-            <li class="menu-header">Dashboard</li>
+           
             <li class="{{ setActive(['admin.dashboard']) }}">
                 <a href="{{ route('admin.dashboard') }}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
             </li>

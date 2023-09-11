@@ -24,8 +24,8 @@
                                     <div class="donate"
                                         style="text-align: center; display:flex; justify-content:space-around"><span>
                                             Goal:
-                                            {{ $item->budget }} </span>
-                                        <a href="" class="thm-btn style-2">Donate Now</a>
+                                            {{ $item->budget }} JOD</span> 
+                                        <a href="{{route('All.projects',$item->id)}}" class="thm-btn style-2">Donate Now</a>
                                     </div>
                                 </div>
                             </div>

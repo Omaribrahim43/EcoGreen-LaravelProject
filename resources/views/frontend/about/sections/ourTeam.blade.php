@@ -9,7 +9,7 @@
             <article class="col-md-3 col-sm-6 col-xs-12">
                 <div class="single-team-member">
                     <figure class="img-box">
-                        <img src="{{ asset('frontend/images/team/rania.png') }}" alt="" width="270px" height="210px">
+                        <img src="{{ asset('frontend/images/team/sami.jpg') }}" alt="" width="270px" height="210px">
                      
                     </figure>
                     <div class="author-info">
@@ -54,7 +54,7 @@
             <article class="col-md-3 col-sm-6 col-xs-12">
                 <div class="single-team-member">
                     <figure class="img-box">
-                        <img src="{{ asset('frontend/images/team/rania.png') }}" alt=""
+                        <img src="{{ asset('frontend/images/team/omar.jpg') }}" alt=""
                         width="270px" height="210px">
                      
                     </figure>
@@ -102,7 +102,7 @@
         <article class="col-md-3 col-md-offset-3 col-sm-6 col-xs-12">
                 <div class="single-team-member">
                     <figure class="img-box">
-                        <img src="{{ asset('frontend/images/team/rania.png') }}" alt=""
+                        <img src="{{ asset('frontend/images/team/yousef.jpeg') }}" alt=""
                         width="270px" height="210px">
                      
                     </figure>

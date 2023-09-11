@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Eco Green || Responsive HTML 5 Template</title>
+    <title>Green Hands</title>
 
     <!-- mobile responsive meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,7 +50,7 @@
 
     <div class="boxed_wrapper">
 
-        <div class="top-bar">
+        {{-- <div class="top-bar">
             <div class="container">
                 <div class="clearfix">
 
@@ -87,7 +87,7 @@
 
 
             </div>
-        </div>
+        </div> --}}
 
         @include('frontend.layouts.navbar')
 
