@@ -13,27 +13,31 @@
                  @csrf
                  <ul class="chicklet-list clearfix">
                     <li>
-                        <input type="radio" id="donate_amount-1" name="donate_amount" value="10 JD" required>
+                        <input type="hidden" name="project_id" value="1" required >
+                        
+                    </li>
+                    <li>
+                        <input type="radio" id="donate_amount-1" name="donate_amount" value="10 " required>
                         <label for="donate_amount-1">10 JD</label>
                     </li>
                     <li>
-                        <input type="radio" id="donate_amount-2" name="donate_amount" value="20 JD" required>
+                        <input type="radio" id="donate_amount-2" name="donate_amount" value="20 " required>
                         <label for="donate_amount-2">20 JD</label>
                     </li>
                     <li>
-                        <input type="radio" id="donate_amount-3" name="donate_amount" value="50 JD" checked required>
+                        <input type="radio" id="donate_amount-3" name="donate_amount" value="50 " checked required>
                         <label for="donate_amount-3">50 JD</label>
                     </li>
                     <li>
-                        <input type="radio" id="donate_amount-4" name="donate_amount" value="100 JD" required>
+                        <input type="radio" id="donate_amount-4" name="donate_amount" value="100 " required>
                         <label for="donate_amount-4">100 JD</label>
                     </li>
                     <li>
-                        <input type="radio" id="donate_amount-5" name="donate_amount" value="200 JD" required>
+                        <input type="radio" id="donate_amount-5" name="donate_amount" value="200 " required>
                         <label for="donate_amount-5">200 JD</label>
                     </li>
                     <li>
-                        <input type="radio" id="donate_amount-6" name="donate_amount" value="300 JD" required>
+                        <input type="radio" id="donate_amount-6" name="donate_amount" value="300 " required>
                         <label for="donate_amount-6">300 JD</label>
                     </li>
                 </ul>
