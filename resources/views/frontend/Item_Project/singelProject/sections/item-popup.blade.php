@@ -15,6 +15,10 @@
                     @csrf
                     <div class="form-bg">
                         <div class="row clearfix">
+                            <li>
+                                <input type="hidden" name="project_id" value="1" required >
+                                
+                            </li>
 
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-group">
@@ -51,22 +55,25 @@
 
                     <ul class="payment-option">
 
-                        <li>
-                            <h4>Choose Items for Donation:</h4>
-                        </li>
-    
-                     </ul>
+                        <h4>Choose Items for Donation:</h4>
+                        
+   
+                    </ul>
                     <div class="form-check form-check-inline">
-                        <input type="checkbox" name="donate_tree" value="yes">{{ $project->tree_type}}                        
-                    </div>
-            
-                    <div class="form-check form-check-inline">
-                        <input type="checkbox" name="donate_tree" value="yes">{{ $project->tree_type}}
-                    </div>
+                       <input type="radio" class="form-check-input" name="donate_item" value="Tree" required>
+                       <label class="form-check-label">Tree</label>
+                   </div>
+                   
+                   <div class="form-check form-check-inline">
+                       <input type="radio" class="form-check-input" name="donate_item" value="Fertilizer" required>
+                       <label class="form-check-label">Fertilizer</label>
+                   </div>
 
-                    <div class="form-check form-check-inline">
-                        <input type="checkbox" name="donate_equipments" value="yes"> {{$project->equipments}}
-                    </div>
+                   <div class="form-check form-check-inline">
+                       <input type="radio" class="form-check-input" name="donate_item" value="Equipments" required>
+                       <label class="form-check-label">Equipments</label>
+                   </div>
+                  
 
                     <div class="center">
 

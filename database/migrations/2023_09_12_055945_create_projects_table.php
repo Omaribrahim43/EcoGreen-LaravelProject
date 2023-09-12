@@ -35,15 +35,13 @@ return new class extends Migration
             $table->integer('volunteering_number')->nullable();
             $table->timestamps();
 
-
-
-
-            // // make relation between projects table and category table:
-            // $table->foreign('category_id')
+            // $table->foreign('user_id')
             //     ->references('id')
-            //     ->on('categories')
+            //     ->on('users')
             //     ->onDelete('cascade')
             //     ->onUpdate('cascade');
+
+
         });
     }
 

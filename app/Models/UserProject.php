@@ -17,4 +17,9 @@ class UserProject extends Model
     {
         return $this->hasMany(Project::class);
     }
+
+    protected $fillable = [
+        'project_id','donate_method', 'choosen_shift', 'donate_amount','user_id'
+    ];
+
 }

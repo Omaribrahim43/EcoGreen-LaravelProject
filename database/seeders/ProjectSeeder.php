@@ -20,7 +20,7 @@ class ProjectSeeder extends Seeder
         DB::table('projects')->insert([
             [
                 'title' => 'Streets Of Irbid',
-                'image' => 'C:\xampp\htdocs\EcoGreen-LaravelProject\public\frontend\images\event\project.PNG',
+                'image' => 'http://127.0.0.1:8000/frontend/images/event/project.PNG',
                 'location' => 'City of Irbid',
                 'short_description' => 'Join us in our mission to make Irbid streets greener and more sustainable.',
                 'long_description' => 'In cooperation withThe Ministry of Agriculture we are seeking to attract 
@@ -93,7 +93,7 @@ class ProjectSeeder extends Seeder
                 soil health, and the critical role trees play in mitigating climate change.',
                 'budget' => '4500',
                 'start_day' => '2023-09-11',
-                'end_day' => '2023-12-13',
+                'end_day' => '2023-09-13',
                 'status' => '0',
                 'tree_type' => 'Decoration Plants',
                 'fertilizer' => 'Nitrogen-based Fertilizers',
