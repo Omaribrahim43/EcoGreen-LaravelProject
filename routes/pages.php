@@ -41,5 +41,5 @@ Route::post('/form.Donation', [SingelProjectController::class, 'checkformDonatio
 
 
 Route::post('/Donation.storeform', [SingelProjectController::class, 'storeformDonation'])->name('store.donation');
-Route::get('/item.storeform', [SingelProjectController::class, 'storeformitem'])->name('store.item');
-Route::get('/service.storeform', [SingelProjectController::class, 'storeformservice'])->name('sorte.service');
+Route::post('/item.storeform', [SingelProjectController::class, 'storeformitem'])->name('store.item');
+Route::post('/service.storeform', [SingelProjectController::class, 'storeformservice'])->name('sorte.service');
