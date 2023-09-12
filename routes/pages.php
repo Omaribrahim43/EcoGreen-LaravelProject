@@ -2,14 +2,18 @@
 
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\AllProjectController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SingelProjectController;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 
 // home page routes
 Route::get('/', [HomeController::class, 'index'])->name('index');
-Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/about', [HomeController:: class, 'about'])->name('about');
+Route::get('/home', [HomeController:: class, 'nav'])->name('nav');
+// Route::get('/about', [Category::class, 'about'])->name('about');
 
 // contact us page routes
 Route::get('returncontact', function () {

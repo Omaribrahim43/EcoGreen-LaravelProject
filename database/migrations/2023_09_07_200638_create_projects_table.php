@@ -35,7 +35,6 @@ return new class extends Migration
             $table->integer('volunteering_number')->nullable();
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // Add this foreign key constraint
 
 
 

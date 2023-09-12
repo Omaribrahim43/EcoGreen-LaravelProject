@@ -8,6 +8,7 @@
     <!-- mobile responsive meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 
 
     <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
@@ -94,6 +95,7 @@
 
     <script id="map-script" src="{{ asset('frontend/js/default-map.js') }}"></script>
     <script src="{{ asset('frontend/js/custom.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
 
