@@ -4,8 +4,8 @@ use App\Http\Controllers\Profile2Controller;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
+Route::get('/home', function () {
+    return view('frontend.profile2.profile');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/profile2', function () {

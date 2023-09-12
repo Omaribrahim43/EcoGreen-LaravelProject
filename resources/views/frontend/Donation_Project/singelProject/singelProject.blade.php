@@ -36,7 +36,9 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="single-event sec-padd">
                         @include('frontend.Donation_Project.singelProject.sections.img-box')
-                        <br><br><br>                        <div class="content">
+                        <br><br><br>    
+                                           
+                         <div class="content">
                             @include('frontend.Donation_Project.singelProject.sections.content')
                             <br>
                             <br><br>

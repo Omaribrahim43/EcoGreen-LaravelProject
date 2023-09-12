@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('project_id');
-            $table->float('donation');
-            $table->rememberToken();
+            $table->float('donate_amount')->nullable();
+            $table->string('donate_method')->nullable();
             $table->timestamps();
         });
     }

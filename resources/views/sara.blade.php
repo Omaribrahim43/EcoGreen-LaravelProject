@@ -15,34 +15,6 @@
 
 			<form action="{{ route('sorte.service') }}" class="donate-form" method="post" novalidate="novalidate">
 				@csrf
-				<ul class="chicklet-list clearfix">
-					<li>
-						<input type="radio" id="donate_amount-1" name="donate_amount" />
-						<label for="donate_amount-1" value="10 JD" required="">10 JD</label>
-
-					</li>
-					<li>
-						<input type="radio" id="donate_amount-1" name="donate_amount" />
-						<label for="donate_amount-1" value="20 JD" required="">20 JD</label>
-					</li>
-					<li>
-						<input type="radio" id="donate_amount-2" name="donate_amount" checked="checked" />
-						<label for="donate_amount-2" value="50 JD" required=""> 50 JD</label>
-					</li>
-					<li>
-						<input type="radio" id="donate_amount-3" name="donate_amount" />
-						<label for="donate_amount-3" value="100 JD" required=""> 100 JD</label>
-					</li>
-					<li>
-						<input type="radio" id="donate_amount-4" name="donate_amount" />
-						<label for="donate_amount-4" value="200 JD"required=""> 200 JD</label>
-					</li>
-
-					<li>
-						<input type="radio" id="donate_amount-4" name="donate_amount" />
-						<label for="donate_amount-4" value="300 JD"required=""> 300 JD</label>
-					</li>
-
 
 				</ul>
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\UserProject;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use App\Models\Category;
@@ -16,7 +17,7 @@ class SingelProjectController extends Controller
     
     {
         $id= auth()->user()->id;
-        // $id=1;
+      
         $user = user::findOrFail($id);
         return view('frontend.layouts.donationPopUp', ['user' => $user]);
     }
@@ -25,7 +26,7 @@ class SingelProjectController extends Controller
     
     {
         $id= auth()->user()->id;
-        // $id=1;
+      
         $user = user::findOrFail($id);
         return view('frontend.service_project.singelProject.sections.service-popup', ['user' => $user]);
     }
@@ -34,11 +35,13 @@ class SingelProjectController extends Controller
     
     {
         $id= auth()->user()->id;
-        // $id=1;
+     
         $project = user::findOrFail($id);
         $user = user::findOrFail($id);
         return view('frontend.Item_Project.singelProject.sections.item-popup', ['project' => $project],['user' => $user]);
     }
+
+    
     public function showDonation($id)
     {
         $project = Project::findOrFail($id);
@@ -52,8 +55,8 @@ class SingelProjectController extends Controller
     public function showservice($id)
     {
         $project = Project::findOrFail($id);
-        return view('frontend.Item_Project.singelProject.singelProject', compact('project'));
-        //sara comment 
+        return view('frontend.service_project.singelProject.singelProject', compact('project'));
+        
     }
 
     public function checkformservice(Request $request)
@@ -80,73 +83,35 @@ class SingelProjectController extends Controller
         $user = User::where('id', 1);
         return view('frontend.Donation_Project.singelProject.sections.donationPopUp', ['user' => $user]);
 
-
-        // dd($user);
-        // if (auth()->user()->check) {
-        //    $iduser= auth()->user()->id;
-
-        //     return view('frontend.layouts.donationPopUp', ['user' => $user]);   
-        // } else {
-
-        //     return redirect('login');
-        // }
-
     }
 
-    // public function viewformservice($id)
-    // {
-    //     $user = User::find($id);
-    //     return view('service_project.singelProject.popup', ['user' => $user]);
-    // }
-
-    // public function viewformitem($id)
-    // {
-    //     $user = User::find($id);
-    //     return view('Item_Project.singelProject.popup', ['user' => $user]);
-    // }
-
-    // public function viewformDonation($id = 1)
-    // {
-    //     $user = User::where('id', $id);
-    //     return view('frontend.layouts.donationPopUp', ['user' => $user]);
-    // }
+   
 
 
     public function storeformDonation(Request $request)
     {
-        // dd($request->donate_amount);
-            $id= auth()->user()->id;
-         
-
-        $user = User::find($id);
-        $user->donate_amount = $request->donate_amount;
-        $user->donate_method = $request->donate_method;
-
-        $user->update([
+        $id= auth()->user()->id;
+        $user = UserProject::create([
             'donate_amount' =>  $request->donate_amount,
-            'donate_method '=> $request->donate_method,
+            'donate_method' => $request->donate_method,
+            'user_id' => $id,
+            'project_id' => $request->project_id
         ]);
-
+    
         return view('frontend.layouts.thankyouPopUp');
-
     }
+    
 
     public function storeformitem(Request $request)
     {
-        $validatedData = $request->validate([
-
-            'tree_checkbox' => 'sometimes|required_without_all:fertilizer_checkbox,equipments_checkbox',
-            'fertilizer_checkbox' => 'sometimes|required_without_all:tree_checkbox,equipments_checkbox',
-            'equipments_checkbox' => 'sometimes|required_without_all:tree_checkbox,fertilizer_checkbox',
-        ]);
                 
         $id= auth()->user()->id;
-       
-        $user = User::find($id);
+        $user = UserProject::create([
+            'user_id' => $id,
+            'donate_item' => $request->donate_item,
+            'project_id' => $request->project_id
 
-        $user->donate_tree = $request->donate_tree;
-        $user->donate_fertilizer = $request->donate_fertilizer;
-        $user->donate_equipments = $request->donate_equipments;
+        ]);
 
 
         return view('frontend.layouts.thankyouPopUp');
@@ -155,13 +120,16 @@ class SingelProjectController extends Controller
 
     public function storeformservice(Request $request)
     {
-            $id= auth()->user()->id;
-            // $id=1;
+        $id= auth()->user()->id;
 
         $user = User::find($id);
 
         $user->choosen_shift = $request->choosen_shift;
+        $user->update([
 
+           'choosen_shift' => $request->choosen_shift
+
+        ]);
 
         return view('frontend.layouts.thankyouPopUp');
 
