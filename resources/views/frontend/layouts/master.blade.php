@@ -41,6 +41,8 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/css/settings.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/css/style.css') }}">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
 
 
 
@@ -135,15 +137,16 @@
         <script src="{{ asset('frontend/js/rev-slider/revolution.extension.parallax.min.js') }}"></script>
         <script src="{{ asset('frontend/js/rev-slider/revolution.extension.slideanims.min.js') }}"></script>
         <script src="{{ asset('frontend/js/rev-slider/revolution.extension.video.min.js') }}"></script>
-
+        <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
         <script src="{{ asset('frontend/js/custom.js') }}"></script>
-
-
-
-
-
+        <script>
+            @if ($errors->any())
+                @foreach ($errors->all() as $error)
+                    toastr.error("{{ $error }}")
+                @endforeach
+            @endif
+        </script>
     </div>
-
 </body>
 
 </html>
