@@ -31,7 +31,7 @@ Route::get('/testimonial', function () {
 Route::get('/Allprojects/{id?}', [AllProjectController::class, 'show'])->name('All.projects');
 
 // ----------singelproject----------
-Route::get('/open/form', [SingelProjectController::class, 'openForm'])->name('open.form');
+Route::get('/open/form', [SingelProjectController::class, 'openForm'])->middleware(['auth', 'verified'])->name('open.form');
 Route::get('/open/service/form', [SingelProjectController::class, 'openFormservice'])->name('open.Sform');
 Route::get('/open/item/form', [SingelProjectController::class, 'openFormitem'])->name('open.Iform');
 
