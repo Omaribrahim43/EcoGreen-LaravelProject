@@ -5,7 +5,7 @@
         </div> --}}
         <br>
         <div class="section-title center">
-            <h1 > <span class="thm-color" > Our Categories </span>   </h1>
+            <h1 > <span class="thm-color" > Our Services </span>   </h1>
         </div>
       
                     <div class="container">
