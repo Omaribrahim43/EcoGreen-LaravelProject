@@ -1,4 +1,4 @@
-<footer class="main-footer">
+<footer  class="main-footer">
 
     <!--Widgets Section-->
     <div class="widgets-section">
@@ -74,7 +74,7 @@
                                             Irbid, center of city, HKJ</li>
                                     </a>
                                     <li><span class="icon-phone-call"></span> Phone: +962777415591</li>
-                                    <li><span class="icon-note"></span>Supportus@Eco greenteam.com</li>
+                                    <li><span class="icon-note"></span>Supportus@GreenHands.com</li>
                                 </ul>
                             </div>
 

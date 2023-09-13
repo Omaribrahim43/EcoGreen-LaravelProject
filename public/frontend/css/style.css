@@ -5078,7 +5078,7 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
 .main-footer {
     position: relative;
     background: #111709;
-    padding: 25px 0 80px;
+    padding: 0 !important;
 }
 
 .main-footer .footer-widget {
@@ -5686,7 +5686,7 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
     margin: 25px 0 0;
 }
 .get-touch-area .single-item {
-    border: 1px solid #f4f4f4;
+    border: 5ph solid #f4f4f4;
     display: block;
     padding: 39px 20px 31px;
 }

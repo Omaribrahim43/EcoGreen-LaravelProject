@@ -13,7 +13,7 @@
              <div class="pull-left">
                  <ul class="list-inline link-list">
                      <li>
-                         <a href={{ route('home') }}>Home</a>
+                         <a href={{ route('index') }}>Home</a>
                      </li>
                      
 
@@ -113,6 +113,6 @@
 
      <!--End contact form area-->
 
-     <iframe style="width:100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3363.009560388833!2d35.84709387523376!3d32.55259009542224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151c7715f2c2e7ab%3A0x51755840c8ddbefd!2sOrange%20Digital%20Village%20Irbid!5e0!3m2!1sen!2sjo!4v1694412713482!5m2!1sen!2sjo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+     <iframe style="width:77%;margin:0 0 0 12%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3363.009560388833!2d35.84709387523376!3d32.55259009542224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151c7715f2c2e7ab%3A0x51755840c8ddbefd!2sOrange%20Digital%20Village%20Irbid!5e0!3m2!1sen!2sjo!4v1694412713482!5m2!1sen!2sjo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
      @include('frontend.contact.sections.contactFormArea')
  @endsection
