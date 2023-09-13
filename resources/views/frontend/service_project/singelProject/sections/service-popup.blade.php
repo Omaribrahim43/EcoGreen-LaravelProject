@@ -17,7 +17,7 @@
 
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <li>
-                                <input type="hidden" name="project_id" value="1" required>
+                                <input type="hidden" name="project_id" value="3" required>
 
                             </li>
                             <div class="form-group">
@@ -37,7 +37,7 @@
                             <div class="form-group">
                                 <p>Phone</p>
                                 <input type="text" class="form-control" required=""
-                                    value="{{ $user->phone }}"readonly>
+                                    value="{{ $user->phone }}" name="phone">
                             </div>
                         </div>
 
@@ -45,7 +45,7 @@
                             <div class="form-group">
                                 <p>Address*</p>
                                 <input type="text" name="address" class="form-control" placeholder="" required=""
-                                    value="{{ $user->address }}" readonly>
+                                    value="{{ $user->address }}" >
                             </div>
                         </div>
 

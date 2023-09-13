@@ -1,7 +1,8 @@
 @extends('frontend.layouts.master')
 
 @section('content')
-    <div class="inner-banner has-base-color-overlay text-center" style="background: url({{ asset('frontend/images/background/4.jpg') }});">
+    <div class="inner-banner has-base-color-overlay text-center"
+        style="background: url({{ asset('frontend/images/background/4.jpg') }});">
         <div class="container">
             <div class="box">
                 <h1>Login</h1>
@@ -56,10 +57,7 @@
                             </div>
                             <div class="clearfix">
                                 <div class="form-group pull-left">
-                                    <button type="submit" class="thm-btn thm-tran-bg">
-                                        
-                                        
-                                        now</button>
+                                    <button type="submit" class="thm-btn thm-tran-bg">Login</button>
                                 </div>
                                 <div class="form-group social-links-two padd-top-5 pull-right">
                                     Or login with <a href="{{ url('auth/facebook') }}" class="img-circle facebook"><span
@@ -74,8 +72,11 @@
                                     <input type="checkbox" id="remember-me"><label for="remember-me">&nbsp; Remember
                                         Me</label>
                                 </div>
-                            </div>
+                            </div><br>
 
+                        </form>
+                        <form action="{{ route('register') }}">
+                            <button type="submit">Create Account</button>
                         </form>
                     </div>
 

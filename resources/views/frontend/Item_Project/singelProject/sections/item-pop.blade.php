@@ -33,15 +33,15 @@
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-group">
                                     <p>Phone</p>
-                                    <input type="text" class="form-control" required=""
-                                        value="{{ $user->phone }}"readonly>
+                                    <input type="text" class="form-control" required
+                                        value="{{ $user->phone }}">
                                 </div>
                             </div>
    
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group">
                                     <p>Address*</p>
-                                    <input type="text" name="address" placeholder="" required="" value="{{ $user->address }}" readonly>
+                                    <input type="text" name="address" placeholder="" required value="{{ $user->address }}" >
                                 </div>
                             </div>
    

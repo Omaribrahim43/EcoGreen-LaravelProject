@@ -19,6 +19,8 @@ return new class extends Migration
             $table->unsignedBigInteger('project_id');
             $table->float('donate_amount')->nullable();
             $table->string('donate_method')->nullable();
+            $table->string('donate_item')->nullable();
+            $table->string('choosen_shift')->nullable();
             $table->timestamps();
         });
     }
