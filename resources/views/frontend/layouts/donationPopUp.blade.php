@@ -13,7 +13,7 @@
                  @csrf
                  <ul class="chicklet-list clearfix">
                     <li>
-                        <input type="hidden" name="project_id" value="1" required >
+                        <input type="hidden" name="project_id" value="2" required >
                         
                     </li>
                     <li>
@@ -66,7 +66,7 @@
                              <div class="form-group">
                                  <p>Phone</p>
                                  <input type="text" class="form-control" required=""
-                                     value="{{ $user->phone }}"readonly>
+                                     value="{{ $user->phone }}" name="phone">
                              </div>
                          </div>
 
@@ -74,7 +74,7 @@
                              <div class="form-group">
                                  <p>Address*</p>
                                  <input type="text" name="address" class="form-control" placeholder="" required=""
-                                     value="{{ $user->address }}" readonly>
+                                     value="{{ $user->address }}" >
                              </div>
                          </div>
 

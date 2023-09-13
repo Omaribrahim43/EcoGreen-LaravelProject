@@ -17,7 +17,7 @@
 
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <li>
-                                <input type="hidden" name="project_id" value="1" required>
+                                <input type="hidden" name="project_id" value="3" required>
 
                             </li>
                             <div class="form-group">
@@ -37,7 +37,7 @@
                             <div class="form-group">
                                 <p>Phone</p>
                                 <input type="text" class="form-control" required=""
-                                    value="{{ $user->phone }}">
+                                    value="{{ $user->phone }}" name="phone">
                             </div>
                         </div>
 

@@ -101,46 +101,66 @@ class SingelProjectController extends Controller
 
     public function storeformDonation(Request $request)
     {
-        $id= auth()->user()->id;
-        $user = UserProject::create([
-            'donate_amount' =>  $request->donate_amount,
-            'donate_method' => $request->donate_method,
-            'user_id' => $id,
-            'project_id' => $request->project_id
-        ]);
+        if ($request->has('donate_method')) {
+            $id = auth()->user()->id;
+            $user = UserProject::create([
+                'donate_amount' =>  $request->donate_amount,
+                'donate_method' => $request->donate_method,
+                'user_id' => $id,
+                'project_id' => $request->project_id
+            ]);
 
-        return view('frontend.layouts.thankyouPopUp');
+            $data['address'] = $request->address;
+            $data['phone'] = $request->phone;
+            User::where(['id' => $id])->update($data);
+
+            return view('frontend.layouts.thankyouPopUp');
+        }
+        return redirect()->back();
     }
 
 
     public function storeformitem(Request $request)
     {
 
-        $id= auth()->user()->id;
-        $user = UserProject::create([
-            'user_id' => $id,
-            'donate_item' => $request->donate_item,
-            'project_id' => $request->project_id
+        if ($request->has('donate_item')) {
+            $id = auth()->user()->id;
+            $userProject = UserProject::create([
+                'user_id' => $id,
+                'donate_item' => $request->donate_item,
+                'project_id' => $request->project_id,
+            ]);
 
-        ]);
+            $data['address'] = $request->address;
+            $data['phone'] = $request->phone;
+            User::where(['id' => $id])->update($data);
 
+            return view('frontend.layouts.thankyouPopUp');
+        }
 
-        return view('frontend.layouts.thankyouPopUp');
-
+        return redirect()->back();
     }
 
     public function storeformservice(Request $request)
     {
-        $id= auth()->user()->id;
-        $user = User::find($id);
+        if ($request->has('choosen_shift')) {
 
-        $user = UserProject::create([
-           'choosen_shift' => $request->choosen_shift,
-           'user_id' => $id,
-            'project_id' => $request->project_id
-        ]);
+            $id = auth()->user()->id;
+            $user = User::find($id);
 
-        return view('frontend.layouts.thankyouPopUp');
+            $user = UserProject::create([
+                'choosen_shift' => $request->choosen_shift,
+                'user_id' => $id,
+                'project_id' => $request->project_id
+            ]);
 
+            $data['address'] = $request->address;
+            $data['phone'] = $request->phone;
+            User::where(['id' => $id])->update($data);
+
+            return view('frontend.layouts.thankyouPopUp');
+        }
+
+        return redirect()->back();
     }
 }
