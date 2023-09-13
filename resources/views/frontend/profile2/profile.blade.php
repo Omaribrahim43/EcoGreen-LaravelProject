@@ -3,6 +3,8 @@
 @section('content') --}}
 <?php
 use App\Controllers\UserController;
+use App\Models\UserProject;
+use App\Models\Project;
 ?>
 <!doctype html>
 <html lang="en">
@@ -186,13 +188,19 @@ use App\Controllers\UserController;
                                 ?>
                                 @csrf
                                 <div class="card-body media align-items-center">
-                                    <img src="{{ asset($user->image) }}" width="100" height="100" alt="User Image">
-                                    <div class="media-body ml-4">
-                                        <label class="btn btn-outline-primary">
-                                            Upload new photo
-                                            <input type="file" name="image" class="account-settings-fileinput">
-                                        </label> &nbsp;
-                                    </div>
+                                    @if (empty($user->image))
+                                    <img src="http://127.0.0.1:8000/assets/img/1694585275.png"
+                                        width="100" height="100" alt="User Image">
+                                        @else
+                                        <img src="{{ asset($user->image) }}" width="100" height="100" alt="">
+                                    @endif
+
+                                        <div class="media-body ml-4">
+                                            <label class="btn btn-outline-primary">
+                                                Upload new photo
+                                                <input type="file" name="image" class="account-settings-fileinput">
+                                            </label> &nbsp;
+                                        </div>
                                 </div>
                                 <hr class="border-light m-0">
                                 <div class="card-body">
@@ -215,6 +223,11 @@ use App\Controllers\UserController;
                                         <label class="form-label">phone</label>
                                         <input type="text" class="form-control" name="phone"
                                             value="{{ $user->phone }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Address</label>
+                                        <input type="text" class="form-control" name="address"
+                                            value="{{ $user->address }}">
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Save changes</button>
@@ -262,7 +275,33 @@ use App\Controllers\UserController;
                         <div class="tab-pane fade" id="account-info">
                             <div class="card-body pb-2">
                                 <?php
-                                $projects = $user->projects;
+                                use App\Models\User;
+                                $id = Auth::id();
+                                $user = User::find($id); // Replace $userId with the user's ID
+                                
+                                $project_ids = UserProject::where('user_id', $id)->pluck('project_id');
+                                $projects = Project::whereIn('id', $project_ids)->get();
+                                
+                                // $project_amount2 = 0;
+                                // $project_amount = UserProject::where('user_id', $id)->pluck('donate_amount');
+                                // foreach ($project_amount as $item) {
+                                //     if ($item != 'null') {
+                                //         $project_amount2 += $item;
+                                //     }
+                                // }
+                                $amounts = [];
+                                
+                                for ($i = 1; $i <= count($projects); $i++) {
+                                    $userProjects = UserProject::where('user_id', $id)
+                                        ->where('project_id', $i)
+                                        ->get();
+                                    $projectAmount = 0;
+                                    foreach ($userProjects as $item) {
+                                        $projectAmount += $item->donate_amount;
+                                    }
+                                    $amounts[$i] = $projectAmount;
+                                }
+                                
                                 ?>
                                 <div class="container">
                                     <table class="table table-bordered">
@@ -270,31 +309,36 @@ use App\Controllers\UserController;
                                             <tr>
                                                 <th>Title</th>
                                                 <th>Location</th>
-                                                <th>Budget</th>
+                                                <th>donate_amount</th>
                                                 <th>Description</th>
                                                 <th>Start Day</th>
                                                 <th>End Day</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($projects as $project)
-                                                <tr>
-                                                    <td>{{ $project->title }}</td>
-                                                    <td>{{ $project->location }}</td>
-                                                    <td>${{ number_format($project->budget, 2) }}</td>
-                                                    <td>{{ $project->long_description }}</td>
-                                                    <td>{{ $project->start_day }}</td>
-                                                    <td>{{ $project->end_day }}</td>
-                                                </tr>
-                                            @endforeach
+                                            @if (!$user->projects->isEmpty())
+                                                <?php
+                                                $i = 1;
+                                                ?>
+                                                @foreach ($projects as $project)
+                                                    <tr>
+                                                        <td>{{ $project->title }}</td>
+                                                        <td>{{ $project->location }}</td>
+                                                        <td>JD{{ $amounts[$i] }}</td>
+                                                        <td>{{ $project->long_description }}</td>
+                                                        <td>{{ $project->start_day }}</td>
+                                                        <td>{{ $project->end_day }}</td>
+                                                    </tr>
+                                                    <?php $i++; ?>
+                                                @endforeach
                                         </tbody>
                                     </table>
 
-                                    {{-- @if (!$user->projects == 'null') --}}
-                                        <a href="{{ route('certificate.download') }}"
-                                            class="btn btn-primary">Download
-                                            Participation Certificate</a>
-                                    {{-- @endif --}}
+
+                                    <a href="{{ route('certificate.download') }}" class="btn btn-primary">Download
+                                        Participation Certificate</a>
+                                    @endif
+
                                     {{-- <img src="{{ asset('assets/img/1694206033.jpg') }}" alt=""> --}}
                                 </div>
                             </div>

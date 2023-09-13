@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\UserProject;
+use App\Models\Project;
 use Auth;
 use Hash;
 use Illuminate\Support\Facades\Redirect;
@@ -13,7 +15,33 @@ class Profile2Controller extends Controller
 {
     public function index()
     {
-        $user = User::all();
+        // $user = User::all();
+        $id = Auth::id();
+
+        $user = User::find($id); // Replace $userId with the user's ID
+
+        $projects = $user->projects; // This will fetch all posts associated with the user
+        $project_ids = UserProject::where('user_id', $id)->pluck('project_id');
+
+        // echo $project_ids;
+        // $userProject = UserProject::all();
+        // $userProject = UserProject::where('user_id', $id)->where('project_id', 1)->get();
+        // // echo $userProject;
+        // $amount = 0;
+        // foreach ($userProject as $item){
+        //     $amount += $item->donate_amount;
+        // }
+
+        // echo count($projects);
+
+        // for($i = 1; $i < count($projects)+1 ; $i++){
+        //     $userProject = UserProject::where('user_id', $id)->where('project_id', $i)->get();
+        //     foreach ($userProject as $item) {
+        //         $amount += $item->donate_amount;
+        //     }
+        //     echo $amount."<br>";
+        //     $amount = 0;
+        // };
         return view('frontend.profile2.profile', compact('user'));
         
     }
@@ -30,6 +58,7 @@ class Profile2Controller extends Controller
         $data['username'] = $request->username;
         $data['email'] = $request->email;
         $data['phone'] = $request->phone;
+        $data['address'] = $request->address;
 
         $filename = '';
 
@@ -49,6 +78,16 @@ class Profile2Controller extends Controller
         return redirect()->route('profile2.profile.index')->with([
             'success' => 'updated successfully'
         ]);
+
+
+        $userProject = UserProject::all();
+        dd($userProject->$id);
+
+
+
+
+
+
     }
 
 
@@ -107,7 +146,7 @@ class Profile2Controller extends Controller
         Auth::logout();
 
         // Redirect to a confirmation page or wherever you want
-        return redirect()->route('home')->with('success', 'Your account has been deleted.');
+        return redirect()->route('/')->with('success', 'Your account has been deleted.');
     }
 
 

@@ -5,7 +5,7 @@
         </div> --}}
         <br>
         <div class="section-title center">
-            <h1 > <span class="thm-color" > Our Categories </span>   </h1>
+            <h1 > <span class="thm-color" > Our Services </span>   </h1>
         </div>
       
                     <div class="container">
@@ -29,11 +29,16 @@
                                         <h3>{{ $item->name }}</h3> <br> 
                                      {{-- </a> --}}
                                         <p>{{ $item->description }}</p>
+                                        <br>
+
+                                        <a href="{{ route('All.projects',$item->id) }}" class="thm-btn thm-tran-bg" >Donate Now</a>
                                     </div>
+                                    
                                 </div>
                             @endforeach
                         </div>
                     </div>
+                    
     </div>
 </section>
 

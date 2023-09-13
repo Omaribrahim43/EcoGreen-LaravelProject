@@ -129,7 +129,7 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(string $id)
+    public function destroy( $id)
     {
         $category = Category::findOrFail($id);
         $this->deleteImage($category->image);

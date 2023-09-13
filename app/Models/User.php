@@ -20,7 +20,7 @@ class User extends Authenticatable
     use TwoFactorAuthenticatable;
 
     protected $fillable = [
-        'image','name', 'email', 'password', 'google_id', 'facebook_id'
+        'image','name', 'email', 'password', 'google_id', 'facebook_id','address', 'phone'
     ];
 
     protected $hidden = [
@@ -37,6 +37,11 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function userProject()
+    {
+        return $this->belongsTo(UserProject::class);
+    }
 
     public function projects()
     {

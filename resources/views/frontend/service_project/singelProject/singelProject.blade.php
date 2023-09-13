@@ -44,9 +44,9 @@
 
                             <br>
                             <br><br>
-                            <div class="section-title style-2">
+                            {{-- <div class="section-title style-2">
                                 <h3>Our Sponsors</h3>
-                            </div>
+                            </div> --}}
                             <ul class="brand-carousel2">
                                 <li><a href="#"><img src="images/event/b1.jpg" alt=""></a></li>
                                 <li><a href="#"><img src="images/event/b2.jpg" alt=""></a></li>
@@ -57,9 +57,9 @@
                         <div class="share clearfix">
 
                             <div class="float_right">
-                                <a href="{{route('open.Sform')}}" >
-                                <button class="thm-btn donate-box-btn">Donate Now</button>
-                            </a>
+                                <a href="{{ route('open.Sform') }}">
+                                    <button class="thm-btn donate-box-btn">Donate Now</button>
+                                </a>
                             </div>
 
 

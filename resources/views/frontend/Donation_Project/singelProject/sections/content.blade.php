@@ -25,9 +25,9 @@
 
         <ul class="list2">
 
-            <li><i class="fa fa-check-circle"></i> Tree_type : {{ $project->tree_type }}</li>
-            <li><i class="fa fa-check-circle"></i> Fertilizer : {{ $project->fertilizer }}</li>
-            <li><i class="fa fa-check-circle"></i> Equipments : {{ $project->equipments }}</li>
+            <li><i class="fa fa-check-circle"></i> Tree_type : {{ $project->tree_type }} 10 JOD / tree</li>
+            <li><i class="fa fa-check-circle"></i> Fertilizer : {{ $project->fertilizer }} 50 JOD</li>
+            <li><i class="fa fa-check-circle"></i> Equipments : {{ $project->equipments }} 50 JOD</li>
           
 
         </ul>

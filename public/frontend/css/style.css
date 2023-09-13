@@ -1280,11 +1280,12 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
 .theme_menu {
     position: relative;
     z-index: 99;
-    padding: 25px 0;
+    padding: 5px 0 !important;
 }
 .theme_menu .menu-column {
     padding-left: 0;
     padding-right: 90px;
+    padding-top: 15px;
     position: inherit;
 }
 
@@ -1296,10 +1297,10 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
 
 .menuzord-menu > li > a {
     position: relative;
-    padding: 20px 18px;
+    padding: 12px 23px!important;
     text-transform: uppercase;
     color: #303030;
-    font-weight: 700;
+    font-weight: 650!important;
     font-family: "Open Sans", sans-serif;
 }
 
@@ -1770,6 +1771,7 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
   border: 1px solid #8dc63f;
   padding: 28px 14px 25px;
   position: relative;
+  height: 430px!important;
 }
 .service .service-item:before {
     position: absolute;
@@ -2116,7 +2118,10 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
     padding-bottom: 30px;
     border: 1px solid #f4f4f4;
     border-top: 0px;
+    height:250px!important
 }
+
+.recent_projects { height:800px!important}
 .urgent-cause2 .content h4 {
     margin-bottom: 15px;
 }

@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('phone')->nullable();
             $table->string('address')->nullable();
-            $table->string('password');
-            $table->string('donate_amount')->nullable();
+            $table->string('password')->default('');
+            $table->float('donate_amount')->nullable();
             $table->string('donate_method')->nullable();
             $table->string('donate_tree')->nullable();
             $table->string('donate_fertilizer')->nullable();

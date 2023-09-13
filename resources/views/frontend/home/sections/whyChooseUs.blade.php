@@ -1,4 +1,8 @@
         <section class="why-chooseus">
+            <div class="section-title">
+                <br>
+              <center> <h1 class="thm-color" >Why Choose Us </h1></center> 
+            </div>
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 col-sm-6 col-xs-12">

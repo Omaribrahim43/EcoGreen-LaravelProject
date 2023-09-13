@@ -66,10 +66,12 @@ class AdminController extends Controller
 
             $admin = Admin::find($id);
           
-           
+            // $name =  session('loginimage');
+            //     dd($name);
 
             // dd($admin->name);
             return view('admin.profile.profile', ['admin' => $admin]);
+
 
 
         }
@@ -106,7 +108,7 @@ class AdminController extends Controller
         // $imagePath = $this->uploadImage($request, 'image', 'uploads');
 
         $imagePath = $this->updateImage($request, 'image', 'uploads', $admin->image);
-
+        session(['loginimage' => $imagePath]);
         $admin->image = empty(!$imagePath) ? $imagePath : $admin->image;
         $admin->name = $request->name;
         $admin->email = $request->email;

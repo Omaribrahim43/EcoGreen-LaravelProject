@@ -14,19 +14,15 @@
             <div class="pull-left">
                 <ul class="list-inline link-list">
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="{{ route('index') }}">Home</a>
                     </li>
-                    <li>
-                        <a href="shop.html">shop</a>
-                    </li>
+                    
                     <li>
                         Register
                     </li>
                 </ul>
             </div>
-            <div class="pull-right">
-                <a href="#" class="get-qoute"><i class="fa fa-arrow-circle-right"></i>Become a Volunteer</a>
-            </div>
+          
         </div>
     </div>
 
@@ -65,7 +61,7 @@
                             </div>
                             <div class="clearfix">
                                 <div class="form-group pull-left">
-                                    <button type="submit" class="thm-btn thm-tran-bg">login now</button>
+                                    <button type="submit" class="thm-btn thm-tran-bg">Register now</button>
                                 </div>
                                 <div class="form-group social-links-two padd-top-5 pull-right">
                                     Or login with <a href="#" class="img-circle facebook"><span
@@ -74,13 +70,13 @@
                                             class="fa fa-google-plus"></span></a>
                                 </div>
                             </div>
-
-                            <div class="clearfix">
+                            <a href="{{ route('login') }}" style="text-decoration: underline"> Already Have An Account!</a></div> <br>
+                            {{-- <div class="clearfix">
                                 <div class="pull-left">
                                     <input type="checkbox" id="remember-me"><label for="remember-me">&nbsp; Remember
                                         Me</label>
                                 </div>
-                            </div>
+                            </div> --}}
 
                         </form>
                     </div>

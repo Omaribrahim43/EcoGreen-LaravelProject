@@ -20,11 +20,20 @@
                             <div class="text-column float_left">
                                 <div class="lower-content">
 
+                                    @if ($item->category->id == 1)
+                                        <a href="{{ route('show.Donation', ['id' => $item->id]) }}">
+                                            <h4>{{ $item->title }}</h4>
+                                        </a>
+                                    @elseif ($item->category->id == 2)
+                                        <a href="{{ route('show.item', ['id' => $item->id]) }}">
+                                            <h4>{{ $item->title }}</h4>
+                                        </a>
+                                    @elseif ($item->category->id == 3)
+                                        <a href="{{ route('show.service', ['id' => $item->id]) }}">
+                                            <h4>{{ $item->title }}</h4>
+                                        </a>
+                                    @endif
 
-
-                                    <a href="{{ route('show.Donation', ['id' => $item->id]) }}">
-                                        <h4>{{ $item->title }}</h4>
-                                    </a>
 
                                     <div class="text">
                                         <p>{{ $item->short_description }}

@@ -42,12 +42,14 @@
 
 
 
-
+     <div class="sec-title text-center">
+        <h3>Send us a messgae</h3> </div> <br>
      <section class="contact-form-area">
          <div class="container">
              <div class="row">
 
                  <div class="col-md-12">
+                    
                      <div class="default-form-area">
                          @if (session('success'))
                              <div class="alert alert-success">
