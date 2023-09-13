@@ -224,7 +224,12 @@
 	    display: inline-block;
 	}
 	.top-bar .top-bar-info {
-		text-align: center;	
+		text-align: center;
+
+	}
+
+	.theme_menu{
+		padding: ;
 	}
 }
 @media (max-width: 420px) {
