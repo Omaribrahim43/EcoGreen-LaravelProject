@@ -6,14 +6,14 @@
                     <p> Discover our recent initiatives that are making a positive impact on the environment and our
                         community</p>
                 </div>
-                <div class="cause-carousel" sty>
+                <div class="cause-carousel" >
 
                     @foreach ($project as $item)
                         <div class="item clearfix">
                             <figure class="img-box">
-                                <a> <img src="{{ asset($item->image) }}" style="height:350 px; width:350px"> </a>
+                                <a> <img src="{{ asset($item->image) }}"  > </a>
                             </figure>
-                            <div class="content">
+                            <div class="content" >
                                 <div class="text center">
                                     <a href="#">
                                         <h4 class="title">{{ $item->title }}</h4>
@@ -31,6 +31,12 @@
                             </div>
                         </div>
                     @endforeach
+                    
                 </div>
+                
             </div>
         </section>
+
+
+
+
