@@ -6,7 +6,7 @@
                     <p> Discover our recent initiatives that are making a positive impact on the environment and our
                         community</p>
                 </div>
-                <div class="cause-carousel">
+                <div class="cause-carousel" sty>
 
                     @foreach ($project as $item)
                         <div class="item clearfix">

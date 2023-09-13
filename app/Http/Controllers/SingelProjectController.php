@@ -16,10 +16,14 @@ class SingelProjectController extends Controller
     public function openForm()
 
     {
-        $id = auth()->user()->id;
-
-        $user = user::findOrFail($id);
-        return view('frontend.layouts.donationPopUp', ['user' => $user]);
+        if (auth()->user()){
+            $id = auth()->user()->id;
+            $user = user::findOrFail($id);
+            return view('frontend.layouts.donationPopUp', ['user' => $user]);
+        } else {
+            return view('auth.login');
+            return toastr('error', 'Please login or register to donate!');
+        }
     }
 
     public function openFormservice()
@@ -38,11 +42,16 @@ class SingelProjectController extends Controller
     public function openFormitem()
 
     {
+        if (auth()->user()) {
         $id = auth()->user()->id;
 
         $project = user::findOrFail($id);
         $user = user::findOrFail($id);
         return view('frontend.Item_Project.singelProject.sections.item-popup', ['project' => $project], ['user' => $user]);
+    } else {
+        return view('auth.login');
+        return toastr('error', 'Please login or register to donate!');
+    }
     }
 
 
@@ -92,7 +101,7 @@ class SingelProjectController extends Controller
 
     public function storeformDonation(Request $request)
     {
-        $id = auth()->user()->id;
+        $id= auth()->user()->id;
         $user = UserProject::create([
             'donate_amount' =>  $request->donate_amount,
             'donate_method' => $request->donate_method,
@@ -107,7 +116,7 @@ class SingelProjectController extends Controller
     public function storeformitem(Request $request)
     {
 
-        $id = auth()->user()->id;
+        $id= auth()->user()->id;
         $user = UserProject::create([
             'user_id' => $id,
             'donate_item' => $request->donate_item,
@@ -117,21 +126,21 @@ class SingelProjectController extends Controller
 
 
         return view('frontend.layouts.thankyouPopUp');
+
     }
 
     public function storeformservice(Request $request)
     {
-        $id = auth()->user()->id;
-
+        $id= auth()->user()->id;
         $user = User::find($id);
 
-        $user->choosen_shift = $request->choosen_shift;
-        $user->update([
-
-            'choosen_shift' => $request->choosen_shift
-
+        $user = UserProject::create([
+           'choosen_shift' => $request->choosen_shift,
+           'user_id' => $id,
+            'project_id' => $request->project_id
         ]);
 
         return view('frontend.layouts.thankyouPopUp');
+
     }
 }

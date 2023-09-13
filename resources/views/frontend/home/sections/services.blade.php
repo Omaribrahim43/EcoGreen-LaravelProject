@@ -29,11 +29,16 @@
                                         <h3>{{ $item->name }}</h3> <br> 
                                      {{-- </a> --}}
                                         <p>{{ $item->description }}</p>
+                                        <br>
+
+                                        <a href="{{ route('All.projects',$item->id) }}" class="thm-btn thm-tran-bg" >Donate Now</a>
                                     </div>
+                                    
                                 </div>
                             @endforeach
                         </div>
                     </div>
+                    
     </div>
 </section>
 

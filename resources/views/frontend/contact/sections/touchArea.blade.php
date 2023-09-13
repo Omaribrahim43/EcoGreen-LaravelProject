@@ -30,7 +30,7 @@
                     <div class="text-holder">
                         <h3>Quick Contact</h3>
                         <span class="border"></span>
-                        <p>Ph: +962777415591 <br>Email: <a href="#">Info@Wesupportyou.com</a></p>
+                        <p>Ph: +962777415591 <br>Email: <a href="#">green_hands@gmail.com</a></p>
                     </div>  
                 </div>
             </div>

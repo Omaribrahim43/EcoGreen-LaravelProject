@@ -57,7 +57,7 @@
                         <div class="share clearfix">
 
                             <div class="float_right">
-                                <a href="{{ route('open.Sform') }}">
+                                <a href="{{ route('open.Iform') }}">
                                     <button class="thm-btn donate-box-btn">Donate Now</button>
                                 </a>
                             </div>

@@ -16,11 +16,20 @@ class HomeController extends Controller
         return view('frontend.home.home', compact(['categories', 'project']));
     }
 
+
+
+
+
+
     public function about()
     {
         return view('frontend.about.about');
     }
 
+
+
+
+    
     public function nav()
     {
         $categories = Category::all();

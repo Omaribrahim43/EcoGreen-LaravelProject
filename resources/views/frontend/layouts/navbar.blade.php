@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="main-logo">
-                    <a href="{{ route('index') }}"><img src="{{ asset('frontend/images/logo/green_hands_logo-removebg-preview.png') }}" alt="" style="height: 62px ; width:97px"></a>
+                    <a href="{{ route('index') }}"><img src="{{ asset('frontend/images/logo/green_hands_logo-removebg-preview.png') }}" alt="" style="height: 75px ; width:124px"></a>
                 </div>
             </div>
             <div class="col-md-9 menu-column">
@@ -16,9 +16,9 @@
                             <ul class="dropdown">
                                 <li><a href="{{ route('All.projects') }}">All Project</a></li>
                                
-                                <li><a href="{{ route('All.projects', 1) }}">Donation Projects</a></li>
-                                <li><a href="{{ route('All.projects', 2) }}">Item Projects</a></li>
-                                <li><a href="{{ route('All.projects', 3) }}">Service Projects</a></li>
+                                <li><a href="{{ route('All.projects', 1) }}">Financial Donation </a></li>
+                                <li><a href="{{ route('All.projects', 2) }}">Item Donation </a></li>
+                                <li><a href="{{ route('All.projects', 3) }}">Service Donation </a></li>
                             </ul>
                         </li>
                         <li><a href="{{ route('show.contact') }}">contact</a></li>
@@ -35,9 +35,12 @@
                                     </ul>
                                 </li>
                             @else
-                                <li><a href="{{ route('login') }}" class="">Login</a></li>
+                                <li>
+                                    <a href="{{ route('login') }}" class="thm-btn thm-tran-bg">
+                                        Login</a>
+                                </li>
                                 @if (Route::has('register'))
-                                    <li><a href="{{ route('register') }}" class="">Register</a></li>
+                                    <li><a href="{{ route('register') }}" class="thm-btn thm-tran-bg" >Register</a></li>
                                 @endif
                             @endauth
                         @endif

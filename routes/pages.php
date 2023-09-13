@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Route;
 
 // home page routes
 Route::get('/', [HomeController::class, 'index'])->name('index');
+
+
 Route::get('/about', [HomeController:: class, 'about'])->name('about');
 Route::get('/home', [HomeController:: class, 'nav'])->name('nav');
 
