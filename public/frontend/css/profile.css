@@ -33,6 +33,9 @@
         .text-light {
             color: #babbbc !important;
         }
+        .nav-link{
+            color: white !important;
+        }
 
         .btn-facebook {
             border-color: rgba(0, 0, 0, 0) !important;
