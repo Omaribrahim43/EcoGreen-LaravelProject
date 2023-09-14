@@ -118,7 +118,7 @@ class SingelProjectController extends Controller
             // }
             return view('frontend.layouts.thankyouPopUp');
         }
-        return redirect()->back();
+        return redirect()->back()->with('error', 'please enter payment method and the amount');
     }
 
 
