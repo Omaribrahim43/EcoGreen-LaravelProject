@@ -5,9 +5,9 @@
         </ul>
     </form>
     <ul class="navbar-nav navbar-right">
-        <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
-                class="nav-link nav-link-lg message-toggle beep"><i class="far fa-envelope"></i></a>
-            <div class="dropdown-menu dropdown-list dropdown-menu-right">
+        {{-- <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
+                class="nav-link nav-link-lg message-toggle beep"><i class="far fa-envelope"></i></a> --}}
+            {{-- <div class="dropdown-menu dropdown-list dropdown-menu-right">
                 <div class="dropdown-header">Messages
                     <div class="float-right">
                         <a href="#">Mark All As Read</a>
@@ -131,14 +131,18 @@
                     <a href="#">View All <i class="fas fa-chevron-right"></i></a>
                 </div>
             </div>
-        </li>
+        </li> --}}
+        
         <li class="dropdown"><a href="#" data-toggle="dropdown"
                 class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                 
-                <img alt="image" src="{{ asset(session('loginimage')) }}" style="width: 50px; height: 50px; border-radius: 50%;" >
-                <div class="d-sm-none d-lg-inline-block" style="font-size: larger">{{session('loginname')}}</div>
+                <div class="d-sm-none d-lg-inline-block" style="font-size: larger; margin-right:10px">{{session('loginname')}}</div>
+                                <img alt="image" src="{{ asset(session('loginimage')) }}" style="width: 50px; height: 50px; border-radius: 50%;" >
+ 
+
+                                                         
             </a>
-            <div class="dropdown-menu dropdown-menu-right">
+            <div class="dropdown-menu dropdown-menu-right ">
                 {{-- <div class="dropdown-title">{{$admin->name}}</div> --}}
                 <a href="{{ route('admin.profile') }}" class="dropdown-item has-icon">
                     <i class="far fa-user"></i> Profile

@@ -660,7 +660,7 @@ select.form-control:not([size]):not([multiple]) {
         margin-left: auto; }
         .card .card-header h4 + .card-header-action .btn,
         .card .card-header h4 + .card-header-form .btn {
-          font-size: 12px;
+          font-size: 18px;
           border-radius: 30px !important;
           padding-left: 13px !important;
           padding-right: 13px !important; }
@@ -1126,7 +1126,7 @@ h6 .badge {
   margin-left: 5px;
   padding: 4px 7px; }
   .btn .badge.badge-transparent {
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: rgba(194, 39, 39, 0.25);
     color: #fff; }
 
 /* 3.12 Button */

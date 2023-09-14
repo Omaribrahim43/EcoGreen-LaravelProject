@@ -12,6 +12,7 @@ use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
+
 class CategoryDataTable extends DataTable
 {
     /**
@@ -80,10 +81,10 @@ class CategoryDataTable extends DataTable
     {
         return [
 
-            Column::make('id'),
-            Column::make('image'),
+            // Column::make('id'),
             Column::make('name'),
-            Column::make('description'),
+            Column::make('description')->width(400),
+            Column::make('image'),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)

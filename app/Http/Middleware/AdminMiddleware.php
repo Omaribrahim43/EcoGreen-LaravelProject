@@ -29,7 +29,7 @@ class AdminMiddleware
     {
         if (!session()->has('loginId')) {
             // $message = $customMessageerror ?: 'Unauthorized access, please log in';
-            return redirect('admin/login')->with('fail', 'You must be logged in as an admin to access this page !');
+            return redirect()->route('alert');
         }
 
         return $next($request);

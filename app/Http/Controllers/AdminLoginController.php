@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 // use session;
 use Illuminate\Support\Facades\Session;
+use App\Models\User;
+use App\Models\Project;
+
+
+
 
 
 
@@ -55,8 +60,8 @@ class AdminLoginController extends Controller
                 session()->put('loginname', $admin->name);
                 session()->put('loginimage', $admin->image);
 
-               
-                return redirect('admin/dashboard');
+
+                return redirect()->route('admin.dashboard');
             } else {
                 return back()->with('fail', 'Password incorrect');
             }
@@ -74,9 +79,23 @@ class AdminLoginController extends Controller
         $admin = array();
         if (Session::has('loginId')) {
             $admin = Admin::where('id', Session::get('loginId'))->first();
-            // dd($admin);
+
+            // Count the number of users
+            $usersCount = User::whereNotNull('id')->count();
+            // Count the number of admins
+            $adminsCount = Admin::whereNotNull('id')->count();
+            // Count the number of projects
+            $projectsCount = Project::whereNotNull('id')->count();
+
+            // Concatenate 'budget' in all projects
+            $projects = Project::whereNotNull('id')->get(); // Get all projects with a valid 'id'
+            // Use the pluck method to extract the 'budget' values as an array
+            $budgetsArray = $projects->pluck('budget')->toArray();
+
+            // Calculate the sum of 'budget' values
+            $totalBudget = array_sum($budgetsArray);
+            return view('admin.dashboard', compact('admin', 'usersCount', 'adminsCount', 'projectsCount', 'totalBudget'));
         }
-        return view('admin.dashboard', compact('admin'));
     }
 
 
