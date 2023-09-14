@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\UserProject;
+use App\Models\Project;
 use Auth;
 use Hash;
 use Illuminate\Support\Facades\Redirect;
@@ -13,8 +15,53 @@ class Profile2Controller extends Controller
 {
     public function index()
     {
-        $user = User::all();
-        return view('frontend.profile2.profile', compact('user'));
+        // $user = User::all();
+        $id = Auth::id();
+
+        $user = User::find($id); // Replace $userId with the user's ID
+
+        $projects = $user->projects; // This will fetch all posts associated with the user
+        $project_ids = UserProject::where('user_id', $id)->pluck('project_id');
+
+        // echo $project_ids;
+        // $userProject = UserProject::all();
+        // $userProject = UserProject::where('user_id', $id)->where('project_id', 1)->get();
+        // // echo $userProject;
+        // $amount = 0;
+        // foreach ($userProject as $item){
+        //     $amount += $item->donate_amount;
+        // }
+
+        // echo count($projects);
+
+        // for($i = 1; $i < count($projects)+1 ; $i++){
+        //     $userProject = UserProject::where('user_id', $id)->where('project_id', $i)->get();
+        //     foreach ($userProject as $item) {
+        //         $amount += $item->donate_amount;
+        //     }
+        //     echo $amount."<br>";
+        //     $amount = 0;
+        // };
+                                $id = Auth::id();
+                                $user = User::find($id); // Replace $userId with the user's ID
+                                
+                                $project_ids = UserProject::where('user_id', $id)->pluck('project_id');
+                                $projects = Project::whereIn('id', $project_ids)->get();
+                                // echo count($projects);
+                                
+                                $amounts = [];
+                                
+                                foreach ($projects as $project) {
+                                    $userProjects = UserProject::where('user_id', $id)
+                                        ->where('project_id', $project->id)
+                                        ->get();
+                                    $projectAmount = 0;
+                                    foreach ($userProjects as $item) {
+                                        $projectAmount += $item->donate_amount;
+                                    }
+                                    $amounts[$project->id] = $projectAmount;
+                                }
+        return view('frontend.profile2.profile', compact('user', 'amounts','projects'));
         
     }
 
@@ -30,6 +77,7 @@ class Profile2Controller extends Controller
         $data['username'] = $request->username;
         $data['email'] = $request->email;
         $data['phone'] = $request->phone;
+        $data['address'] = $request->address;
 
         $filename = '';
 
@@ -49,6 +97,16 @@ class Profile2Controller extends Controller
         return redirect()->route('profile2.profile.index')->with([
             'success' => 'updated successfully'
         ]);
+
+
+        $userProject = UserProject::all();
+        dd($userProject->$id);
+
+
+
+
+
+
     }
 
 
@@ -113,9 +171,15 @@ class Profile2Controller extends Controller
 
     public function download()
     {
+        $id = Auth::id();
+
         // Fetch the user and project information
         $user = auth()->user(); // You can adjust this to retrieve the user as needed
-        $projects = $user->projects; // Assuming you have a relationship set up
+        // $projects = $user->projects; // Assuming you have a relationship set up
+        $project_ids = UserProject::where('user_id', $id)->pluck('project_id');
+
+        $projects = Project::whereIn('id', $project_ids)->get();
+
 
         // Load the HTML template
         $html = view('frontend.profile2.certificate_template', compact('user', 'projects'));

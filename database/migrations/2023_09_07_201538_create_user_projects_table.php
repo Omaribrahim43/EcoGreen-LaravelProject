@@ -11,6 +11,17 @@ return new class extends Migration
      *
      * @return void
      */
+    // public function up()
+    // {
+    //     Schema::create('user_projects', function (Blueprint $table) {
+    //         $table->id();
+    //         $table->unsignedBigInteger('user_id');
+    //         $table->unsignedBigInteger('project_id');
+    //         $table->float('donate_amount')->nullable();
+    //         $table->string('donate_method')->nullable();
+    //         $table->timestamps();
+    //     });
+    // }
     public function up()
     {
         Schema::create('user_projects', function (Blueprint $table) {
@@ -19,6 +30,8 @@ return new class extends Migration
             $table->unsignedBigInteger('project_id');
             $table->float('donate_amount')->nullable();
             $table->string('donate_method')->nullable();
+            $table->string('donate_item')->nullable();
+            $table->string('choosen_shift')->nullable();
             $table->timestamps();
         });
     }

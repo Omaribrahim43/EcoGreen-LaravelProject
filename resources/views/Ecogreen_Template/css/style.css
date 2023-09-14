@@ -5755,7 +5755,7 @@ input,textarea {font-family: 'Open Sans', sans-serif;display: block; font-size: 
     margin: 25px 0 0;
 }
 .get-touch-area .single-item {
-    border: 1px solid #f4f4f4;
+    border: 3px solid #f4f4f4;
     display: block;
     padding: 39px 20px 31px;
 }

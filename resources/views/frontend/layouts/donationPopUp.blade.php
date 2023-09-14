@@ -13,7 +13,7 @@
                  @csrf
                  <ul class="chicklet-list clearfix">
                     <li>
-                        <input type="hidden" name="project_id" value="1" required >
+                        <input type="hidden" name="project_id" value="{{ $id }}" required >
                         
                     </li>
                     <li>
@@ -25,7 +25,7 @@
                         <label for="donate_amount-2">20 JD</label>
                     </li>
                     <li>
-                        <input type="radio" id="donate_amount-3" name="donate_amount" value="50 " checked required>
+                        <input type="radio" id="donate_amount-3" name="donate_amount" value="50 " required>
                         <label for="donate_amount-3">50 JD</label>
                     </li>
                     <li>
@@ -65,8 +65,8 @@
                          <div class="col-md-12 col-sm-12 col-xs-12">
                              <div class="form-group">
                                  <p>Phone</p>
-                                 <input type="text" class="form-control" required=""
-                                     value="{{ $user->phone }}"readonly>
+                                 <input type="text" class="form-control" required="" value="{{ $user->phone }}"
+                                     name="phone">
                              </div>
                          </div>
 
@@ -74,7 +74,7 @@
                              <div class="form-group">
                                  <p>Address*</p>
                                  <input type="text" name="address" class="form-control" placeholder="" required=""
-                                     value="{{ $user->address }}" readonly>
+                                     value="{{ $user->address }}">
                              </div>
                          </div>
 
@@ -90,15 +90,15 @@
 
                  </ul>
                  <div class="form-check form-check-inline">
-                    <input type="radio" class="form-check-input" name="donate_method" value="Cash" required>
-                    <label class="form-check-label">Cash</label>
-                </div>
-                
-                <div class="form-check form-check-inline">
-                    <input type="radio" class="form-check-input" name="donate_method" value="PayPal" required>
-                    <label class="form-check-label">PayPal</label>
-                </div>
-                
+                     <input type="radio" class="form-check-input" name="donate_method" value="Cash" required>
+                     <label class="form-check-label">Cash</label>
+                 </div>
+
+                 <div class="form-check form-check-inline">
+                     <input type="radio" class="form-check-input" name="donate_method" value="PayPal" required>
+                     <label class="form-check-label">PayPal</label>
+                 </div>
+
                  <div class="center">
 
                      <button class="thm-btn sbmt-btn" type="submit">Donate Now</button>

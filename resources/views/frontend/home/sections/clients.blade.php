@@ -9,7 +9,7 @@
         <div class="client-carousel owl-carousel owl-theme">
 
             <div class="item tool_tip" title="media partner">
-                <center>    <img src="{{asset('frontend/images/partners/logo.png')}}" alt="Awesome Image" style="width: 60px"></center> 
+                <center> <img src="{{asset('frontend/images/partners/logo.png')}}" alt="Awesome Image" style="width: 60px"></center> 
             </div>
             <div class="item tool_tip" title="media partner">
                 <img src="{{asset('frontend/images/partners/farm.png')}}" alt="Awesome Image">

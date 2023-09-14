@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Eco Green || Responsive HTML 5 Template</title>
+    <title>Green Hands</title>
 
     <!-- mobile responsive meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,6 +41,8 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/css/settings.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/css/style.css') }}">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
 
 
 
@@ -48,9 +50,11 @@
 
 <body>
 
+
+{{-- 
     <div class="boxed_wrapper">
 
-        <div class="top-bar">
+        {{-- <div class="top-bar">
             <div class="container">
                 <div class="clearfix">
 
@@ -87,8 +91,10 @@
 
 
             </div>
-        </div>
+        </div> --}}
 
+
+        
         @include('frontend.layouts.navbar')
 
 
@@ -135,15 +141,16 @@
         <script src="{{ asset('frontend/js/rev-slider/revolution.extension.parallax.min.js') }}"></script>
         <script src="{{ asset('frontend/js/rev-slider/revolution.extension.slideanims.min.js') }}"></script>
         <script src="{{ asset('frontend/js/rev-slider/revolution.extension.video.min.js') }}"></script>
-
+        <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
         <script src="{{ asset('frontend/js/custom.js') }}"></script>
-
-
-
-
-
+        <script>
+            @if ($errors->any())
+                @foreach ($errors->all() as $error)
+                    toastr.error("{{ $error }}")
+                @endforeach
+            @endif
+        </script>
     </div>
-
 </body>
 
 </html>

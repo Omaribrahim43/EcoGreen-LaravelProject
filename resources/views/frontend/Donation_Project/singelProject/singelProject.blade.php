@@ -45,25 +45,16 @@
                             <div class="section-title style-2">
                                 <h3>Our Sponsors</h3>
                             </div>
-                            <ul class="brand-carousel2">
-                                <li><a href="#"><img src="{{ asset('frontend/images/partners/logo.png') }}"
-                                            alt="Awesome Image" style="width: 60px"></a></li>
-                                <li><a href="#"><img src="{{ asset('frontend/images/partners/farm.png') }}"
-                                            alt="Awesome Image"></a></li>
-                                <li><a href="#"><img src="{{ asset('frontend/images/partners/env.png') }}"
-                                            alt="Awesome Image">
-                                    </a></li>
-                                <li><a href="#"><img src="{{ asset('frontend/images/partners/work.png') }}"
-                                            alt="Awesome Image" style="width: 90px"></a></li>
-                                <li><a href="#"><img src="{{ asset('frontend/images/partners/irbid.png') }}"
-                                            alt="Awesome Image"></a></li>
-                            </ul>
+                            @include('frontend.home.sections.clients')
                         </div>
+                        <br><br>
                         <div class="share clearfix">
-
-                            <div class="float_right">
-                                <a href="{{ route('open.form') }}" class="thm-btn style-2 donate-box-btn">Donate Now </a>
+                         
+   
+                            <div class="justify-content" style="text-align: center;">
+                                <a href="{{ route('open.form', ['id' => $id]) }}" class="thm-btn style-2 donate-box-btn">Donate Now</a>
                             </div>
+                            
                         </div>
                     </div>
                 </div>

@@ -19,7 +19,7 @@ class UserProject extends Model
     }
 
     protected $fillable = [
-        'project_id','donate_method', 'choosen_shift', 'donate_amount','user_id'
+        'project_id','donate_method', 'choosen_shift', 'donate_amount','user_id','donate_item'
     ];
 
 }

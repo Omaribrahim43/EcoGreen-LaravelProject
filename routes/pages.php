@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Route;
 
 // home page routes
 Route::get('/', [HomeController::class, 'index'])->name('index');
+
+
 Route::get('/about', [HomeController:: class, 'about'])->name('about');
 Route::get('/home', [HomeController:: class, 'nav'])->name('nav');
 
@@ -30,9 +32,9 @@ Route::get('/testimonial', function () {
 Route::get('/Allprojects/{id?}', [AllProjectController::class, 'show'])->name('All.projects');
 
 // ----------singelproject----------
-Route::get('/open/form', [SingelProjectController::class, 'openForm'])->middleware(['auth', 'verified'])->name('open.form');
-Route::get('/open/service/form', [SingelProjectController::class, 'openFormservice'])->name('open.Sform');
-Route::get('/open/item/form', [SingelProjectController::class, 'openFormitem'])->name('open.Iform');
+Route::get('/open/form/{id}', [SingelProjectController::class, 'openForm'])->middleware(['auth', 'verified'])->name('open.form');
+Route::get('/open/service/form/{id}', [SingelProjectController::class, 'openFormservice'])->middleware(['auth', 'verified'])->name('open.Sform');
+Route::get('/open/item/form/{id}', [SingelProjectController::class, 'openFormitem'])->middleware(['auth', 'verified'])->name('open.Iform');
 
 Route::get('/Donation/singelProject/{id}', [SingelProjectController::class, 'showDonation'])->name('show.Donation');
 Route::get('/Item_Project.singelProject/{id}', [SingelProjectController::class, 'showitem'])->name('show.item');

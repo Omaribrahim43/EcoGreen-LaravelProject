@@ -2,7 +2,7 @@
         <div class="container">
             <div class="section-title center">
                 <h2>Words About Us</h2>
-                <p>At ECO Green, our mission is to make a complete difference. We are dedicated to safeguarding <br>the environment and ensuring the well-being of our planet. 
+                <p>At Green Hands, our mission is to make a complete difference. We are dedicated to safeguarding <br>the environment and ensuring the well-being of our planet. 
                 </p>
             </div>
             <div class="row">
@@ -21,7 +21,7 @@
                         </div>
                        <p style="font-size: 17px">
                         Join us today in our mission to protect and nurture our planet. Together, we can turn our green dreams into a thriving reality.</p><br>
-                        <div class="link"><a href="#" class="thm-btn style-2">Join With Us</a></div>
+                        <div class="link"><a href="{{ route('register') }}" class="thm-btn style-2">Join With Us</a></div>
                     </div>
                 </div>
             </div>
