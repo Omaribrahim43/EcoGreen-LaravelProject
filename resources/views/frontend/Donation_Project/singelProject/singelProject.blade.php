@@ -1,4 +1,4 @@
-@extends('frontend.layouts.master_popup')
+@extends('frontend.layouts.master')
 @section('content')
     <div class="inner-banner has-base-color-overlay text-center" style="background-image: url({{ asset('frontend/images/background/back.jpg') }});">
         <div class="container">
