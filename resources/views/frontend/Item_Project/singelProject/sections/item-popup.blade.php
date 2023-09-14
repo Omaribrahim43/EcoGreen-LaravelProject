@@ -12,7 +12,7 @@
                 <div class="form-bg">
                     <div class="row clearfix">
                         <li>
-                            <input type="hidden" name="project_id" value="2" required>
+                            <input type="hidden" name="project_id" value="{{ $id }}" required>
 
                         </li>
 

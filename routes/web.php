@@ -30,6 +30,3 @@ require __DIR__ . '/auth.php';
 // Route::get('payment', [PayPalController::class, 'payment'])->name('payment');
 // Route::get('cancel', [PayPalController::class, 'payment'])->name('payment.cancel');
 // Route::get('payment/success', [PayPalController::class, 'success'])->name('payment.success');
-
-
-
