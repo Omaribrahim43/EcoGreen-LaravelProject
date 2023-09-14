@@ -12,14 +12,80 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+J+R1AAw1TpLOvcl5W5+4n5sH9tu08f1+d85ftnjdG3FwxjD" crossorigin="anonymous"> --}}
+
     {{-- <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}"> --}}
 
-    <link rel="stylesheet" href="{{asset('frontend/css/profile.css')}}"> 
+    <link rel="stylesheet" href="{{ asset('frontend/css/profile.css') }}">
 </head>
 
 <body>
     {{-- @include('frontend.layouts.navbar') --}}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: black !important; color:white !important">
+        <div class="container">
+            <a class="navbar-brand" href="{{ route('index') }}">
+                <img src="{{ asset('frontend/images/logo/green_hands_logo-removebg-preview.png') }}" alt="Logo"
+                    style="height: 75px; width: 124px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="main_menu">
+                <ul class="navbar-nav ml-auto" style="color:white !important">
+                    <li class="nav-item" style="color:white !important">
+                        <a class="nav-link" href="{{ route('index') }}" style="color:white !important">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('about') }}">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+                        <div class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <a class="dropdown-item" href="{{ route('All.projects') }}">All Project</a>
+                            <a class="dropdown-item" href="{{ route('All.projects', 1) }}">Financial Donation</a>
+                            <a class="dropdown-item" href="{{ route('All.projects', 2) }}">Item Donation</a>
+                            <a class="dropdown-item" href="{{ route('All.projects', 3) }}">Service Donation</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('show.contact') }}">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('about') }}">About</a>
+                    </li>
+                    @if (Route::has('login'))
+                        @auth
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Account</a>
+                                <div class="dropdown-menu" aria-labelledby="accountDropdown">
+                                    <a class="dropdown-item" href="{{ route('profile2.profile.index') }}">Profile</a>
+                                    <form method="POST" action="{{ route('logout') }}" x-data>
+                                        @csrf
+                                        <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
+                                    </form>
+                                </div>
+                            </li>
+                        @else
+                            <li class="nav-item">
+                                <a class="nav-link" id="loginbnt" href="{{ route('login') }}">Login</a>
+                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" id="registerbnt" href="{{ route('register') }}">Register</a>
+                                </li>
+                            @endif
+                        @endauth
+                    @endif
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
     <div class="container light-style flex-grow-1 container-p-y">
 
         <h4 class="font-weight-bold py-3 mb-4">
@@ -46,7 +112,11 @@
                         <a class="list-group-item list-group-item-action" data-toggle="list"
                             href="#account-change-password">Change password</a>
                         <a class="list-group-item list-group-item-action" data-toggle="list"
-                            href="#account-info">Projects</a>
+                            href="#donationProject">Financial Projects</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#ItemsProjects">All
+                            Projects</a>
+                        {{-- <a class="list-group-item list-group-item-action" data-toggle="list"
+                            href="#servicesProjects">Services Projects</a> --}}
                         <a class="list-group-item list-group-item-action" data-toggle="list"
                             href="#account-social-links">Delete Account</a>
 
@@ -104,7 +174,8 @@
                                 <button type="submit" class="btn btn-primary">Save changes</button>
                             </form>
 
-                            <form action="{{ route('updatePassword') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('updatePassword') }}" method="POST"
+                                enctype="multipart/form-data">
                                 @csrf
                         </div>
                         <div class="tab-pane fade" id="account-change-password">
@@ -140,9 +211,15 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="account-info">
+                        <div class="tab-pane fade" id="donationProject">
                             <div class="card-body pb-2">
                                 <div class="container">
+                                    @if (!$projects->isEmpty())
+                                        <a href="{{ route('certificate.download') }}" class="btn btn-primary"
+                                            style="margin-bottom: 20px ;float:right">Download
+                                             Certificate</a>
+                                    @endif
+                                    <br>
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr>
@@ -156,15 +233,108 @@
                                         </thead>
                                         <tbody>
                                             @foreach ($projects as $project)
+                                                @if ($amounts[$project->id] > 0)
+                                                    <tr>
+                                                        <td>{{ $project->title }}</td>
+                                                        <td>{{ $project->location }}</td>
+                                                        <td>JD{{ $amounts[$project->id] }}</td>
+                                                        <td>{{ $project->long_description }}</td>
+                                                        <td>{{ $project->start_day }}</td>
+                                                        <td>{{ $project->end_day }}</td>
+                                                    </tr>
+                                                @endif
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
+
+
+
+
+                                {{-- <img src="{{ asset('assets/img/1694206033.jpg') }}" alt=""> --}}
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="ItemsProjects">
+                            <div class="card-body pb-2">
+                                <div class="container">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Title</th>
+                                                <th>Location</th>
+                                                {{-- <th>donate_amount</th> --}}
+                                                <th>Description</th>
+                                                <th>Start Day</th>
+                                                <th>End Day</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($projects as $project)
+                                                @if (!empty($items[$project->id]))
+                                                    <tr>
+                                                        <td>{{ $project->title }}</td>
+                                                        <td>{{ $project->location }}</td>
+                                                        {{-- <td>
+                                                            @foreach ($items[$project->id] as $item)
+                                                                {{ $item }}<br>
+                                                            @endforeach
+                                                        </td> --}}
+                                                        <td>{{ $project->long_description }}</td>
+                                                        <td>{{ $project->start_day }}</td>
+                                                        <td>{{ $project->end_day }}</td>
+                                                    </tr>
+                                                @endif
+                                            @endforeach
+                                        </tbody>
+
+
+
+                                    </table>
+                                </div>
+
+
+                                {{-- 
+                                @if (!$projects->isEmpty())
+                                    <a href="{{ route('certificate.download') }}" class="btn btn-primary">Download
+                                        Participation Certificate</a>
+                                @endif --}}
+
+
+                                {{-- <img src="{{ asset('assets/img/1694206033.jpg') }}" alt=""> --}}
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="servicesProjects">
+                            <div class="card-body pb-2">
+                                <div class="container">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Title</th>
+                                                <th>Location</th>
+                                                {{-- <th>donate_amount</th> --}}
+                                                <th>Description</th>
+                                                <th>Start Day</th>
+                                                <th>End Day</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($projects as $project)
                                                 <tr>
                                                     <td>{{ $project->title }}</td>
                                                     <td>{{ $project->location }}</td>
-                                                    <td>JD{{ $amounts[$project->id] }}</td>
+                                                    {{-- <td>
+                                                        @foreach ($shifts[$project->id] as $item)
+                                                            {{ $item }}<br>
+                                                        @endforeach
+                                                    </td> --}}
                                                     <td>{{ $project->long_description }}</td>
                                                     <td>{{ $project->start_day }}</td>
                                                     <td>{{ $project->end_day }}</td>
                                                 </tr>
                                             @endforeach
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -180,19 +350,18 @@
                                 {{-- <img src="{{ asset('assets/img/1694206033.jpg') }}" alt=""> --}}
                             </div>
                         </div>
-                    </div>
-                    <div class="tab-pane fade" id="account-social-links">
-                        <form method="POST" action="{{ route('user.delete') }}">
-                            @csrf
-                            @method('DELETE')
-                            <p>Are you sure you want to delete your account? This action cannot be undone.</p>
-                            <button type="submit" class="btn btn-danger">Delete Account</button>
-                        </form>
+                        <div class="tab-pane fade" id="account-social-links">
+                            <form method="POST" action="{{ route('user.delete') }}">
+                                @csrf
+                                @method('DELETE')
+                                <p>Are you sure you want to delete your account? This action cannot be undone.</p>
+                                <button type="submit" class="btn btn-danger">Delete Account</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
     </div>
     {{-- @include('frontend.layouts.footer') --}}

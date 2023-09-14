@@ -79,11 +79,11 @@ class UsersDataTable extends DataTable
     public function getColumns(): array
     {
         return [
-            Column::make('id')->width(60),
-            Column::make('image')->width(150),
+            // Column::make('id')->width(60),
             Column::make('name'),
             Column::make('email')->width(200),
             Column::make('phone'),
+            Column::make('image')->width(150),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)

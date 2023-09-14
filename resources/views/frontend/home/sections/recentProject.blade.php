@@ -11,12 +11,25 @@
                     @foreach ($project as $item)
                         <div class="item clearfix">
                             <figure class="img-box">
-                                <a> <img src="{{ asset($item->image) }}"  > </a>
+                                <a> <img src="{{ asset($item->image) }}"  style="height: 220px ; width:650px"> </a>
                             </figure>
                             <div class="content" >
                                 <div class="text center">
                                     <a href="#">
-                                        <h4 class="title">{{ $item->title }}</h4>
+                                        <h4 class="title"> 
+                                            @if ($item->category->id == 1)
+                                                <a href="{{ route('show.Donation', ['id' => $item->id]) }}">
+                                                    <h4>{{ $item->title }}</h4>
+                                                </a>
+                                            @elseif ($item->category->id == 2)
+                                                <a href="{{ route('show.item', ['id' => $item->id]) }}">
+                                                    <h4>{{ $item->title }}</h4>
+                                                </a>
+                                            @elseif ($item->category->id == 3)
+                                                <a href="{{ route('show.service', ['id' => $item->id]) }}">
+                                                    <h4>{{ $item->title }}</h4>
+                                                </a>
+                                            @endif</h4>
                                     </a>
                                     <p> {{ $item->short_description }}</p>
                                 </div>
@@ -25,17 +38,34 @@
                                         style="text-align: center; display:flex; justify-content:space-around"><span>
                                             Goal:
                                             {{ $item->budget }} JOD</span> 
-                                        <a href="{{route('All.projects',$item->id)}}" class="thm-btn style-2">Donate Now</a>
+
+                                            @if ($item->category->id == 1)
+                                            <a href="{{ route('show.Donation', ['id' => $item->id]) }}">
+                                                <button class="thm-btn style-2 donate-box-btn">
+                                                    donate now</button>
+                                            </a>
+                                        @elseif ($item->category->id == 2)
+                                            <a href="{{ route('show.item', ['id' => $item->id]) }}">
+                                                <button class="thm-btn style-2 donate-box-btn">
+                                                    donate now</button>
+                                            </a>
+                                        @elseif ($item->category->id == 3)
+                                            <a href="{{ route('show.service', ['id' => $item->id]) }}">
+                                                <button class="thm-btn style-2 donate-box-btn">
+                                                    donate now</button>
+                                            </a>
+                                        @endif
+                                        {{-- <a href="" class="thm-btn style-2">Donate Now</a> --}}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     @endforeach
-                    
                 </div>
-                
             </div>
         </section>
+       
+        
 
 
 

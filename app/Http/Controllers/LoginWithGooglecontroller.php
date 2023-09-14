@@ -22,12 +22,14 @@ class LoginWithGoogleController extends Controller
             $user = Socialite::driver('google')->user();
 
             $finduser = User::where('google_id', $user->id)->first();
-
-            if ($finduser) {
+            if ($finduser && $finduser != null) {
 
                 Auth::login($finduser);
 
-                return redirect()->back();
+                return redirect()->route('index');
+            } else if ($finduser == null) {
+                toastr('this email is already registered with other social media account.', 'error');
+                return redirect()->route('login');
             } else {
                 $newUser = User::create([
                     'name' => $user->name,
@@ -37,7 +39,7 @@ class LoginWithGoogleController extends Controller
 
                 Auth::login($newUser);
 
-                return redirect()->back();
+                return redirect()->route('index');
             }
         } catch (Exception $e) {
             dd($e->getMessage());

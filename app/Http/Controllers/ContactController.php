@@ -13,6 +13,7 @@ use App\Models\Contactt as ModelsContactt;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
+use App\DataTables\MessagesDataTable;
 
 use function Ramsey\Uuid\v1;
 
@@ -42,5 +43,27 @@ class ContactController extends Controller
       
 
         return redirect()->route('show.contact');
+    }
+
+
+
+    public function index(MessagesDataTable $dataTables)
+    {
+        // if (session('loginId')) {
+        //     // dd(session('admin_id'));
+        //     // return 'hh';
+        //     $id =  session('loginId');
+        //     $admin = Admin::find($id);
+        return $dataTables->render('admin.messages.index');
+        // }
+    }
+
+
+    public function destroy($id)
+    {
+        $admin = Contactt::findOrFail($id);
+        $admin->delete();
+
+        return response(['status' => 'success', 'message' => 'Deleted Successfully!']);
     }
 }
