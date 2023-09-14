@@ -5,33 +5,27 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Srmklive\PayPal\Services\ExpressCheckout;
 
+
 class PayPalController extends Controller
 {
-    public function payment(){
+    public function payment($price){
     $data =[];
     $data ['items'] = [
 
     [
-        'name'=> 'subscribe to channel',
-        'price'=> 1000,
-        'desc' => 'Description',
-        'qty'=>2
-
-
-    ],[
-        'name'=> 'make like',
-        'price'=> 300,
-        'desc' => 'Description',
-        'qty'=>2
+        'name'=> '',
+        'price'=> $price,
+        'desc' => '',
+        'qty'=>1
 
     ],
     ];
 
     $data['invoice_id'] = 1;
     $data['invoice_description'] = "Order #{$data['invoice_id']} Invoice";
-    $data['return_url'] = 'http://127.0.0.1:8000/payment/success';
-    $data['cancel_url'] = 'http://127.0.0.1:8000/cancel';
-    $data['total'] = 2600;
+    $data['return_url'] = route('success');
+    // $data['cancel_url'] = route('cancel');
+    $data['total'] = $price *1;
 
     $provider= new ExpressCheckout;
     $response=$provider->setExpressCheckout($data, true);

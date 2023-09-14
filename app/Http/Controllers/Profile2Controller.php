@@ -42,26 +42,71 @@ class Profile2Controller extends Controller
         //     echo $amount."<br>";
         //     $amount = 0;
         // };
-                                $id = Auth::id();
-                                $user = User::find($id); // Replace $userId with the user's ID
+        // $id = Auth::id();
+        // $user = User::find($id); // Replace $userId with the user's ID
+
+        // $project_ids = UserProject::where('user_id', $id)->pluck('project_id');
+        // $projects = Project::whereIn('id', $project_ids)->get();                                
+        // $amounts = [];
+
+        // foreach ($projects as $project) {
+        //     $userProjects = UserProject::where('user_id', $id)
+        //         ->where('project_id', $project->id)
+        //         ->get();
+        //     $projectAmount = 0;
+        //     foreach ($userProjects as $item) {
+        //         $projectAmount += $item->donate_amount;
+        //     }
+        //     $amounts[$project->id] = $projectAmount;
+        // }
+
+
+        // // foreach ($projects as $project) {
+        //     $userProjects = UserProject::where('user_id', $id)->get();
+        //         // dd($userProjects);
+        //     $projectItems = [];
+        //     foreach ($userProjects as $item) {
+        //         $projectItems[] = $item->donate_item;
+        //     }
+        //     // $amounts[$project->id] = $projectAmount;
+        // // }
+        // // dd($projectItems);
+
+        $id = Auth::id();
+        $user = User::find($id);
+
+        $project_ids = UserProject::where('user_id', $id)->pluck('project_id');
+        $projects = Project::whereIn('id', $project_ids)->get();
+
+        $amounts = [];
+        $items = [];
+        $shifts = [];
+
+        foreach ($projects as $project) {
+            $userProjects = UserProject::where('user_id', $id)
+            ->where('project_id', $project->id)
+            ->get();
+
+            $projectAmount = 0;
+            $projectItems = [];
+            $projectShifts = [];
+
+            foreach ($userProjects as $item) {
+                $projectAmount += $item->donate_amount;
+                $projectItems[] = $item->donate_item;
+                $projectShifts[] = $item->choosen_shift;
+            }
+
+            $amounts[$project->id] = $projectAmount;
+            $items[$project->id] = $projectItems;
+            $shifts[$project->id] = $projectShifts;
+        }
+
+
+// dd($shifts[$project->id]);
+        //***************************************
                                 
-                                $project_ids = UserProject::where('user_id', $id)->pluck('project_id');
-                                $projects = Project::whereIn('id', $project_ids)->get();
-                                // echo count($projects);
-                                
-                                $amounts = [];
-                                
-                                foreach ($projects as $project) {
-                                    $userProjects = UserProject::where('user_id', $id)
-                                        ->where('project_id', $project->id)
-                                        ->get();
-                                    $projectAmount = 0;
-                                    foreach ($userProjects as $item) {
-                                        $projectAmount += $item->donate_amount;
-                                    }
-                                    $amounts[$project->id] = $projectAmount;
-                                }
-        return view('frontend.profile2.profile', compact('user', 'amounts','projects'));
+        return view('frontend.profile2.profile', compact('user', 'amounts','projects' , 'items' , 'shifts'));
         
     }
 
@@ -180,9 +225,27 @@ class Profile2Controller extends Controller
 
         $projects = Project::whereIn('id', $project_ids)->get();
 
+        $user = User::find($id); // Replace $userId with the user's ID
+
+        $project_ids = UserProject::where('user_id', $id)->pluck('project_id');
+        $projects = Project::whereIn('id', $project_ids)->get();
+        // echo count($projects);
+        $amounts = [];
+
+        foreach ($projects as $project) {
+            $userProjects = UserProject::where('user_id', $id)
+            ->where('project_id', $project->id)
+            ->get();
+            $projectAmount = 0;
+            foreach ($userProjects as $item) {
+                $projectAmount += $item->donate_amount;
+            }
+            $amounts[$project->id] = $projectAmount;
+        }
+
 
         // Load the HTML template
-        $html = view('frontend.profile2.certificate_template', compact('user', 'projects'));
+        $html = view('frontend.profile2.certificate_template', compact('user', 'projects','amounts'));
 
         // Generate PDF
         $pdf = PDF::loadHTML($html);

@@ -89,8 +89,8 @@ class SingelProjectController extends Controller
 
     public function checkformDonation()
     {
-
-        $user = User::where('id', 1);
+        $id=auth()->user();
+        $user = User::where('id', $id);
         return view('frontend.Donation_Project.singelProject.sections.donationPopUp', ['user' => $user]);
     }
 
@@ -99,6 +99,7 @@ class SingelProjectController extends Controller
 
     public function storeformDonation(Request $request)
     {
+        
         if ($request->has('donate_method')) {
             $id = auth()->user()->id;
 
@@ -108,12 +109,13 @@ class SingelProjectController extends Controller
                 'user_id' => $id,
                 'project_id' => (int) $request->input('project_id')
             ]);
-
-
+            
             $data['address'] = $request->address;
             $data['phone'] = $request->phone;
             User::where(['id' => $id])->update($data);
-
+            // if($request->donate_method=='PayPal'){
+            //     return redirect()->route('payment',['price'=>$request->donate_amount]);
+            // }
             return view('frontend.layouts.thankyouPopUp');
         }
         return redirect()->back();
