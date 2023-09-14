@@ -42,6 +42,8 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/css/settings.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/css/style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+
 
 
 
@@ -49,7 +51,11 @@
 
 <body>
 
+
+
     @yield('content')
+
+
 
     <!-- jQuery -->
     <script src="{{ asset('frontend/js/jquery.js') }}"></script>
