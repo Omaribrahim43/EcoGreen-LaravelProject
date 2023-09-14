@@ -41,7 +41,7 @@
 
 
 
-                                            <button type="submit" class="btn  account-image-reset mb-3">
+                                            <button type="submit" class="btn  account-image-reset mb-3 " >
                                                 <i class="mdi mdi-reload d-block d-sm-none"></i>
                                                 <span class="d-none d-sm-block"><a
                                                         href="{{ route('admin.profile.reset') }}"class="btn btn-outline-danger">Reset Password</a></span>

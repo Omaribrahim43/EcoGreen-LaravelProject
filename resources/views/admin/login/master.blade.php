@@ -24,7 +24,13 @@
 
   gtag('config', 'UA-94034622-3');
 </script>
-<!-- /END GA --></head>
+<!-- /END GA -->
+
+
+
+  @yield('alert')
+
+</head>
 
 <body>
   @yield('content')
