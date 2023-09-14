@@ -89,20 +89,22 @@
                      </li>
 
                  </ul>
-                 <div class="form-check form-check-inline">
-                     <input type="radio" class="form-check-input" name="donate_method" value="Cash" required>
-                     <label class="form-check-label">Cash</label>
-                 </div>
 
                  <div class="form-check form-check-inline">
-                     <input type="radio" class="form-check-input" name="donate_method" value="PayPal" required>
-                     <label class="form-check-label">PayPal</label>
-                 </div>
-
-                 <div class="center">
-
-                     <button class="thm-btn sbmt-btn" type="submit">Donate Now</button>
-                 </div>
+                    <input type="radio" class="form-check-input" name="donate_method" value="Cash" required>
+                    <label class="form-check-label" for="cash">
+                        <i class="bi bi-cash-coin"></i> 
+                    </label>
+                </div>
+                
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" name="donate_method" value="PayPal" required>
+                    <label class="form-check-label" for="paypal">
+                        <i class='fa fa-paypal' style='color: blue;'></i>
+                    </label>
+                </div>
+                
+                
              </form>
          </div>
      </div>

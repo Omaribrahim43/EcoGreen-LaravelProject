@@ -1,4 +1,5 @@
-@extends('frontend.layouts.master_popup')
+
+
 
 @section('content')
     <div class="container">
