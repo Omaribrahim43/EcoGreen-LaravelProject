@@ -1,8 +1,8 @@
 @extends('frontend.layouts.master')
 
 @section('content')
-    <div class="inner-banner has-base-color-overlay text-center" style="background: url(images/background/4.jpg);">
-        <div class="container">
+<div class="inner-banner has-base-color-overlay text-center" style="background-image: url({{ asset('frontend/images/background/back.jpg') }});">
+    <div class="container">
             <div class="box">
                 <h1>Event Single</h1>
             </div>
@@ -44,27 +44,13 @@
 
                             <br>
                             <br><br>
-                            {{-- <div class="section-title style-2">
-                                <h3>Our Sponsors</h3>
-                            </div> --}}
-                            <ul class="brand-carousel2">
-                                <li><a href="#"><img src="images/event/b1.jpg" alt=""></a></li>
-                                <li><a href="#"><img src="images/event/b2.jpg" alt=""></a></li>
-                                <li><a href="#"><img src="images/event/b3.jpg" alt=""></a></li>
-                                <li><a href="#"><img src="images/event/b4.jpg" alt=""></a></li>
-                            </ul>
-                        </div>
-                        <div class="share clearfix">
+                            @include('frontend.home.sections.clients')                        </div>
+                  <div class="share clearfix">
 
-                            <div class="float_right">
-                                <a href="{{ route('open.Iform') }}">
-                                    <button class="thm-btn donate-box-btn">Donate Now</button>
-                                </a>
+                            <div class="justify-content" style="text-align: center;">
+                                <a href="{{ route('open.Iform', ['id' => $id]) }}" class="thm-btn style-2 donate-box-btn">Donate Now</a>
                             </div>
-
-
-
-
+                            
                         </div>
 
 

@@ -42,7 +42,26 @@ class Profile2Controller extends Controller
         //     echo $amount."<br>";
         //     $amount = 0;
         // };
-        return view('frontend.profile2.profile', compact('user'));
+                                $id = Auth::id();
+                                $user = User::find($id); // Replace $userId with the user's ID
+                                
+                                $project_ids = UserProject::where('user_id', $id)->pluck('project_id');
+                                $projects = Project::whereIn('id', $project_ids)->get();
+                                // echo count($projects);
+                                
+                                $amounts = [];
+                                
+                                foreach ($projects as $project) {
+                                    $userProjects = UserProject::where('user_id', $id)
+                                        ->where('project_id', $project->id)
+                                        ->get();
+                                    $projectAmount = 0;
+                                    foreach ($userProjects as $item) {
+                                        $projectAmount += $item->donate_amount;
+                                    }
+                                    $amounts[$project->id] = $projectAmount;
+                                }
+        return view('frontend.profile2.profile', compact('user', 'amounts','projects'));
         
     }
 
@@ -152,9 +171,15 @@ class Profile2Controller extends Controller
 
     public function download()
     {
+        $id = Auth::id();
+
         // Fetch the user and project information
         $user = auth()->user(); // You can adjust this to retrieve the user as needed
-        $projects = $user->projects; // Assuming you have a relationship set up
+        // $projects = $user->projects; // Assuming you have a relationship set up
+        $project_ids = UserProject::where('user_id', $id)->pluck('project_id');
+
+        $projects = Project::whereIn('id', $project_ids)->get();
+
 
         // Load the HTML template
         $html = view('frontend.profile2.certificate_template', compact('user', 'projects'));

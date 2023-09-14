@@ -3,6 +3,7 @@
 namespace App\DataTables;
 
 use App\Models\Project;
+// use App\Models\Category;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
@@ -34,9 +35,20 @@ class ProjectsDataTable extends DataTable
             ->addColumn('image', function ($query) {
                 return $img = "<img width='100px' src='" . asset($query->image) . "'></img>";
             })
+
+            // ->addColumn('category', function ($query) {
+            //     return $query->category->name;
+            // })
+
             ->addColumn('category', function ($query) {
-                return $query->Category->name;
+                if ($query->category) {
+                    return $query->category->name;
+                } else {
+                    return 'N/A'; // Or any other placeholder value you want to use
+                }
             })
+
+
             ->rawColumns(['action', 'image'])
             ->setRowId('id');
     }
@@ -84,11 +96,13 @@ class ProjectsDataTable extends DataTable
     public function getColumns(): array
     {
         return [
-            Column::make('id'),
-            Column::make('image'),
+            // Column::make('id'),
             Column::make('title'),
             Column::make('location'),
             Column::make('category'),
+            Column::make('budget'),
+            Column::make('status'),
+            Column::make('image'),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)

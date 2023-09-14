@@ -5083,7 +5083,7 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
 .main-footer {
     position: relative;
     background: #111709;
-    padding: 25px 0 20px!important;
+    padding: 0 !important;
 }
 
 .main-footer .footer-widget {
@@ -5691,7 +5691,7 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
     margin: 25px 0 0;
 }
 .get-touch-area .single-item {
-    border: 1px solid #f4f4f4;
+    border: 5ph solid #f4f4f4;
     display: block;
     padding: 39px 20px 31px;
 }
@@ -6046,8 +6046,8 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
     background: #f7f7f7;
     padding: 20px 30px 8px;
     margin-bottom: 70px;
-    border-top: 1px solid #f4f4f4;
-    border-bottom: 1px solid #f4f4f4;
+    /* border-top: 1px solid #f4f4f4;
+    border-bottom: 1px solid #f4f4f4; */
 }
 .single-event .share .tag-box span {
     font-size: 14px;
@@ -7104,11 +7104,11 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
     width: 0;
     height: 0;
     background-color: transparent;
-    border-bottom: 35px solid transparent;
+    /* border-bottom: 35px solid transparent;
     border-bottom: 35px solid transparent;
     border-top: 35px solid #ab7442;
     border-left: 35px solid #ab7442;
-    border-right: 35px solid transparent;
+    border-right: 35px solid transparent; */
 }
 .single-shop-item .img-box .offer-box .inner span {
     display: block;

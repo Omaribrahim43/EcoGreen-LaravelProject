@@ -1,11 +1,6 @@
 {{-- @extends('frontend.layouts.master')
 
 @section('content') --}}
-<?php
-use App\Controllers\UserController;
-use App\Models\UserProject;
-use App\Models\Project;
-?>
 <!doctype html>
 <html lang="en">
 
@@ -17,132 +12,10 @@ use App\Models\Project;
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    {{-- <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}"> --}}
-    <style>
-        body {
-            background: #f5f5f5 !important;
-            margin-top: 20px !important;
-        }
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+    {{-- <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}"> --}}
 
-        .ui-w-80 {
-            width: 80px !important;
-            height: auto !important;
-        }
-
-        .btn-default {
-            border-color: rgba(24, 28, 33, 0.1) !important;
-            background: rgba(0, 0, 0, 0) !important;
-            color: #4E5155 !important;
-        }
-
-        label.btn {
-            margin-bottom: 0 !important;
-        }
-
-
-        .btn-primary,
-        .btn-outline-primary {
-            border-color: #8dc63f !important;
-            background-color: #8dc63f !important;
-            color: white !important;
-        }
-
-        .btn {
-            cursor: pointer !important;
-        }
-
-        .text-light {
-            color: #babbbc !important;
-        }
-
-        .btn-facebook {
-            border-color: rgba(0, 0, 0, 0) !important;
-            background: #3B5998 !important;
-            color: #fff !important;
-        }
-
-        .btn-instagram {
-            border-color: rgba(0, 0, 0, 0) !important;
-            background: #000 !important;
-            color: #fff !important;
-        }
-
-        .card {
-            background-clip: padding-box !important;
-            box-shadow: 0 1px 4px rgba(24, 28, 33, 0.012) !important;
-        }
-
-        .row-bordered {
-            overflow: hidden !important;
-        }
-
-        .account-settings-fileinput {
-            position: absolute !important;
-            visibility: hidden !important;
-            width: 1px !important;
-            height: 1px !important;
-            opacity: 0 !important;
-        }
-
-        .account-settings-links .list-group-item.active {
-            font-weight: bold !important;
-            color: #8dc63f;
-        }
-
-        html:not(.dark-style) .account-settings-links .list-group-item.active {
-            background: transparent !important;
-            color: #8dc63f !important;
-        }
-
-        .account-settings-multiselect~.select2-container {
-            width: 100% !important;
-        }
-
-        .light-style .account-settings-links .list-group-item {
-            padding: 0.85rem 1.5rem !important;
-            border-color: rgba(24, 28, 33, 0.03) !important;
-        }
-
-        .light-style .account-settings-links .list-group-item.active {
-            color: #4e5155 !important;
-        }
-
-        .material-style .account-settings-links .list-group-item {
-            padding: 0.85rem 1.5rem !important;
-            border-color: rgba(24, 28, 33, 0.03) !important;
-        }
-
-        .material-style .account-settings-links .list-group-item.active {
-            color: #4e5155 !important;
-        }
-
-        .dark-style .account-settings-links .list-group-item {
-            padding: 0.85rem 1.5rem !important;
-            border-color: rgba(255, 255, 255, 0.03) !important;
-        }
-
-        .dark-style .account-settings-links .list-group-item.active {
-            color: #fff !important;
-        }
-
-        .light-style .account-settings-links .list-group-item.active {
-            color: #4E5155 !important;
-        }
-
-        .light-style .account-settings-links .list-group-item {
-            padding: 0.85rem 1.5rem;
-            border-color: rgba(24, 28, 33, 0.03) !important;
-        }
-
-        .font-weight-bold {
-            color: #8dc63f;
-        }
-
-        .card-body {
-            padding: 20px 0 !important;
-        }
-    </style>
+    <link rel="stylesheet" href="{{asset('frontend/css/profile.css')}}"> 
 </head>
 
 <body>
@@ -183,24 +56,22 @@ use App\Models\Project;
                     <div class="tab-content">
                         <div class="tab-pane fade active show" id="account-general">
                             <form action="{{ route('profile2/') }}" method="POST" enctype="multipart/form-data">
-                                <?php
-                                $user = auth()->user();
-                                ?>
                                 @csrf
                                 <div class="card-body media align-items-center">
                                     @if (empty($user->image))
-                                    <img src="http://127.0.0.1:8000/assets/img/1694585275.png"
-                                        width="100" height="100" alt="User Image">
-                                        @else
-                                        <img src="{{ asset($user->image) }}" width="100" height="100" alt="">
+                                        <img src="http://127.0.0.1:8000/assets/img/1694585275.png" width="100"
+                                            height="100" alt="User Image">
+                                    @else
+                                        <img src="{{ asset($user->image) }}" width="100" height="100"
+                                            alt="">
                                     @endif
 
-                                        <div class="media-body ml-4">
-                                            <label class="btn btn-outline-primary">
-                                                Upload new photo
-                                                <input type="file" name="image" class="account-settings-fileinput">
-                                            </label> &nbsp;
-                                        </div>
+                                    <div class="media-body ml-4">
+                                        <label class="btn btn-outline-primary">
+                                            Upload new photo
+                                            <input type="file" name="image" class="account-settings-fileinput">
+                                        </label> &nbsp;
+                                    </div>
                                 </div>
                                 <hr class="border-light m-0">
                                 <div class="card-body">
@@ -234,9 +105,6 @@ use App\Models\Project;
                             </form>
 
                             <form action="{{ route('updatePassword') }}" method="POST" enctype="multipart/form-data">
-                                <?php
-                                $user = auth()->user();
-                                ?>
                                 @csrf
                         </div>
                         <div class="tab-pane fade" id="account-change-password">
@@ -274,35 +142,6 @@ use App\Models\Project;
                         </div>
                         <div class="tab-pane fade" id="account-info">
                             <div class="card-body pb-2">
-                                <?php
-                                use App\Models\User;
-                                $id = Auth::id();
-                                $user = User::find($id); // Replace $userId with the user's ID
-                                
-                                $project_ids = UserProject::where('user_id', $id)->pluck('project_id');
-                                $projects = Project::whereIn('id', $project_ids)->get();
-                                
-                                // $project_amount2 = 0;
-                                // $project_amount = UserProject::where('user_id', $id)->pluck('donate_amount');
-                                // foreach ($project_amount as $item) {
-                                //     if ($item != 'null') {
-                                //         $project_amount2 += $item;
-                                //     }
-                                // }
-                                $amounts = [];
-                                
-                                for ($i = 1; $i <= count($projects); $i++) {
-                                    $userProjects = UserProject::where('user_id', $id)
-                                        ->where('project_id', $i)
-                                        ->get();
-                                    $projectAmount = 0;
-                                    foreach ($userProjects as $item) {
-                                        $projectAmount += $item->donate_amount;
-                                    }
-                                    $amounts[$i] = $projectAmount;
-                                }
-                                
-                                ?>
                                 <div class="container">
                                     <table class="table table-bordered">
                                         <thead>
@@ -316,45 +155,44 @@ use App\Models\Project;
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @if (!$user->projects->isEmpty())
-                                                <?php
-                                                $i = 1;
-                                                ?>
-                                                @foreach ($projects as $project)
-                                                    <tr>
-                                                        <td>{{ $project->title }}</td>
-                                                        <td>{{ $project->location }}</td>
-                                                        <td>JD{{ $amounts[$i] }}</td>
-                                                        <td>{{ $project->long_description }}</td>
-                                                        <td>{{ $project->start_day }}</td>
-                                                        <td>{{ $project->end_day }}</td>
-                                                    </tr>
-                                                    <?php $i++; ?>
-                                                @endforeach
+                                            @foreach ($projects as $project)
+                                                <tr>
+                                                    <td>{{ $project->title }}</td>
+                                                    <td>{{ $project->location }}</td>
+                                                    <td>JD{{ $amounts[$project->id] }}</td>
+                                                    <td>{{ $project->long_description }}</td>
+                                                    <td>{{ $project->start_day }}</td>
+                                                    <td>{{ $project->end_day }}</td>
+                                                </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
+                                </div>
 
 
+
+                                @if (!$projects->isEmpty())
                                     <a href="{{ route('certificate.download') }}" class="btn btn-primary">Download
                                         Participation Certificate</a>
-                                    @endif
+                                @endif
 
-                                    {{-- <img src="{{ asset('assets/img/1694206033.jpg') }}" alt=""> --}}
-                                </div>
+
+                                {{-- <img src="{{ asset('assets/img/1694206033.jpg') }}" alt=""> --}}
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="account-social-links">
-                            <form method="POST" action="{{ route('user.delete') }}">
-                                @csrf
-                                @method('DELETE')
-                                <p>Are you sure you want to delete your account? This action cannot be undone.</p>
-                                <button type="submit" class="btn btn-danger">Delete Account</button>
-                            </form>
-                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="account-social-links">
+                        <form method="POST" action="{{ route('user.delete') }}">
+                            @csrf
+                            @method('DELETE')
+                            <p>Are you sure you want to delete your account? This action cannot be undone.</p>
+                            <button type="submit" class="btn btn-danger">Delete Account</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
     </div>
     {{-- @include('frontend.layouts.footer') --}}
