@@ -23,7 +23,6 @@
                             </ul>
                         </li>
                         <li><a href="{{ route('show.contact') }}">contact</a></li>
-                        <li><a href="{{ route('about') }}">About</a></li>
                         @if (Route::has('login'))
                             @auth
                                 <li><a>My Account</a>
