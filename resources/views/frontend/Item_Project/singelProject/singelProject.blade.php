@@ -36,7 +36,7 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="single-event sec-padd">
-                        @include('frontend.service_project.singelProject.sections.img-box')
+                        @include('frontend.Item_Project.singelProject.sections.img-box')
 
 
                         <div class="content">
