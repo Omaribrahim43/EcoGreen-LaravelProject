@@ -1,4 +1,4 @@
-@extends('frontend.layouts.master')
+@extends('frontend.layouts.master_popup')
 @section('content')
     <div class="inner-banner has-base-color-overlay text-center" style="background-image: url({{ asset('frontend/images/background/back.jpg') }});">
         <div class="container">
@@ -41,21 +41,21 @@
                          <div class="content">
                             @include('frontend.Donation_Project.singelProject.sections.content')
                             <br>
-                            <br><br>
-                            <div class="section-title style-2">
-                                <h3>Our Sponsors</h3>
-                            </div>
-                            @include('frontend.home.sections.clients')
-                        </div>
-                        <br><br>
-                        <div class="share clearfix">
+                            <br>
+                            <br>
+                            <div class="share clearfix">
                          
    
-                            <div class="justify-content" style="text-align: center;">
-                                <a href="{{ route('open.form', ['id' => $id]) }}" class="thm-btn style-2 donate-box-btn">Donate Now</a>
+                                <div class="justify-content" style="text-align: center;">
+                                    <a href="{{ route('open.form', ['id' => $id]) }}" class="thm-btn style-2 donate-box-btn">Donate Now</a>
+                                </div>
+                                
                             </div>
-                            
+                         
+                            @include('frontend.home.sections.clients')
                         </div>
+                       
+                  
                     </div>
                 </div>
             </div>
