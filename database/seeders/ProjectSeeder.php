@@ -22,7 +22,9 @@ class ProjectSeeder extends Seeder
                 'title' => 'Streets Of Irbid',
                 'image' => 'http://127.0.0.1:8000/frontend/images/event/project.PNG',
                 'location' => 'City of Irbid',
-                'short_description' => 'Join us in our mission to make Irbid streets greener and more sustainable.',
+                'short_description' => 'In This project we are seeking to attract 
+                volunteers to Join us in our mission to make Irbid streets greener
+and more sustainable through our volunteers, and organizations.',
                 'long_description' => 'In cooperation withThe Ministry of Agriculture we are seeking to attract 
                  volunteers to Join us in our mission to make Irbid streets greener and more sustainable through our collvolunteers, and organizations to come together to make a lasting impact on our environment.',
                 'budget' => '7500',
@@ -41,7 +43,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'Flowers festival',
-                'image' => 'https://www.gardeningknowhow.com/wp-content/uploads/2007/03/flowers-1.jpg',
+                'image' => 'https://images.pexels.com/photos/1373841/pexels-photo-1373841.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                 'location' => 'Al Hasan Sport City',
                 'short_description' => 'Join our campaign as we cultivate a culture of environmental stewardship within our schools. Together, 
                 we will plant the seeds of sustainability, nurturing not only trees but also young minds, for a greener and brighter future. ',
@@ -64,8 +66,8 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title' => 'For More Greener Schools',
-                'image' => 'https://th.bing.com/th/id/OIP.1maxQYO7VNphHmm-S6tEDgHaE6?pid=ImgDet&rs=1',
-                'location' => 'Schhols of Irbid City',
+                'image' => 'https://mymodernmet.com/wp/wp-content/uploads/2019/05/student-tree-planting-law-philippines-2.jpg',
+                'location' => 'Schools of Irbid City',
                 'short_description' => 'Join our campaign as we cultivate a culture of environmental stewardship within our schools. Together, we wi
                 ll plant the seeds of sustainability, nurturing not only trees but also young minds, for a greener and brighter future.',
                 'long_description' => 'In cooperation withThe Ministry of Agriculture we are seeking to attract 
@@ -87,6 +89,7 @@ class ProjectSeeder extends Seeder
                 'volunteering_number' => '75',
 
             ],
+            
 
         ]);
     }

@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master')
 @section('content')
-    <div class="inner-banner has-base-color-overlay text-center" style="background: url(images/background/4.jpg);">
-        <div class="container">
+<div class="inner-banner has-base-color-overlay text-center" style="background-image: url({{ asset('frontend/images/background/back.jpg') }});">
+    <div class="container">
             <div class="box">
                 <h1> Project Detailes </h1>
             </div>

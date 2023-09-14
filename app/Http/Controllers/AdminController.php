@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Hash;
 
 
 
+
 class AdminController extends Controller
 {
     use ImageUploadTrait;
@@ -24,6 +25,8 @@ class AdminController extends Controller
     {
         
         return view('admin.dashboard');
+
+       
 
     }
 
