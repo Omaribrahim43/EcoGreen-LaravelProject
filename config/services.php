@@ -33,7 +33,7 @@ return [
     'google' => [
         'client_id' => '313025192442-mv50cnln1cpvpsph7o1i4qq49bik36ht.apps.googleusercontent.com',
         'client_secret' => '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',
-        'redirect' => 'http://127.0.0.1:8000/authorized/google/callback',
+        'redirect' => 'http://localhost:8000/authorized/google/callback',
     ],
     'facebook' => [
 
