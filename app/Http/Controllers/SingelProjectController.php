@@ -129,7 +129,7 @@ class SingelProjectController extends Controller
             $id = auth()->user()->id;
             $userProject = UserProject::create([
                 'user_id' => $id,
-                'donate_item' => $request->donate_item,
+                'donate_item' => $request->donate_item ." ". (int)$request->donate_itemNo,
                 'project_id' => (int) $request->input('project_id')
             ]);
 
