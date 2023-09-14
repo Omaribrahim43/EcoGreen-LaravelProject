@@ -49,6 +49,8 @@
 </head>
 
 <body>
+
+
 {{-- 
     <div class="boxed_wrapper">
 
@@ -91,6 +93,8 @@
             </div>
         </div> --}}
 
+
+        
         @include('frontend.layouts.navbar')
 
 

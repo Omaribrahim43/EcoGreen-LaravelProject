@@ -1,6 +1,7 @@
 @extends('frontend.layouts.master_popup')
 
 @section('content')
+
 	{{-- <div id="donate-popup" class="donate-popup">
    <div class="close-donate theme-btn"><span class="fa fa-close"></span></div>
    <div class="popup-inner"> --}}
@@ -91,7 +92,5 @@
 
 
 
-
-	{{-- </div>
-</div> --}}
+ 
 @endsection
