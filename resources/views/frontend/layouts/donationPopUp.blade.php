@@ -90,13 +90,16 @@
                     <li>
                         <div class="form-check form-check-inline">
                             <input type="radio" class="form-check-input" name="donate_method" value="Cash" required>
-                            <i class="fa fa-money" aria-hidden="true"></i>
+                            {{-- <i class="fa fa-money" aria-hidden="true"></i> --}}
+                                                        <h4>Cash</h4>
+
                         </div>
                     </li>
                     <li>
                         <div class="form-check form-check-inline">
                             <input type="radio" class="form-check-input" name="donate_method" value="PayPal" required>
-                            <i class="fa-brands fa-paypal" style="color: #5d8bda;"></i>
+                            <h4>paypal</h4>
+                            {{-- <i class="fab fa-paypal"></i> --}}
                         </div>
                     </li>
                 </ul>

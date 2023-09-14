@@ -27,9 +27,10 @@ class FacebookController extends Controller
                 Auth::login($finduser);
 
                 return redirect()->route('index');
-            } else if ($finduser == null) {
-                toastr('this email is already registered with other social media account.', 'error');
-                return redirect()->route('login');
+
+            // } else if ($finduser == null) {
+            //     toastr('this email is already registered with other social media account.', 'error');
+            //     return redirect()->route('login');
             } else {
                 $newUser = User::updateOrCreate(['email' => $user->email], [
                     'name' => $user->name,
