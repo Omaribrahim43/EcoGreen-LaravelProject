@@ -100,7 +100,7 @@ class SingelProjectController extends Controller
     public function storeformDonation(Request $request)
     {
         
-        if ($request->has('donate_method')) {
+        if ($request->has('donate_method') && $request->donate_amount != 0) {
             $id = auth()->user()->id;
 
             $user = UserProject::create([
