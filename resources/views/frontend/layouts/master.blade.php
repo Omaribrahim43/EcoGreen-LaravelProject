@@ -42,6 +42,12 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/css/settings.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/css/style.css') }}">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <style> #slider1 {
+        height: 640px!important;
+        }
+       .rev_slider_wrapper{  height: 640px!important;
+
+       } </style>
 
 
 
@@ -139,6 +145,7 @@
         <script src="{{ asset('frontend/js/rev-slider/revolution.extension.video.min.js') }}"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
         <script src="{{ asset('frontend/js/custom.js') }}"></script>
+        
         <script>
             @if ($errors->any())
                 @foreach ($errors->all() as $error)

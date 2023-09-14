@@ -1,3 +1,4 @@
+
  @extends('frontend.layouts.master_popUp')
 
  @section('content')
@@ -12,34 +13,32 @@
              <form action="{{ route('store.donation') }}" class="donate-form" method="post" novalidate="novalidate">
                  @csrf
                  <ul class="chicklet-list clearfix">
-                    <li>
+                     <li>
                         <input type="hidden" name="project_id" value="2" required >
                         
                     </li>
+                 
                     <li>
-                        <input type="radio" id="donate_amount-1" name="donate_amount" value="10 " required>
-                        <label for="donate_amount-1">10 JD</label>
+                        <input type="radio" id="donate_amount-1" name="donate_amount" value="20" required>
+                        <label for="donate_amount-1">20 JD</label>
                     </li>
                     <li>
-                        <input type="radio" id="donate_amount-2" name="donate_amount" value="20 " required>
-                        <label for="donate_amount-2">20 JD</label>
+                        <input type="radio" id="donate_amount-2" name="donate_amount" value="50" required>
+                        <label for="donate_amount-2">50 JD</label>
                     </li>
                     <li>
-                        <input type="radio" id="donate_amount-3" name="donate_amount" value="50 " checked required>
-                        <label for="donate_amount-3">50 JD</label>
+                        <input type="radio" id="donate_amount-3" name="donate_amount" value="100" required>
+                        <label for="donate_amount-3">100 JD</label>
                     </li>
                     <li>
-                        <input type="radio" id="donate_amount-4" name="donate_amount" value="100 " required>
-                        <label for="donate_amount-4">100 JD</label>
+                        <input type="radio" id="donate_amount-4" name="donate_amount" value="200" required>
+                        <label for="donate_amount-4">200 JD</label>
                     </li>
                     <li>
-                        <input type="radio" id="donate_amount-5" name="donate_amount" value="200 " required>
-                        <label for="donate_amount-5">200 JD</label>
+                        <input type="radio" id="donate_amount-7" name="donate_amount" value="0" required>
+                        <input type="number" id="custom_amount" name="donate_amount" placeholder="Enter the  amount" required>
                     </li>
-                    <li>
-                        <input type="radio" id="donate_amount-6" name="donate_amount" value="300 " required>
-                        <label for="donate_amount-6">300 JD</label>
-                    </li>
+
                 </ul>
                 
 
@@ -73,7 +72,7 @@
                          <div class="col-md-12 col-sm-12 col-xs-12">
                              <div class="form-group">
                                  <p>Address*</p>
-                                 <input type="text" name="address" class="form-control" placeholder="" required=""
+                                 <input type="text" id="" name="address" class="form-control" placeholder="" required=""
                                      value="{{ $user->address }}" >
                              </div>
                          </div>
@@ -83,22 +82,22 @@
                  </div>
 
                  <ul class="payment-option">
-
                      <li>
                          <h4>Choose your payment method:</h4>
                      </li>
-
-                 </ul>
+                     <li>
                  <div class="form-check form-check-inline">
                     <input type="radio" class="form-check-input" name="donate_method" value="Cash" required>
                     <label class="form-check-label">Cash</label>
                 </div>
-                
+            </li>
+            <li>
                 <div class="form-check form-check-inline">
                     <input type="radio" class="form-check-input" name="donate_method" value="PayPal" required>
                     <label class="form-check-label">PayPal</label>
                 </div>
-                
+                </li>
+                </ul>
                  <div class="center">
 
                      <button class="thm-btn sbmt-btn" type="submit">Donate Now</button>
@@ -106,4 +105,36 @@
              </form>
          </div>
      </div>
+     <script>
+        // Get references to the radio buttons and the custom amount input field
+        const radioButtons = document.querySelectorAll('input[name="donate_amount"]');
+        const customAmountInput = document.getElementById('custom_amount');
+    
+        // Add click event listeners to the radio buttons
+        radioButtons.forEach(radioButton => {
+            radioButton.addEventListener('click', () => {
+                // Check if the custom amount radio button is selected
+                if (radioButton.id === 'donate_amount-7') {
+                    // Enable the custom amount input field
+                    customAmountInput.removeAttribute('disabled');
+                    customAmountInput.value = ''; 
+                    // Clear the custom amount input
+                } else {
+                    // Disable the custom amount input field and set its value to the selected radio's value
+                    // customAmountInput.setAttribute('disabled', 'true');
+                    customAmountInput.value = radioButton.value;
+                }
+            });
+        });
+    
+        // Add an input event listener to the custom amount input
+        customAmountInput.addEventListener('input', () => {
+            // Update the selected radio button's value when the custom amount input changes
+            radioButtons.forEach(radioButton => {
+                if (radioButton.id !== 'donate_amount-7') {
+                    radioButton.checked = false;
+                }
+            });
+        });
+    </script>
  @endsection

@@ -33,8 +33,8 @@ Route::get('/Allprojects/{id?}', [AllProjectController::class, 'show'])->name('A
 
 // ----------singelproject----------
 Route::get('/open/form', [SingelProjectController::class, 'openForm'])->middleware(['auth', 'verified'])->name('open.form');
-Route::get('/open/service/form', [SingelProjectController::class, 'openFormservice'])->name('open.Sform');
-Route::get('/open/item/form', [SingelProjectController::class, 'openFormitem'])->name('open.Iform');
+Route::get('/open/service/form', [SingelProjectController::class, 'openFormservice'])->middleware(['auth', 'verified'])->name('open.Sform');
+Route::get('/open/item/form', [SingelProjectController::class, 'openFormitem'])->middleware(['auth', 'verified'])->name('open.Iform');
 
 Route::get('/Donation/singelProject/{id}', [SingelProjectController::class, 'showDonation'])->name('show.Donation');
 Route::get('/Item_Project.singelProject/{id}', [SingelProjectController::class, 'showitem'])->name('show.item');

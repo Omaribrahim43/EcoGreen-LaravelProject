@@ -2,6 +2,7 @@
  
 use App\Http\Controllers\Profile2Controller;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PayPalController;
 
 
 Route::get('/login', function () {
@@ -27,9 +28,12 @@ require __DIR__ . '/auth.php';
 
 // Route::get('/pay', function () {
 //     return view('frontend.home.paybal');});
-// Route::get('payment', [PayPalController::class, 'payment'])->name('payment');
+// Route::get('payment{price}', [PayPalController::class, 'payment'])->name('payment');
 // Route::get('cancel', [PayPalController::class, 'payment'])->name('payment.cancel');
 // Route::get('payment/success', [PayPalController::class, 'success'])->name('payment.success');
+// Route::get('/success', function () {
+//     return view('frontend.layouts.thankyouPopUp');
+// })->name('success');
 
 
 
