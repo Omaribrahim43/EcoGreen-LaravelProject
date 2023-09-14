@@ -58,17 +58,17 @@
                 </ul>
                 <div class="form-check form-check-inline">
                     <input type="radio" class="form-check-input" name="donate_item" value="Tree" required>
-                    <label class="form-check-label">Tree</label>
+                    <label class="form-check-label"> Tree :{{$project->tree_type}}</label>
                 </div>
 
                 <div class="form-check form-check-inline">
                     <input type="radio" class="form-check-input" name="donate_item" value="Fertilizer" required>
-                    <label class="form-check-label">Fertilizer</label>
+                    <label class="form-check-label">Fertilizer : {{$project->fertilizer}}</label>
                 </div>
 
                 <div class="form-check form-check-inline">
                     <input type="radio" class="form-check-input" name="donate_item" value="Equipments" required>
-                    <label class="form-check-label">Equipments</label>
+                    <label class="form-check-label">Equipments : {{$project->equipments}}</label>
                 </div>
 
 
