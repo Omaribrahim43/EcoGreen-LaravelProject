@@ -13,7 +13,7 @@
                  @csrf
                  <ul class="chicklet-list clearfix">
                     <li>
-                        <input type="hidden" name="project_id" value="2" required >
+                        <input type="hidden" name="project_id" value= required >
                         
                     </li>
                     <li>

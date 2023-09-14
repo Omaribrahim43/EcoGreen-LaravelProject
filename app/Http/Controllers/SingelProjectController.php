@@ -13,13 +13,13 @@ use App\Models\User;
 class SingelProjectController extends Controller
 {
 
-    public function openForm()
+    public function openForm($id)
 
     {
         if (auth()->user()){
-            $id = auth()->user()->id;
-            $user = user::findOrFail($id);
-            return view('frontend.layouts.donationPopUp', ['user' => $user]);
+            $iduser = auth()->user()->id;
+            $user = user::findOrFail($iduser);
+            return view('frontend.layouts.donationPopUp', ['user' => $user],compact('id'));
         } else {
             return view('auth.login');
             return toastr('error', 'Please login or register to donate!');
@@ -58,17 +58,17 @@ class SingelProjectController extends Controller
     public function showDonation($id)
     {
         $project = Project::findOrFail($id);
-        return view('frontend.Donation_Project.singelProject.singelProject', ['project' => $project]);
+        return view('frontend.Donation_Project.singelProject.singelProject', ['project' => $project],compact('id'));
     }
     public function showitem($id)
     {
         $project = Project::findOrFail($id);
-        return view('frontend.Item_Project.singelProject.singelProject', compact('project'));
+        return view('frontend.Item_Project.singelProject.singelProject', compact('project'),compact('id'));
     }
     public function showservice($id)
     {
         $project = Project::findOrFail($id);
-        return view('frontend.service_project.singelProject.singelProject', compact('project'));
+        return view('frontend.service_project.singelProject.singelProject', compact('project'),compact('id'));
     }
 
     public function checkformservice(Request $request)
@@ -103,12 +103,14 @@ class SingelProjectController extends Controller
     {
         if ($request->has('donate_method')) {
             $id = auth()->user()->id;
+
             $user = UserProject::create([
                 'donate_amount' =>  $request->donate_amount,
                 'donate_method' => $request->donate_method,
                 'user_id' => $id,
-                'project_id' => $request->project_id
+                'project_id' => (int) $request->input('project_id')
             ]);
+        
 
             $data['address'] = $request->address;
             $data['phone'] = $request->phone;
@@ -128,7 +130,7 @@ class SingelProjectController extends Controller
             $userProject = UserProject::create([
                 'user_id' => $id,
                 'donate_item' => $request->donate_item,
-                'project_id' => $request->project_id,
+                'project_id' => (int) $request->input('project_id')
             ]);
 
             $data['address'] = $request->address;
@@ -151,7 +153,7 @@ class SingelProjectController extends Controller
             $user = UserProject::create([
                 'choosen_shift' => $request->choosen_shift,
                 'user_id' => $id,
-                'project_id' => $request->project_id
+                'project_id' => (int) $request->input('project_id')
             ]);
 
             $data['address'] = $request->address;
