@@ -29,6 +29,12 @@
                     <p> <span style="color: black "> Start date: </span>{{ $project->start_day }}</p>
                     <p> <span style="color: black "> Location : </span>{{ $project->location }}</p>
 
+                    <br> 
+
+                    <div style="text-align: left;">
+                        <a href="{{ route('open.Sform', ['id' => $id]) }}" class="thm-btn style-2 donate-box-btn">Donate Now</a>
+                    </div>
+
 
                 </div><br><br>
 

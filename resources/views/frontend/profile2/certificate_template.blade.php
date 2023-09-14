@@ -1,4 +1,3 @@
-<!-- resources/views/certificate_template.blade.php -->
 <!DOCTYPE html>
 <html>
 
@@ -6,8 +5,8 @@
     <style>
         /* Certificate Styles */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
+            font-family: "Times New Roman", Times, serif;
+            background-color: #f0f0f0;
             margin: 0;
             padding: 0;
         }
@@ -16,19 +15,21 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #fff;
-            border: 2px solid #007bff;
+            background-color: #ffffff;
+            border: 4px solid #239e44;
             border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
 
         .certificate-header {
             text-align: center;
+            background-color: #158b3a;
+            padding: 10px 0;
         }
 
         .certificate-title {
             font-size: 28px;
-            color: #333;
-            margin: 20px 0;
+            color: #fff;
             text-transform: uppercase;
         }
 
@@ -46,7 +47,7 @@
         .project-item {
             margin-bottom: 20px;
             padding: 10px;
-            border: 1px solid #ccc;
+            border: 2px solid #0ca152;
             border-radius: 5px;
             background-color: #f9f9f9;
         }
@@ -71,6 +72,13 @@
         .project-info {
             margin-top: 10px;
         }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 150px;
+            height: auto;
+        }
     </style>
 </head>
 
@@ -79,7 +87,6 @@
         <div class="certificate-header">
             <h1 class="certificate-title">Certificate of Participation</h1>
         </div>
-
 
         <div class="certificate-content">
             <p>This is to certify that <strong>{{ $user->name }}</strong> has participated in the following projects:
@@ -96,11 +103,13 @@
                                 <p><strong>Start Date:</strong> {{ $project->start_day }}</p>
                                 <p><strong>End Date:</strong> {{ $project->end_day }}</p>
                                 <p><strong>Volunteering Days:</strong> {{ $project->volunteering_days }}</p>
+                                <img src="{{ public_path('frontend/images/logo/green_hands_logo-removebg-preview.png') }}"
+                                    alt="Logo" style="text-align: center">
+
                             </div>
                         </li>
                     @endif
                 @endforeach
-
             </ul>
         </div>
     </div>
