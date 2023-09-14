@@ -1261,6 +1261,7 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
     margin: 0;
     padding: 15px 0;
     position: fixed;
+    /* background:  !important; */
     top: 0;
     left: 0;
     width: 100%;
