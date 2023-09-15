@@ -15,7 +15,7 @@
 
             <h4>How much would you like to donate:</h4>
 
-            <form action="{{ route('store.donation') }}" class="donate-form" method="post" novalidate="novalidate">
+            <form action="{{ route('paypal') }}" class="donate-form" method="post" novalidate="novalidate">
                 @csrf
                 <ul class="chicklet-list clearfix">
                     <li>
