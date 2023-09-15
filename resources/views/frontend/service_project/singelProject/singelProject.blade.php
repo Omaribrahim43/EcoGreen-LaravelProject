@@ -44,16 +44,17 @@
 
                             <br>
                             <br><br>
+                            <div class="share clearfix">
+
+                                <div class="justify-content" style="text-align: center;">
+                                    <a href="{{ route('open.Sform', ['id' => $id]) }}" class="thm-btn style-2 donate-box-btn">Donate Now</a>
+                                </div>
+                                
+                            </div>
                             @include('frontend.home.sections.clients')
                         </div>
                         <br><br>
-                        <div class="share clearfix">
-
-                            <div class="justify-content" style="text-align: center;">
-                                <a href="{{ route('open.Sform', ['id' => $id]) }}" class="thm-btn style-2 donate-box-btn">Donate Now</a>
-                            </div>
-                            
-                        </div>
+      
 
 
                     </div>

@@ -1,8 +1,5 @@
-<div class="border-bottom"></div>
-
-<section class="clients-section sec-padd">
-    <div class="container">
-        <div class="section-title center">
+<center><section class="clients-section sec-padd">
+    <div class="container" class="justify-content" style="text-align: center;">
            
             <h1 class="thm-color" >Our partners </h1>
         </div>
@@ -20,10 +17,9 @@
             <div class="item tool_tip" title="media partner">
               <center> <img src="{{asset('frontend/images/partners/work.png')}}" alt="Awesome Image" style="width: 90px"></center> 
             </div>
-            <div class="item tool_tip" title="media partner">
-                <img src="{{asset('frontend/images/partners/irbid.png')}}" alt="Awesome Image">
-            </div>
+           
+           
 
         </div>
     </div>
-</section>
+</section></center>

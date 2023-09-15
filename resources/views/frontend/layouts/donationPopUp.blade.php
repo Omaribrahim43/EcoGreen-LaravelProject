@@ -2,6 +2,12 @@
 
 @section('content')
     <div class="container">
+        @if(session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif
+
         <div class="donate-form-area">
             <div class="section-title center">
                 <h2>Donation Information</h2>
@@ -86,20 +92,23 @@
                 <ul class="payment-option">
                     <li>
                         <h4>Choose your payment method:</h4>
-                    </li>
-                    <li>
+                    </li>                </ul>
+
+                    {{-- <li> --}}
                         <div class="form-check form-check-inline">
                             <input type="radio" class="form-check-input" name="donate_method" value="Cash" required>
-                            <label class="form-check-label">Cash</label>
+                            {{-- <i class="fa fa-money" aria-hidden="true"></i> --}}
+                                                        <h4>Cash</h4>
+
                         </div>
-                    </li>
-                    <li>
+                    {{-- </li> --}}
+                    {{-- <li> --}}
                         <div class="form-check form-check-inline">
                             <input type="radio" class="form-check-input" name="donate_method" value="PayPal" required>
-                            <label class="form-check-label">PayPal</label>
+                            <h4>paypal</h4>
+                            {{-- <i class="fab fa-paypal"></i> --}}
                         </div>
-                    </li>
-                </ul>
+                    {{-- </li> --}}
                 <div class="center">
 
                     <button class="thm-btn sbmt-btn" type="submit">Donate Now</button>

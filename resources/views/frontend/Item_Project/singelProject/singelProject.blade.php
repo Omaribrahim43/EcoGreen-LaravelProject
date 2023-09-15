@@ -1,8 +1,9 @@
 @extends('frontend.layouts.master')
 
 @section('content')
-<div class="inner-banner has-base-color-overlay text-center" style="background-image: url({{ asset('frontend/images/background/back.jpg') }});">
-    <div class="container">
+    <div class="inner-banner has-base-color-overlay text-center"
+        style="background-image: url({{ asset('frontend/images/background/back.jpg') }});">
+        <div class="container">
             <div class="box">
                 <h1>Event Single</h1>
             </div>
@@ -35,7 +36,7 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="single-event sec-padd">
-                        @include('frontend.service_project.singelProject.sections.img-box')
+                        @include('frontend.Item_Project.singelProject.sections.img-box')
 
 
                         <div class="content">
@@ -44,14 +45,17 @@
 
                             <br>
                             <br><br>
-                            @include('frontend.home.sections.clients')                        </div>
-                  <div class="share clearfix">
+                            <div class="share clearfix">
 
-                            <div class="justify-content" style="text-align: center;">
-                                <a href="{{ route('open.Iform', ['id' => $id]) }}" class="thm-btn style-2 donate-box-btn">Donate Now</a>
+                                <div class="justify-content" style="text-align: center;">
+                                    <a href="{{ route('open.Iform', ['id' => $id]) }}"
+                                        class="thm-btn style-2 donate-box-btn">Donate Now</a>
+                                </div>
+    
                             </div>
-                            
+                            @include('frontend.home.sections.clients')
                         </div>
+          
 
 
                     </div>

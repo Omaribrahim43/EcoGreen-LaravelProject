@@ -1,4 +1,5 @@
-@extends('frontend.layouts.master_popup')
+@extends('frontend.layouts.master_popUp')
+
 @section('content')
     <div class="container">
         <div class="donate-form-area">
