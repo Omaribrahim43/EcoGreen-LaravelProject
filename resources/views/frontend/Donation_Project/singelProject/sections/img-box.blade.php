@@ -29,10 +29,9 @@
 
                     <p style="font-size:17px">{{ $project->long_description }}</p>
                     <br>
-
-                    <p> <span style="color: black "> Budget: </span>JD {{ $project->budget }}</p>
-                    <p> <span style="color: black "> Location : </span>{{ $project->location }}</p>
-                    <p> <span style="color: black "> Remaining Amount : </span>JD {{ $remainingAmount }}</p>
+                    <p> <b style="color: black; font-weight: bold;"> Budget: {{ $project->budget }}</b></p>
+                    <p> <b style="color: black; font-weight: bold;"> Location : </b>{{ $project->location }}</p>
+                    <p> <span style="color: black; font-weight: bold "> Remaining Amount : </span>JD {{ $remainingAmount }}</p>
 
 
                     <br>
@@ -48,18 +47,6 @@
                         </div>
                     @endif
 
-
-                <p> <b style="color: black; font-weight: bold;"> Budget: {{ $project->budget }}</b></p>
-                <p> <b style="color: black; font-weight: bold;"> Location : </b>{{ $project->location }}</p>
-
-                
-                       <br> 
-   
-                    <div style="text-align: left;">
-                        <a href="{{ route('open.form', ['id' => $id]) }}" class="thm-btn style-2 donate-box-btn">Donate Now</a>
-                    </div>
-                    
-              
 
 
                 </div><br><br>
