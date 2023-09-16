@@ -4,9 +4,10 @@
             <h2 > <span class="thm-color" > We are ECO Green , </span>  a passionate community dedicated to preserving and enhancing our planet's green spaces. </h2>
         </div> --}}
         <br>
-        <div class="section-title center">
-            <h1 > <span class="thm-color" > Our Services </span>   </h1>
+        <div class="section-title center" >
+          <h1 > <span class="thm-color" style="margin-right: 0px"> Our Services </span>   </h1>
         </div>
+
       
                     <div class="container">
                         <div class="row">
