@@ -198,7 +198,7 @@ class ProjectController extends Controller
             // Assuming you have a category name
             $categoryName = $project->category->name;
 
-            if ($categoryName === 'Money Donation') {
+            if ($categoryName === 'Financial Donation') {
                 return view('admin.projects.showMoney', compact('project', 'userProject'));
                 // $dataTables->render('admin.projects.index');
             } elseif ($categoryName === 'Items Donation') {
