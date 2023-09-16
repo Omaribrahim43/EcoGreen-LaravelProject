@@ -36,7 +36,14 @@
                                     @endif
                                 </h4>
                             </a>
-                            <p> {{ $item->short_description }}</p>
+                            <?php
+                                $shortDescription = strip_tags($item->short_description);
+                                $limit = 130;
+
+                                if (strlen($shortDescription) > $limit) {
+                                    $shortDescription = substr($shortDescription, 0, $limit) . '...';
+                                }
+                                ?>
                         </div>
                         <div class="donate clearfix">
                             <div class="donate" style="text-align: center; display:flex; justify-content:space-around">

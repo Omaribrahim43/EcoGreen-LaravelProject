@@ -77,8 +77,8 @@
                 <div class="form-check form-check-inline">
                     <input type="radio" class="form-check-input" name="donate_item" value="Equipments" required>
                     <label class="form-check-label">Equipments : {{ $project->equipments }}</label>
-                    <input type="hidden" class="form-check-input" name="donate_itemNo" value="0"
-                        style="width: 100px;height:20px;dispaly:inline-block" required>
+                    <input type="number" class="form-check-input" name="donate_itemNo" value="0"
+                        style="width: 100px;height:20px;display:none" required>
                 </div>
 
 
