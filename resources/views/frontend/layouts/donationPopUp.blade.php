@@ -2,6 +2,12 @@
 
 @section('content')
     <div class="container">
+        @if (session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
+
         <div class="donate-form-area">
             <div class="section-title center">
                 <h2>Donation Information</h2>
@@ -9,14 +15,11 @@
 
             <h4>How much would you like to donate:</h4>
 
-            <form action="{{ route('store.donation') }}" class="donate-form" method="post" novalidate="novalidate">
+            <form action="{{ route('paypal') }}" class="donate-form" method="post" novalidate="novalidate">
                 @csrf
                 <ul class="chicklet-list clearfix">
                     <li>
                         <input type="hidden" name="project_id" value="{{ $id }}" required>
-                    <li>
-                        <input type="hidden" name="project_id" value="2" required>
-
                     </li>
 
                     <li>
@@ -80,6 +83,7 @@
                         </div>
 
 
+
                     </div>
                 </div>
 
@@ -87,22 +91,23 @@
                     <li>
                         <h4>Choose your payment method:</h4>
                     </li>
-                    <li>
-                        <div class="form-check form-check-inline">
-                            <input type="radio" class="form-check-input" name="donate_method" value="Cash" required>
-                            {{-- <i class="fa fa-money" aria-hidden="true"></i> --}}
-                                                        <h4>Cash</h4>
-
-                        </div>
-                    </li>
-                    <li>
-                        <div class="form-check form-check-inline">
-                            <input type="radio" class="form-check-input" name="donate_method" value="PayPal" required>
-                            <h4>paypal</h4>
-                            {{-- <i class="fab fa-paypal"></i> --}}
-                        </div>
-                    </li>
                 </ul>
+
+                {{-- <li> --}}
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" name="donate_method" value="Cash" required>
+                    {{-- <i class="fa fa-money" aria-hidden="true"></i> --}}
+                    <h4>Cash</h4>
+
+                </div>
+                {{-- </li> --}}
+                {{-- <li> --}}
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" name="donate_method" value="PayPal" required>
+                    <h4>paypal</h4>
+                    {{-- <i class="fab fa-paypal"></i> --}}
+                </div>
+                {{-- </li> --}}
                 <div class="center">
 
                     <button class="thm-btn sbmt-btn" type="submit">Donate Now</button>

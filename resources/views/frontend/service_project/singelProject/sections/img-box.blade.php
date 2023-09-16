@@ -26,8 +26,8 @@
                     <p style="font-size:17px">{{ $project->long_description }}</p>
                     <br>
 
-                    <p> <span style="color: black "> Start date: </span>{{ $project->start_day }}</p>
-                    <p> <span style="color: black "> Location : </span>{{ $project->location }}</p>
+                    <p> <b style="color: black; font-weight: bold;"> Start date: </b>{{ $project->start_day }}</p>
+                    <p> <b style="color: black; font-weight: bold;"> Location : </b>{{ $project->location }}</p>
 
                     <br> 
 

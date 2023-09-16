@@ -16,12 +16,10 @@
         <div class="pull-left">
             <ul class="list-inline link-list">
                 <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="#">Pages</a>
+                    <a href="{{route('index')}}">Home</a>
                 </li>
                 
+
                 <li>
                     Events Grid View
                 </li>

@@ -3,7 +3,7 @@
 @section('content')
 
 <center>
-        <div class="container-thanks" style="margin:165px 0; width: 70%;">
+        <div class="container-thanks" style="margin:165px ; width: 70%;">
            
             <h2 class="thm-color">Thank You for Your Donation!</h2><br>
             <p class="p-thanks">Your donation has been received successfully.</p> <br>

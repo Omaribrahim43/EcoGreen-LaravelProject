@@ -86,6 +86,8 @@
 	}
 	.menuzord-responsive .menuzord-menu.menuzord-indented > li > ul.dropdown > li:hover > a {
 	    padding-left: 40px !important;
+	 color: white !important;
+
 	}
 	/*====menu=======*/
 
