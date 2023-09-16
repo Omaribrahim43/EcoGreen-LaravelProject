@@ -103,6 +103,8 @@ class Profile2Controller extends Controller
         }
 
 
+
+
 // dd($shifts[$project->id]);
         //***************************************
                                 

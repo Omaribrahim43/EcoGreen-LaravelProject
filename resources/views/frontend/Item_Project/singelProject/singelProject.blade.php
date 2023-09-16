@@ -5,7 +5,7 @@
         style="background-image: url({{ asset('frontend/images/background/back.jpg') }});">
         <div class="container">
             <div class="box">
-                <h1>Event Single</h1>
+                <h1> Item Project </h1>
             </div>
         </div>
     </div>
@@ -14,14 +14,14 @@
             <div class="pull-left">
                 <ul class="list-inline link-list">
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="{{route('index')}}">Home</a>
                     </li>
                     <li>
-                        <a href="event-1.html">event</a>
+                        <a href="{{ route('All.projects', ['id' => $project->category_id]) }}"> All Item Projects</a>
                     </li>
 
                     <li>
-                        Event Single
+                       Item Project
                     </li>
                 </ul>
             </div>
@@ -40,7 +40,7 @@
 
 
                         <div class="content">
-                            @include('frontend.service_project.singelProject.sections.content')
+                            @include('frontend.Item_Project.singelProject.sections.content')
 
 
                             <br>

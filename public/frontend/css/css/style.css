@@ -2106,11 +2106,10 @@ textarea {
 }
 
 .urgent-cause2 .content {
-    position: relative;
-    padding: 20px;
-    padding-bottom: 30px;
-    border: 1px solid #f4f4f4;
-    border-top: 0px;
+  position: relative;
+  padding: 20px;
+  padding-bottom: 30px;
+  border-top: 0px;
 }
 
 .urgent-cause2 .content h4 {

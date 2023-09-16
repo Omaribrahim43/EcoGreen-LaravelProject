@@ -4,7 +4,7 @@
 <div class="inner-banner has-base-color-overlay text-center" style="background-image: url({{ asset('frontend/images/background/back.jpg') }});">
     <div class="container">
             <div class="box">
-                <h1>Event Single</h1>
+                <h1>Service Project</h1>
             </div>
         </div>
     </div>
@@ -13,14 +13,14 @@
             <div class="pull-left">
                 <ul class="list-inline link-list">
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="{{route('index')}}">Home</a>
                     </li>
                     <li>
-                        <a href="event-1.html">event</a>
+                        <a href="{{ route('All.projects', ['id' => $project->category_id]) }}"> All service Projects</a>
                     </li>
 
                     <li>
-                        Event Single
+                        Service Project
                     </li>
                 </ul>
             </div>
