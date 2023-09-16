@@ -25,8 +25,8 @@
                 <p style="font-size:17px">{{ $project->long_description }}</p>
                 <br>
 
-                <p> <span style="color: black "> Budget: </span>{{ $project->budget }}</p>
-                <p> <span style="color: black "> Location : </span>{{ $project->location }}</p>
+                <p> <b style="color: black; font-weight: bold;"> Budget: {{ $project->budget }}</b></p>
+                <p> <b style="color: black; font-weight: bold;"> Location : </b>{{ $project->location }}</p>
 
                 
                        <br> 

@@ -15,10 +15,10 @@
                         <a href="{{ route('index') }}">Home</a>
                     </li>
                     <li>
-                        <a href="{{ route('All.projects', 1) }}"> Donation Projects </a>
+                        <a href="{{ route('All.projects', ['id' => $project->category_id]) }}"> All Money Projects </a>
                     </li>
                     <li>
-                        Single Donation Project
+                        Money Donation Project
                     </li>
                 </ul>
             </div>

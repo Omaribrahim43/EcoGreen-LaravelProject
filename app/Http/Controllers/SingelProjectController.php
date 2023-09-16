@@ -51,6 +51,20 @@ class SingelProjectController extends Controller
         }
     }
     
+    public function openFormhelp()
+    {
+        if (auth()->user()) {
+            $iduser = auth()->user()->id;
+    
+            $project = user::findOrFail($iduser);
+            $user = user::findOrFail($iduser);
+            return view('frontend.helpProject.help-popup', compact('project', 'user'));
+        } else {
+            return view('auth.login');
+            // You cannot have two return statements in a row. The second one will never be executed.
+            // return toastr('error', 'Please login or register to donate!');
+        }
+    }
 
 
     public function showDonation($id)
