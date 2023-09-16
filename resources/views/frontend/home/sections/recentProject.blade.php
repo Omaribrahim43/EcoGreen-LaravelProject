@@ -16,11 +16,35 @@
                                     {{ $projectProgress[$item->id]['progress'] }}%
                                 </div>
                         @endif
+                        <div class="overlay">
+                            <div class="inner-box">
+                                <div class="content-box">
+                                    @if ($item->category->id == 1)
+                                        <a href="{{ route('show.Donation', ['id' => $item->id]) }}">
+                                            <button class="thm-btn style-2 donate-box-btn">
+                                                donate now</button>
+                                        </a>
+                                    @elseif ($item->category->id == 2)
+                                        <a href="{{ route('show.item', ['id' => $item->id]) }}">
+                                            <button class="thm-btn style-2 donate-box-btn">
+                                                donate now</button>
+                                        </a>
+                                    @elseif ($item->category->id == 3)
+                                        <a href="{{ route('show.service', ['id' => $item->id]) }}">
+                                            <button class="thm-btn style-2 donate-box-btn">
+                                                donate now</button>
+                                        </a>
+                                    @endif
+                                   
+                                </div>
+                            </div>
+                        </div>
                     </figure>
                     <div class="content">
                         <div class="text center">
                             <a href="#">
                                 <h4 class="title">
+                                    
                                     @if ($item->category->id == 1)
                                         <a href="{{ route('show.Donation', ['id' => $item->id]) }}">
                                             <h4>{{ $item->title }}</h4>
@@ -36,20 +60,27 @@
                                     @endif
                                 </h4>
                             </a>
-                            <?php
+                            <p >
+                                    
+                                <?php
                                 $shortDescription = strip_tags($item->short_description);
-                                $limit = 130;
-
+                                $limit = 132; // Adjust this to your desired character limit
+                            
                                 if (strlen($shortDescription) > $limit) {
                                     $shortDescription = substr($shortDescription, 0, $limit) . '...';
                                 }
                                 ?>
+                            
+                                {{ $shortDescription }}
+
+                            </p>
+                            {{-- <p> {{ $item->short_description }}</p> --}}
+                          
                         </div>
                         <div class="donate clearfix">
                             <div class="donate" style="text-align: center; display:flex; justify-content:space-around">
-                                <span>
-                                    Goal:
-                                    {{ $item->budget }} JOD</span>
+                                <div class="donate float_left " style="margin-left: 10px"> <span> {{ optional($item->category)->name }}</span> </div>
+                                    
 
                                 @if ($item->category->id == 1)
                                     <a href="{{ route('show.Donation', ['id' => $item->id]) }}">

@@ -10,6 +10,7 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
 
+
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -47,7 +48,7 @@ class User extends Authenticatable
 
     public function userProject()
     {
-        return $this->belongsTo(UserProject::class);
+        return $this->hasMany(UserProject::class);
     }
 
     public function projects()

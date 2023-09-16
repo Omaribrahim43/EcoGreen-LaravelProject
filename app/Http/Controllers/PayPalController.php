@@ -71,7 +71,7 @@ class PaypalController extends Controller
             $data['address'] = $request->address;
             $data['phone'] = $request->phone;
             User::where(['id' => $id])->update($data);
-            return view('frontend.layouts.thankyouPopUp');
+            return view('frontend.layouts.thankyoupopupcash');
         } else {
             return redirect()->back();
         }

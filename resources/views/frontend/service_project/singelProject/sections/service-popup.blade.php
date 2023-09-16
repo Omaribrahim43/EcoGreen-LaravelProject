@@ -1,4 +1,4 @@
-@extends('frontend.layouts.master_popUp')
+@extends('frontend.layouts.navsticky')
 
 @section('content')
     <div class="container">

@@ -1,5 +1,5 @@
 
-@extends('frontend.layouts.master_popUp')
+@extends('frontend.layouts.navsticky')
 @section('content')
     <div class="container">
         <div class="donate-form-area">
@@ -62,7 +62,7 @@
                             style="display: inline-block">
                         <label class="form-check-label"> Tree :{{ $project->tree_type }}</label>
                     </div>
-                    <input type="number" class="form-check-input treebox" name="donate_itemNo" value=""
+                    <input type="number" class="form-check-input treebox" name="donate_itemNo" value=" "
                         style="width: 100px;height:20px;dispaly:inline-block" required>
                 </div>
 

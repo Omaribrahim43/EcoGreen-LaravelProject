@@ -197,7 +197,7 @@ class SingelProjectController extends Controller
             $data['phone'] = $request->phone;
             User::where(['id' => $id])->update($data);
 
-            return view('frontend.layouts.thankyouPopUp');
+            return view('frontend.layouts.thx');
         }
 
         return redirect()->back();
@@ -220,7 +220,7 @@ class SingelProjectController extends Controller
             $data['phone'] = $request->phone;
             User::where(['id' => $id])->update($data);
 
-            return view('frontend.layouts.thankyouPopUp');
+            return view('frontend.layouts.thx');
         }
 
         return redirect()->back();

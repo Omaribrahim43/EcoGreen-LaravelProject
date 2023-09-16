@@ -43,9 +43,9 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/css/style.css') }}">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <style> #slider1 {
-        height: 640px!important;
+        height: 740px!important;
         }
-       .rev_slider_wrapper{  height: 640px!important;
+       .rev_slider_wrapper{  height: 680px!important;
 
        } </style>
 
