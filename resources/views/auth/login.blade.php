@@ -79,9 +79,9 @@
                             </div> --}}
 
                         </form>
-                        <form action="{{ route('register') }}">
+                        {{-- <form action="{{ route('register') }}">
                             <button type="submit">Create Account</button>
-                        </form>
+                        </form> --}}
                     </div>
 
                 </div>

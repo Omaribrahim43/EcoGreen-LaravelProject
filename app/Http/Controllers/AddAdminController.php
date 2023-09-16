@@ -61,7 +61,7 @@ class AddAdminController extends Controller
         $admin->password = bcrypt($request->password);
         $admin->save();
 
-        toastr('Updated Successfully', 'success');
+        toastr('Added Successfully', 'success');
         return redirect()->route('admins.index');
     }
 

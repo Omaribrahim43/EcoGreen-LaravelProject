@@ -47,7 +47,7 @@
                                             <div class="form-row">
                                                 <div class="form-group col-md-8">
                                                     <label for="description">Description</label>
-                                                    <textarea class="summernote-simple" name="description" id="description" placeholder="Enter a description">{{ $category->description }}</textarea>
+                                                    <textarea class="summernote-simple" name="description" id="description" placeholder="Enter a description">{!! $category->description !!}</textarea>
 
 
                                                 </div>

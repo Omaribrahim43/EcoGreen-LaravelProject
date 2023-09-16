@@ -1,6 +1,7 @@
 @extends('frontend.layouts.master')
 @section('content')
-    <div class="inner-banner has-base-color-overlay text-center" style="background-image: url({{ asset('frontend/images/background/back.jpg') }});">
+    <div class="inner-banner has-base-color-overlay text-center"
+        style="background-image: url({{ asset('frontend/images/background/back.jpg') }});">
         <div class="container">
             <div class="box">
                 <h1>Money Donation Project</h1>
@@ -15,10 +16,10 @@
                         <a href="{{ route('index') }}">Home</a>
                     </li>
                     <li>
-                        <a href="{{ route('All.projects', 1) }}"> Donation Projects </a>
+                        <a href="{{ route('All.projects', ['id' => $project->category_id]) }}"> All Money Projects </a>
                     </li>
                     <li>
-                        Single Donation Project
+                        Money Donation Project
                     </li>
                 </ul>
             </div>
@@ -36,26 +37,35 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="single-event sec-padd">
                         @include('frontend.Donation_Project.singelProject.sections.img-box')
-                        <br><br><br>    
-                                           
-                         <div class="content">
+                        <br><br><br>
+
+                        <div class="content">
                             @include('frontend.Donation_Project.singelProject.sections.content')
                             <br>
                             <br>
                             <br>
                             <div class="share clearfix">
-                         
-   
-                                <div class="justify-content" style="text-align: center;">
-                                    <a href="{{ route('open.form', ['id' => $id]) }}" class="thm-btn style-2 donate-box-btn">Donate Now</a>
-                                </div>
-                                
+
+
+                                @if ($projectProgress[$id]['progress'] < 100)
+                                    <div class="justify-content" style="text-align: center;">
+                                        <a href="{{ route('open.form', ['id' => $id]) }}"
+                                            class="thm-btn style-2 donate-box-btn">Donate Now</a>
+                                    </div>
+
+                                    @else
+                                    <div class="justify-content" style="text-align: center; color:black;font-weight:800">
+                                        <p>thanks for your help </p>
+                                    </div>
+                                @endif
+
+
                             </div>
-                         
+
                             @include('frontend.home.sections.clients')
                         </div>
-                       
-                  
+
+
                     </div>
                 </div>
             </div>

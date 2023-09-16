@@ -20,17 +20,17 @@ class CategoryController extends Controller
     public function index(CategoryDataTable $dataTables)
     {
         // return view("admin.category.index");
-        if (session('loginId')) {
+        // if (session('loginId')) {
             // dd(session('admin_id'));
             // return 'hh';
-            $id =  session('loginId');
-            $admin = Admin::find($id);
+            // $id =  session('loginId');
+            // $admin = Admin::find($id);
             // dd($admin->name);
             // return view('admin.profile.profile', ['admin' => $admin]);
         
         
-        return $dataTables->render('admin.category.index', ['admin' => $admin]);
-        }
+        return $dataTables->render('admin.category.index');
+        // }
     }
 
     /**
@@ -63,7 +63,7 @@ class CategoryController extends Controller
 
         $category->image =  $imagePath;
         $category->name = $request->name;
-        $category->description = $request->description;
+        $category->description = htmlspecialchars($request->description);
         $category->save();
         
         toastr('Created Successfully!', 'success');
@@ -114,7 +114,7 @@ class CategoryController extends Controller
 
         $category->image = empty(!$imagePath) ? $imagePath : $category->image;
         $category->name = $request->name;
-        $category->description = $request->description;
+        $category->description = htmlspecialchars( $request->description);
         // $category->image = $request->image;
         $category->save();
 

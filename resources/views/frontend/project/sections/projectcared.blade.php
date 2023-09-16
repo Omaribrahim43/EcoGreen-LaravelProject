@@ -31,8 +31,7 @@
                                                     donate now</button>
                                             </a>
                                         @endif
-                                        {{-- <button class="thm-btn style-2 donate-box-btn">
-                                            donate now</button> --}}
+                                       
                                     </div>
                                 </div>
                             </div>
@@ -56,48 +55,62 @@
                                         @elseif ($item->category->id == 3)
                                             <a href="{{ route('show.service', ['id' => $item->id]) }}">
                                                 <h4>{{ $item->title }}</h4>
+                                                
                                             </a>
                                         @endif
                                     </h4>
                                 </a> 
-                                <p>{{ $item->short_description }}</p>
-                                {{-- <div class="progress-box">
-                                    <div>
-                                        <div class="progress-container" style="width: 90%;">
-                                            <div class="progress-bar" id="myProgressBar">90%</div>
-                                        </div>
-                                    </div>
-                                </div> --}}
+                                <p >
+                                    
+                                    <?php
+                                    $shortDescription = strip_tags($item->short_description);
+                                    $limit = 132; // Adjust this to your desired character limit
                                 
+                                    if (strlen($shortDescription) > $limit) {
+                                        $shortDescription = substr($shortDescription, 0, $limit) . '...';
+                                    }
+                                    ?>
+                                
+                                    {{ $shortDescription }}
+
+                                </p>
+                              
                                 <div class="donate clearfix">
-                                 <div class="donate float_left" style="margin-left: 10px"><span> Location : </span>{{ $item->location }} </div>
-                                 <br>
-                                 <div class="donate float_left" style="margin-left: 10px"><span> Start Date : </span>{{ $item->start_day }} </div>
-                                 {{-- <div class="donate float_left"><span> {{ $item->start_date }}  </span></div> --}}
-
+                                
+                                 <div class="donate " style="margin-left: 10px"><span> Donation Type : </span>{{ optional($item->category)->name }} </div>
+                                    {{-- <span> {{ $item->category->name }} </span> --}}
+                                   
+                                 <div ><span>  
+                                    <span class="icon-signs2"></span>{{ $item->location }} </div>
+                                 
+                              
+                                
                                 </div>
+                                
 
-
+                                
                             </div>
 
                         </div>
                 </article>
+                
             @endforeach
 
         </div>
     </div>
 </section>
+
+
 <ul class="page_pagination center">
     <li><a href="#" class="tran3s"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
     <li><a href="#" class="active tran3s">1</a></li>
     <li><a href="#" class="tran3s">2</a></li>
     <li><a href="#" class="tran3s"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 </ul>
+
+
+
 <br>
-
-
-
-
 
 
 

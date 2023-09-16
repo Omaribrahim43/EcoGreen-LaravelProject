@@ -5,6 +5,7 @@ use App\Http\Controllers\AllProjectController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SingelProjectController;
+use App\Http\Controllers\Quickhelp;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
@@ -13,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('index');
 
 
-Route::get('/about', [HomeController:: class, 'about'])->name('about');
-Route::get('/home', [HomeController:: class, 'nav'])->name('nav');
+Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/home', [HomeController::class, 'nav'])->name('nav');
 
 // contact us page routes
 Route::get('returncontact', function () {
@@ -48,3 +49,10 @@ Route::post('/form.Donation', [SingelProjectController::class, 'checkformDonatio
 Route::post('/Donation.storeform', [SingelProjectController::class, 'storeformDonation'])->name('store.donation');
 Route::post('/item.storeform', [SingelProjectController::class, 'storeformitem'])->name('store.item');
 Route::post('/service.storeform', [SingelProjectController::class, 'storeformservice'])->name('sorte.service');
+
+Route::get('/open/help/form', [SingelProjectController::class, 'openFormhelp'])->middleware(['auth', 'verified'])->name('open.help.form');
+
+// Route::post('/Donation.Quickstoreform', [Quickhelp::class, 'QuickformDonation'])->name('store.Quick.donation');
+// Route::post('/item.Quickstoreform', [Quickhelp::class, 'Quickformitem'])->name('store.Quick.item');
+// Route::post('/service.Quickstoreform', [Quickhelp::class, 'Quickformservice'])->name('sorte.Quick.service');
+// Route::post('/project/Quickstoreform', [Quickhelp::class, 'storeQuickProject'])->name('sorte.Quick.project');

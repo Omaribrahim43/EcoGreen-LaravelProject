@@ -23,7 +23,7 @@
                 </ul>
             </div>
             <div class="pull-right">
-                <a href="#" class="get-qoute"><i class="fa fa-arrow-circle-right"></i>Become a
+                <a  href="{{ route('register') }}" class="get-qoute"><i class="fa fa-arrow-circle-right"></i>Become a
                     Volunteer</a>
             </div>
         </div>
@@ -45,7 +45,7 @@
                 <h4>Join Our Mission to Improve a Child's Feature, Pet’s Life and Our Planet.</h4>
             </div>
             <div class="float_right">
-                <a href="#" class="thm-btn style-3">Get Involeved</a>
+                <a href="{{ route('register') }}" class="thm-btn style-3">Get Involeved</a>
             </div>
 
         </div>

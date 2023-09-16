@@ -508,7 +508,8 @@ License: http://codecanyon.net/licenses
 	.menuzord-responsive .menuzord-menu ul.dropdown li a{
 		border-bottom: solid 1px #f0f0f0;
 	}
-	.menuzord-responsive .menuzord-menu.menuzord-indented > li > ul.dropdown > li > a{ padding-left: 40px !important; }
+	.menuzord-responsive .menuzord-menu.menuzord-indented > li > ul.dropdown > li > a{ padding-left: 40px !important;		color: white !important;
+ }
 	.menuzord-responsive .menuzord-menu.menuzord-indented > li > ul.dropdown > li > ul.dropdown > li > a{ padding-left: 60px !important; }
 	.menuzord-responsive .menuzord-menu.menuzord-indented > li > ul.dropdown > li > ul.dropdown > li > ul.dropdown > li > a{ padding-left: 80px !important; }
 	.menuzord-responsive .menuzord-menu.menuzord-indented > li > ul.dropdown > li:hover > a{ padding-left: 50px !important; }

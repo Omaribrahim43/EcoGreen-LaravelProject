@@ -101,7 +101,7 @@ class ProjectsDataTable extends DataTable
             Column::make('location'),
             Column::make('category'),
             Column::make('budget'),
-            Column::make('status'),
+            // Column::make('status'),
             Column::make('image'),
             Column::computed('action')
                 ->exportable(false)
