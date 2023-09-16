@@ -25,6 +25,9 @@
                         </li>
                         <li><a href="{{ route('show.contact') }}">contact</a></li>
                         <li><a href="{{ route('about') }}">About</a></li>
+
+                     
+                        
                         @if (Route::has('login'))
                             @auth
                                 <li><a>My Account</a>
@@ -45,6 +48,9 @@
                                 @endif
                             @endauth
                         @endif
+                        {{-- <li><a id="loginbnt" class="thm-btn style-2" href="{{ route('open.help.form') }}"
+                            class="">Quick Help</a>
+                        </li> --}}
                     </ul>
                 </nav>
             </div>

@@ -49,6 +49,17 @@
                     @endif
 
 
+                <p> <b style="color: black; font-weight: bold;"> Budget: {{ $project->budget }}</b></p>
+                <p> <b style="color: black; font-weight: bold;"> Location : </b>{{ $project->location }}</p>
+
+                
+                       <br> 
+   
+                    <div style="text-align: left;">
+                        <a href="{{ route('open.form', ['id' => $id]) }}" class="thm-btn style-2 donate-box-btn">Donate Now</a>
+                    </div>
+                    
+              
 
 
                 </div><br><br>

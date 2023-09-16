@@ -2077,6 +2077,10 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
 }
 .urgent-cause2 .with-mb {
     margin-bottom: 30px;
+    margin-bottom: 30px;
+    border: 1px solid #f4f4f4;
+    min-height: 600px;
+
 }
 .urgent-cause2 .img-box {
     position: relative;
@@ -2117,7 +2121,6 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
     position: relative;
     padding: 20px;
     padding-bottom: 30px;
-    border: 1px solid #f4f4f4;
     border-top: 0px;
     height:250px!important
 }
@@ -2136,6 +2139,7 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
 }
 .urgent-cause2 .content p {
     margin-bottom: 18px;
+    min-height: 140px;
 }
 
 .urgent-cause2 .content .thm-btn {

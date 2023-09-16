@@ -61,20 +61,25 @@
                                     </h4>
                                 </a> 
                                 <p>{{ $item->short_description }}</p>
-                                {{-- <div class="progress-box">
-                                    <div>
-                                        <div class="progress-container" style="width: 90%;">
-                                            <div class="progress-bar" id="myProgressBar">90%</div>
-                                        </div>
-                                    </div>
-                                </div> --}}
+
+             
                                 
                                 <div class="donate clearfix">
+                                
+                                 <div class="donate float_left" style="margin-left: 10px"><span> Donation Type : </span>{{ optional($item->category)->name }} </div>
                                  <div class="donate float_left" style="margin-left: 10px"><span> Location : </span>{{ $item->location }} </div>
                                  <br>
                                  <div class="donate float_left" style="margin-left: 10px"><span> Start Date : </span>{{ $item->start_day }} </div>
                                  {{-- <div class="donate float_left"><span> {{ $item->start_date }}  </span></div> --}}
 
+                                </div>
+
+                                <div class="progress-box">
+                                    <div>
+                                        <div class="progress-container" style="width: 90%;">
+                                            <div class="progress-bar" id="myProgressBar">90%</div>
+                                        </div>
+                                    </div>
                                 </div>
 
 
