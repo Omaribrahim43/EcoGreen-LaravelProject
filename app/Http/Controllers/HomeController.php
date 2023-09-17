@@ -32,8 +32,25 @@ class HomeController extends Controller
         }
         // dd($projectProgress);
         $_PROGRESS= $progressPercentage;
-        
-        return view('frontend.home.home', compact(['categories', 'project', 'projectProgress']));
+
+
+         // Count the number of users
+         $usersCount = User::whereNotNull('id')->count();
+         
+         // Count the number of projects
+         $projectsCount = Project::whereNotNull('id')->count();
+
+         // Concatenate 'budget' in all projects
+         $projects = Project::whereNotNull('id')->get(); // Get all projects with a valid 'id'
+         // Use the pluck method to extract the 'budget' values as an array
+         $budgetsArray = $projects->pluck('budget')->toArray();
+
+         // Calculate the sum of 'budget' values
+         $totalBudget = array_sum($budgetsArray);
+         
+
+        return view('frontend.home.home', compact(['categories', 'project', 'projectProgress', 'usersCount', 
+        'projectsCount', 'totalBudget']));
     }
 
 
@@ -62,20 +79,6 @@ class HomeController extends Controller
 
     public function count()
     {
-         // Count the number of users
-         $usersCount = User::whereNotNull('id')->count();
-         // Count the number of admins
-         $adminsCount = Admin::whereNotNull('id')->count();
-         // Count the number of projects
-         $projectsCount = Project::whereNotNull('id')->count();
-
-         // Concatenate 'budget' in all projects
-         $projects = Project::whereNotNull('id')->get(); // Get all projects with a valid 'id'
-         // Use the pluck method to extract the 'budget' values as an array
-         $budgetsArray = $projects->pluck('budget')->toArray();
-
-         // Calculate the sum of 'budget' values
-         $totalBudget = array_sum($budgetsArray);
-         return view('frontend.home.home', compact('admin', 'usersCount', 'adminsCount', 'projectsCount', 'totalBudget'));
+        
     }
     }

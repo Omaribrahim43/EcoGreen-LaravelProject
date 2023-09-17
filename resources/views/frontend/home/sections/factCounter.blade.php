@@ -12,7 +12,7 @@
                             <div class="item">
                                 <div class="icon"><i class="icon-heart2"></i></div>
                                 <div class="count-outer"><span class="count-text" data-speed="3000"
-                                        data-stop="262">0</span>
+                                        data-stop="{{$projectsCount}}">0</span>
                                 </div>
                                 <h4 class="counter-title"> Projects Done</h4>
                             </div>
@@ -25,7 +25,7 @@
                             <div class="item">
                                 <div class="icon"><i class="fa fa-money"></i></div>
                                 <div class="count-outer">JD<span class="count-text" data-speed="3000"
-                                        data-stop="8635">0</span></div>
+                                        data-stop="{{$totalBudget}}">0</span></div>
                                 <h4 class="counter-title">Funds Collected</h4>
                             </div>
                         </article>
@@ -36,7 +36,7 @@
                             <div class="item">
                                 <div class="icon"><i class="icon-people3"></i></div>
                                 <div class="count-outer"><span class="count-text" data-speed="3000"
-                                        data-stop="635">0</span>
+                                        data-stop="{{$usersCount}}">0</span>
                                 </div>
                                 <h4 class="counter-title">Volunteers Involved</h4>
                             </div>

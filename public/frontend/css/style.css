@@ -2079,7 +2079,7 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
     margin-bottom: 30px;
     margin-bottom: 30px;
     border: 1px solid #f4f4f4;
-    min-height: 600px;
+    min-height: 500px;
 
 }
 .urgent-cause2 .img-box {
@@ -2122,7 +2122,7 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
     padding: 20px;
     padding-bottom: 30px;
     border-top: 0px;
-    height:250px!important
+    height:285px!important
 }
 
 .recent_projects { height:800px!important}
@@ -2138,8 +2138,8 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
     color: #8dc63f;
 }
 .urgent-cause2 .content p {
-    margin-bottom: 18px;
-    min-height: 140px;
+    margin-bottom: 0px;
+    min-height: 100px;
 }
 
 .urgent-cause2 .content .thm-btn {

@@ -77,9 +77,9 @@
                               
                                 <div class="donate clearfix">
                                 
-                                 <div class="donate float_left" style="margin-left: 10px"><span> Donation Type : </span>{{ optional($item->category)->name }} </div>
-                                    <span> {{ $item->category->name }} </span>
-                                    <br>
+                                 <div class="donate " style="margin-left: 10px"><span> Donation Type : </span>{{ optional($item->category)->name }} </div>
+                                    {{-- <span> {{ $item->category->name }} </span> --}}
+                                   
                                  <div ><span>  
                                     <span class="icon-signs2"></span>{{ $item->location }} </div>
                                  

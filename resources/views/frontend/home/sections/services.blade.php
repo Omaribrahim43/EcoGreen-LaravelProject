@@ -1,11 +1,8 @@
-use Illuminate\Support\Str;
 <section class="service sec-padd3" id="services">
     <div class="container">
-        {{-- <div class="section-title center">
-            <h2 > <span class="thm-color" > We are ECO Green , </span>  a passionate community dedicated to preserving and enhancing our planet's green spaces. </h2>
-        </div> --}}
+      
         <br>
-        <div class="section-title center">
+        <div class="section-title center" >
             <h1 > <span class="thm-color" > Our Services </span>   </h1>
         </div>
       
