@@ -55,7 +55,9 @@
         <h4>How much you need to help:</h4>
 
         <form action="{{ route('store.Quick.donation') }}" class="donate-form" method="post" novalidate="novalidate">
+            @
             @csrf
+
             <ul class="chicklet-list clearfix">
 
                 <div class="form-check form-check-inline">
@@ -101,7 +103,7 @@
 
 {{-- *************Service Donation Section************* --}}
 
-<div class="container" id="Service_Donation">
+{{-- <div class="container" id="Service_Donation">
     <div class="donate-form-area">
         <div class="section-title center">
             <h2>Donation Information</h2>
@@ -153,13 +155,14 @@
                 </div>
         </form>
     </div>
-</div>
+</div> --}}
 
 {{-- ...................................................... --}}
 
 
 {{-- *************Item Donation Section************* --}}
-<div class="container" id="Item_Donation">
+
+{{-- <div class="container" id="Item_Donation">
     <div class="donate-form-area">
         <div class="section-title center">
             <h2>Donation Information</h2>
@@ -230,7 +233,7 @@
                 </div>
         </form>
     </div>
-</div>
+</div> --}}
 
 {{-- ...................................................... --}}
 

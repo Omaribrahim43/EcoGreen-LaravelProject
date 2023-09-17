@@ -50,9 +50,9 @@ Route::post('/Donation.storeform', [SingelProjectController::class, 'storeformDo
 Route::post('/item.storeform', [SingelProjectController::class, 'storeformitem'])->name('store.item');
 Route::post('/service.storeform', [SingelProjectController::class, 'storeformservice'])->name('sorte.service');
 
-// Route::get('/open/help/form', [SingelProjectController::class, 'openFormhelp'])->middleware(['auth', 'verified'])->name('open.help.form');
+Route::get('/open/help/form', [SingelProjectController::class, 'openFormhelp'])->middleware(['auth', 'verified'])->name('open.help.form');
 
-// Route::post('/Donation.Quickstoreform', [Quickhelp::class, 'storeformDonation'])->name('store.Quick.donation');
-// Route::post('/item.Quickstoreform', [Quickhelp::class, 'storeformitem'])->name('store.Quick.item');
-// Route::post('/service.Quickstoreform', [Quickhelp::class, 'storeformservice'])->name('sorte.Quick.service');
+// Route::post('/Donation.Quickstoreform', [Quickhelp::class, 'QuickformDonation'])->name('store.Quick.donation');
+// Route::post('/item.Quickstoreform', [Quickhelp::class, 'Quickformitem'])->name('store.Quick.item');
+// Route::post('/service.Quickstoreform', [Quickhelp::class, 'Quickformservice'])->name('sorte.Quick.service');
 // Route::post('/project/Quickstoreform', [Quickhelp::class, 'storeQuickProject'])->name('sorte.Quick.project');

@@ -1,4 +1,4 @@
-{{-- @extends('frontend.layouts.master_popup')
+@extends('frontend.layouts.master_popup')
 
 @section('content')
     <style>
@@ -68,7 +68,7 @@
             </form>
             <br><br>
 
-            <form method="post" action="{{ url('/project/Quickstoreform') }}" enctype="multipart/form-data">
+            {{-- <form method="post" action="{{ url('/project/Quickstoreform') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-bg">
                     <div class="row clearfix">
@@ -138,7 +138,7 @@
 
                     </div> <!-- End of row -->
                 </div> <!-- End of form-bg -->
-            </form>
+            </form> --}}
 
         </div>
     </div>
@@ -151,16 +151,16 @@
 
     <div class="button-container" id="btn_box">
         <div class="center">
-            <button class="thm-btn sbmt-btn Mony_Donationbtn" type="button" style="display: none">Money Help</button>
+            <button class="thm-btn sbmt-btn Mony_Donationbtn" type="button" >Money Help</button>
         </div>
 
         <div class="center">
-            <button class="thm-btn sbmt-btn Service_Donationbtn" type="button" style="display: none">Service
+            <button class="thm-btn sbmt-btn Service_Donationbtn" type="button" >Service
                 Help</button>
         </div>
 
         <div class="center">
-            <button class="thm-btn sbmt-btn Item_Donationbtn" type="button" style="display: none">Item Help</button>
+            <button class="thm-btn sbmt-btn Item_Donationbtn" type="button" >Item Help</button>
         </div>
     </div>
 
@@ -172,7 +172,7 @@
 
 
     {{-- **************Mony Donation Section****************** --}}
-    <div class="container" id="Mony_Donation">
+    {{-- <div class="container" id="Mony_Donation">
         @if (session('error'))
             <div class="alert alert-danger">
                 {{ session('error') }}
@@ -229,7 +229,7 @@
         </div>
 
 
-    </div>
+    </div> --}}
 
 
     {{-- ................................................ --}}
@@ -298,7 +298,7 @@
 
 
     {{-- *************Item Donation Section************* --}}
-    <div class="container" id="Item_Donation">
+    {{-- <div class="container" id="Item_Donation">
         <div class="donate-form-area">
             <div class="section-title center">
                 <h2>Donation Information</h2>
@@ -369,7 +369,7 @@
                     </div>
             </form>
         </div>
-    </div>
+    </div> --}}
 
     {{-- ...................................................... --}}
 
@@ -411,7 +411,7 @@
 
 
     {{-- ***********************item Donation***************** --}}
-    <script>
+    {{-- <script>
         var tree = document.getElementsByClassName("tree")[
             0]; // Assuming you want to select the first element with the "tree" class
         var treebox = document.getElementsByClassName("treebox")[
@@ -437,7 +437,7 @@
             fertilizerbox.style.display = 'block';
             treebox.style.display = 'none';
         };
-    </script>
+    </script> --}}
 
     {{-- ................................................... --}}
 
@@ -551,4 +551,4 @@
     </script>
 
     {{-- ................................................... --}}
-@endsection --}}
+@endsection

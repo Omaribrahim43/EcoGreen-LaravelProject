@@ -38,7 +38,7 @@
 
 
 {{-- **************Mony Donation Section****************** --}}
-<div class="container" id="Mony_Donation">
+{{-- <div class="container" id="Mony_Donation">
     @if (session('error'))
     <div class="alert alert-danger">
         {{ session('error') }}
@@ -93,7 +93,7 @@
     </div>
 
 
-</div>
+</div> --}}
 
 
 {{-- ................................................ --}}

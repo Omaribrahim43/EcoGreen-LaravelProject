@@ -138,12 +138,13 @@ class SingelProjectController extends Controller
 
     public function storeformitem(Request $request)
     {
+        
 
         if ($request->has('donate_item')) {
             $id = auth()->user()->id;
             $userProject = UserProject::create([
                 'user_id' => $id,
-                'donate_item' => $request->donate_item ." ". (int)$request->donate_itemNo,
+                'donate_item' => $request->donate_item ." ". (int) $request->donate_itemNo,
                 'project_id' => (int) $request->input('project_id')
             ]);
 

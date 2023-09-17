@@ -56,30 +56,33 @@
 
 
                 </ul>
-                <div class="form-check form-check-inline">
-                    <div style="display: flex">
-                        <input type="radio" class="form-check-input tree" name="donate_item" value="Tree" required
-                            style="display: inline-block">
-                        <label class="form-check-label"> Tree :{{ $project->tree_type }}</label>
-                    </div>
-                    <input type="number" class="form-check-input treebox" name="donate_itemNo" value=""
-                        style="width: 100px;height:20px;dispaly:inline-block" required>
-                </div>
+                <div style="display: flex ;gap:7%" >
+                        <div style="display: flex">
+                            <div style="display: flex">
+                                <input type="radio" class="form-check-input tree" name="donate_item" value="Tree" required
+                                    style="display: inline-block">
+                                <label class="form-check-label" style="margin-left: 7px"> Tree {{ $project->tree_type }}</label>
+                            </div>
+                            
+                        </div>
 
-                <div class="form-check form-check-inline">
-                    <input type="radio" class="form-check-input fertilizer" name="donate_item" value="Fertilizer"
-                        for="f" required>
-                    <label class="form-check-label ">Fertilizer : {{ $project->fertilizer }}</label>
-                    <input type="number" class="form-check-input fertilizerbox" name="donate_itemNo" value="" id="f"
-                        style="width: 100px;height:20px;dispaly:inline-block" required>
-                </div>
+                        <div style="display: flex">
+                            <input type="radio" class="form-check-input fertilizer" name="donate_item" value="Fertilizer"
+                                for="f" required>
+                            <label class="form-check-label" style="margin-left: 7px">Fertilizer {{ $project->fertilizer }}</label>
+                    
+                        </div>
 
-                <div class="form-check form-check-inline">
-                    <input type="radio" class="form-check-input" name="donate_item" value="Equipments" required>
-                    <label class="form-check-label">Equipments : {{ $project->equipments }}</label>
-                    <input type="hidden" class="form-check-input" name="donate_itemNo" value="0"
-                        style="width: 100px;height:20px;dispaly:inline-block" required>
+
+                        <div style="display: flex">
+                            <input type="radio" class="form-check-input" name="donate_item" value="Equipments" required>
+                            <label class="form-check-label" style="margin-left: 7px">Equipments {{ $project->equipments }}</label>
+                        </div>
                 </div>
+                <br>
+                
+                <input type="number" class="form-check-input treebox" name="donate_itemNo"
+                style="width: 200px;height:20px;dispaly:inline-block" placeholder="Enter number">
 
 
                 <div class="center">
@@ -97,19 +100,18 @@
 
         tree.onclick = function() {
             treebox.style.display = 'block';
-            fertilizerbox.style.display = 'none';
+            fertilizerbox.style.display = 'box';
             
         };
 
 
         var fertilizer = document.getElementsByClassName("fertilizer")[0]; // Assuming you want to select the first element with the "tree" class
-        var fertilizerbox = document.getElementsByClassName("fertilizerbox")[0]; // Assuming you want to select the first element with the "treebox" class
+        var fertilizerbox = document.getElementsByClassName("treebox")[0]; // Assuming you want to select the first element with the "treebox" class
 
-        fertilizerbox.style.display = "none";
 
         fertilizer.onclick = function() {
             fertilizerbox.style.display = 'block';
-            treebox.style.display = 'none';
+            treebox.style.display = 'block';
         };
     </script>
 @endsection
