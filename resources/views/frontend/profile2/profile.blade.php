@@ -43,13 +43,11 @@
             </button>
 
             <div class="collapse navbar-collapse" id="main_menu">
-                <ul class="navbar-nav ml-auto" style="color:white !important">
+                <ul class="navbar-nav ml-auto" style="color:white !important ;margin-right: 32%;">
                     <li class="nav-item" style="color:white !important">
                         <a class="nav-link" href="{{ route('index') }}" style="color:white !important">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('about') }}">About</a>
-                    </li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>

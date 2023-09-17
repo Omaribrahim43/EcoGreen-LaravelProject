@@ -1,4 +1,4 @@
-@extends('frontend.layouts.master')
+@extends('frontend.layouts.navsticky')
 
 @section('content')
     <div class="container">
@@ -7,13 +7,12 @@
                 {{ session('error') }}
             </div>
         @endif
-
         <div class="donate-form-area">
             <div class="section-title center">
                 <h2>Donation Information</h2>
             </div>
 
-            <h4>How much would you like to donate:</h4>
+            <h3>How much would you like to donate:</h3>
 
             <form action="{{ route('paypal') }}" class="donate-form" method="post" novalidate="novalidate">
                 @csrf
@@ -86,28 +85,36 @@
 
                     </div>
                 </div>
+                {{-- payment_method --}}
+
 
                 <ul class="payment-option">
                     <li>
-                        <h4>Choose your payment method:</h4>
+                        <h3>Choose your payment method:</h3>
                     </li>
                 </ul>
+                <div id="paymentpp">
+                    <div class="form-check form-check-inline">
 
-                {{-- <li> --}}
-                <div class="form-check form-check-inline">
-                    <input type="radio" class="form-check-input" name="donate_method" value="Cash" required>
-                    {{-- <i class="fa fa-money" aria-hidden="true"></i> --}}
-                    <h4>Cash</h4>
+                        <h4> <input style="display: inline-block" type="radio" class="form-check-input" name="donate_method" value="Cash" required>
+                            Cash
+                            <span style="color: green !important"><i class="fa fa-money" aria-hidden="true"></i>
+                        </h4>
+                        </span>
+                    </div>
 
+                    <div class="form-check form-check-inline">
+
+                        <h4> <input style="display: inline-block" type="radio" class="form-check-input"
+                                name="donate_method" value="PayPal" required>
+                            Paypal <span style="color:skyblue"><i class="fa fa-paypal" aria-hidden="true"></i>
+                            </span>
+                        </h4>
+
+                    </div>
                 </div>
-                {{-- </li> --}}
-                {{-- <li> --}}
-                <div class="form-check form-check-inline">
-                    <input type="radio" class="form-check-input" name="donate_method" value="PayPal" required>
-                    <h4>paypal</h4>
-                    {{-- <i class="fab fa-paypal"></i> --}}
-                </div>
-                {{-- </li> --}}
+
+
                 <div class="center">
 
                     <button class="thm-btn sbmt-btn" type="submit">Donate Now</button>

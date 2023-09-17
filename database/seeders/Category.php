@@ -17,7 +17,7 @@ class Category extends Seeder
     public function run()
     {
         DB::table('categories')->insert([
-            'name' => 'Money Donation',
+            'name' => 'Financial Donation',
             'description' => 'This service is designed for individuals and organizations who want to contribute financially to support our green area planting initiatives. ',
             'image' => 'http://127.0.0.1:8000/frontend/images/money.jpg',
         ]);
