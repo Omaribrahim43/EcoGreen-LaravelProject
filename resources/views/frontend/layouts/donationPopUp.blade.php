@@ -20,9 +20,6 @@
                 <ul class="chicklet-list clearfix">
                     <li>
                         <input type="hidden" name="project_id" value="{{ $id }}" required>
-                    <li>
-                        {{-- <input type="hidden" name="project_id" value="2" required> --}}
-
                     </li>
 
                     <li>
