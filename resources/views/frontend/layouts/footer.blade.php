@@ -1,4 +1,4 @@
-<footer  class="main-footer">
+<footer class="main-footer">
 
     <!--Widgets Section-->
     <div class="widgets-section">
@@ -13,17 +13,20 @@
                             {{-- fore logo  and descreption --}}
 
 
-                                <div class="footer-widget about-column">
-                                    <figure class="footer-logo"><a href="{{ route('index') }}"><img style="width: 65%;" src="{{ asset('frontend/images/logo/green_hands_logo-removebg-preview.png') }}" alt=""></a>
-                                    </figure>
+                            <div class="footer-widget about-column">
+                                <figure class="footer-logo"><a href="{{ route('index') }}"><img style="width: 65%;"
+                                            src="{{ asset('frontend/images/logo/green_hands_logo-removebg-preview.png') }}"
+                                            alt=""></a>
+                                </figure>
 
-                                                    <div class="text">
-                                                        <p>Welcome to the Green Hands website! Which connects eco-conscious volunteers with green initiatives and community efforts. </p>
-                                                       </div>
+                                <div class="text">
+                                    <p>Welcome to the Green Hands website! Which connects eco-conscious volunteers with
+                                        green initiatives and community efforts. </p>
                                 </div>
-                                
+                            </div>
 
-                            
+
+
 
 
 
@@ -37,10 +40,10 @@
                                 {{-- class="menuzord" id="main_menu" --}}
                                 <div class="widget-content">
                                     <ul class="list">
-                                    <li><a href="{{ route('index') }}" class="">Home</a></li>
-                                    <li><a href="{{ route('All.projects') }}">Services</a></li>
-                                    <li><a href="{{ route('about') }}" class="">About </a></li>
-                                    <li><a href="{{ route('show.contact') }}">Contact</a></li>
+                                        <li><a href="{{ route('index') }}" class="">Home</a></li>
+                                        <li><a href="{{ route('All.projects') }}">Services</a></li>
+                                        <li><a href="{{ route('about') }}" class="">About </a></li>
+                                        <li><a href="{{ route('show.contact') }}">Contact</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -107,7 +110,8 @@
 <section class="footer-bottom">
     <div class="container">
         <div class="pull-left copy-text">
-            <p><a href="#">Copyrights © 2023</a> All Rights Reserved. Powered by <a href="#">Green Hands</a></p>
+            <p><a href="#">Copyrights © 2023</a> All Rights Reserved. Powered by <a href="#">Green Hands</a>
+            </p>
 
         </div>
 

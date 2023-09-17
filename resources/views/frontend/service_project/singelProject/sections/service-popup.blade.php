@@ -1,4 +1,5 @@
-@extends('frontend.layouts.master_popup')
+@extends('frontend.layouts.master_popUp')
+
 @section('content')
     <div class="container">
         <div class="donate-form-area">
@@ -6,7 +7,7 @@
                 <h2>Donation Information</h2>
             </div>
 
-            
+
 
             <form action="{{ route('sorte.service') }}" class="donate-form" method="post" novalidate="novalidate">
                 @csrf
@@ -36,8 +37,8 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <p>Phone</p>
-                                <input type="text" class="form-control" required=""
-                                    value="{{ $user->phone }}" name="phone">
+                                <input type="text" class="form-control" required="" value="{{ $user->phone }}"
+                                    name="phone">
                             </div>
                         </div>
 
@@ -45,7 +46,7 @@
                             <div class="form-group">
                                 <p>Address*</p>
                                 <input type="text" name="address" class="form-control" placeholder="" required=""
-                                    value="{{ $user->address }}" >
+                                    value="{{ $user->address }}">
                             </div>
                         </div>
 
@@ -54,7 +55,7 @@
                 </div>
 
                 <ul class="payment-option">
-<br>
+                    <br>
                     <li>
                         <h4> Choose the Donation Service:</h4>
                     </li>
@@ -63,7 +64,7 @@
                 <div class="form-check form-check-inline">
                     <input type="radio" class="form-check-input" name="choosen_shift" value="Transportation" required>
                     <label class="form-check-label">Transportation </label>
-                    
+
                 </div>
 
                 <div class="form-check form-check-inline">

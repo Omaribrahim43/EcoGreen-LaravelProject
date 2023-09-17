@@ -20,14 +20,16 @@
     </div>
     <div class="col-md-6 col-sm-6 col-xs-12">
         <div class="section-title style-2">
-            <h3>Project requiered </h3>
+            <br><br>
+
+            <h3>Project required </h3>
         </div>
 
         <ul class="list2">
 
-            <li><i class="fa fa-check-circle"></i> Tree_type : {{ $project->tree_type }}</li>
-            <li><i class="fa fa-check-circle"></i> Fertilizer : {{ $project->fertilizer }}</li>
-            <li><i class="fa fa-check-circle"></i> Equipments : {{ $project->equipments }}</li>
+            <li><i class="fa fa-check-circle"></i><b style="color: black; font-weight: bold;"> Tree_type : </b>{{ $project->tree_type }}</li>
+            <li><i class="fa fa-check-circle"></i><b style="color: black; font-weight: bold;"> Fertilizer :</b> {{ $project->fertilizer }}</li>
+            <li><i class="fa fa-check-circle"></i><b style="color: black; font-weight: bold;"> Equipments :</b>{{ $project->equipments }}</li>
           
 
         </ul>

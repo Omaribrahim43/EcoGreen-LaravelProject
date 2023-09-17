@@ -50,6 +50,7 @@
 
 
 
+
                 <li data-transition="fade">
                     <img src="https://th.bing.com/th/id/R.8088ed438001b81ab5807dc72f74e2b6?rik=NUhararFqqKPGw&pid=ImgRaw&r=0"
                         alt="" width="1920" height="580" data-bgposition="top center" data-bgfit="cover"
@@ -63,8 +64,9 @@
                         data-responsive_offset="on" data-start="700">
                         <div class="slide-content-box center">
                             <h2>Make Our Country a better place</h2>
-                            
-                            <p style="font-size:26px">Join us in making our country a better place for all through environmental <br>stewardship and community engagement.</p>
+
+                            <p style="font-size:26px">Join us in making our country a better place for all through
+                                environmental <br>stewardship and community engagement.</p>
                         </div>
                     </div>
                     <div class="tp-caption tp-resizeme" data-x="center" data-hoffset="-90" data-y="top" data-voffset="450"
@@ -102,9 +104,10 @@
                         data-mask_in="x:[100%];y:0;s:inherit;e:inherit;" data-splitin="none" data-splitout="none"
                         data-responsive_offset="on" data-start="700">
                         <div class="slide-content-box">
-                            <h2 > Save <span >...World By Planting</span></h2>
+                            <h2> Save <span>...World By Planting</span></h2>
                             <h3>trees Your Surrounding</h3>
-                            <p style="font-size:26px">Great explorer of the truth, the master-builder of human happiness <br>not know how
+                            <p style="font-size:26px">Great explorer of the truth, the master-builder of human happiness
+                                <br>not know how
                                 to pursue pleasure rationally... </p>
                         </div>
                     </div>
@@ -131,7 +134,7 @@
                         </div>
                     </div>
                 </li>
-           
+
             </ul>
         </div>
     </section>
@@ -162,7 +165,7 @@
     @include('frontend.home.sections.factCounter')
     {{-- End Facts Counter --}}
 
- 
+
     {{-- Clients --}}
     @include('frontend.home.sections.clients')
     {{-- End Clients --}}

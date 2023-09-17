@@ -110,7 +110,7 @@
         @include('frontend.layouts.footer')
 
         <!-- preloader  -->
-        <div class="preloader"></div>
+        {{-- <div class="preloader"></div> --}}
 
         {{-- @include('frontend.layouts.donationPopUp') --}}
 
