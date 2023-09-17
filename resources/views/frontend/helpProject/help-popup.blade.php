@@ -72,9 +72,7 @@
                 @csrf
                 <div class="form-bg">
                     <div class="row clearfix">
-                        <input type="hidden" class="form-check-input" name="category_id1" value="1" </div>
-                        <input type="hidden" class="form-check-input" name="category_id2" value="2" </div>
-                        <input type="hidden" class="form-check-input" name="category_id3" value=" " </div>
+                
 
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="form-group">
