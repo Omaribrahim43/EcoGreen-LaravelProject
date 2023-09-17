@@ -159,6 +159,7 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
+        Barryvdh\DomPDF\ServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
@@ -181,6 +182,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Srmklive\PayPal\Providers\PayPalServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -194,6 +196,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\FortifyServiceProvider::class,
+        App\Providers\JetstreamServiceProvider::class,
 
     ],
 
@@ -208,8 +212,24 @@ return [
     |
     */
 
+    // 'aliases' => Facade::defaultAliases()->merge([
+    //     // 'ExampleClass' => App\Example\ExampleClass::class,
+    // ])->toArray(),
+
+
+    // 'aliases' => [
+    //     // ...
+    //     'PDF' => Barryvdh\DomPDF\Facade::class,
+    // ],
     'aliases' => Facade::defaultAliases()->merge([
-        // 'ExampleClass' => App\Example\ExampleClass::class,
+        // Add the alias for Dompdf here
+        'PDF' => Barryvdh\DomPDF\Facade::class,
     ])->toArray(),
+    // 'providers' => [
+    //     Barryvdh\DomPDF\ServiceProvider::class,
+    // ],
+    // 'aliases' => [
+    //     'PDF' => Barryvdh\DomPDF\Facade::class,
+    // ],
 
 ];
