@@ -109,7 +109,7 @@
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
                                                     <label for="description">Description</label>
-                                                    <textarea class="summernote-simple" name="long_description" id="description" placeholder="Enter a description">{{ $project->long_description }}</textarea>
+                                                    <textarea class="summernote-simple" name="long_description" id="description" placeholder="Enter a description">{!! $project->long_description !!}</textarea>
                                                 </div>
                                             </div>
 

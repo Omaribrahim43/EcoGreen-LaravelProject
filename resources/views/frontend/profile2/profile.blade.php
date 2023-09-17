@@ -20,9 +20,19 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/profile.css') }}">
 </head>
 
+<style>
+    .progress-bar {
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        color: white;
+    }
+</style>
+
 <body>
     {{-- @include('frontend.layouts.navbar') --}}
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: black !important; color:white !important">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"
+        style="background-color: black !important; color:white !important">
         <div class="container">
             <a class="navbar-brand" href="{{ route('index') }}">
                 <img src="{{ asset('frontend/images/logo/green_hands_logo-removebg-preview.png') }}" alt="Logo"
@@ -33,13 +43,11 @@
             </button>
 
             <div class="collapse navbar-collapse" id="main_menu">
-                <ul class="navbar-nav ml-auto" style="color:white !important">
+                <ul class="navbar-nav ml-auto" style="color:white !important ;margin-right: 32%;">
                     <li class="nav-item" style="color:white !important">
                         <a class="nav-link" href="{{ route('index') }}" style="color:white !important">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('about') }}">About</a>
-                    </li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
@@ -113,7 +121,8 @@
                             href="#account-change-password">Change password</a>
                         <a class="list-group-item list-group-item-action" data-toggle="list"
                             href="#donationProject">Financial Projects</a>
-                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#ItemsProjects">All
+                        <a class="list-group-item list-group-item-action" data-toggle="list"
+                            href="#ItemsProjects">All
                             Projects</a>
                         {{-- <a class="list-group-item list-group-item-action" data-toggle="list"
                             href="#servicesProjects">Services Projects</a> --}}
@@ -214,10 +223,13 @@
                         <div class="tab-pane fade" id="donationProject">
                             <div class="card-body pb-2">
                                 <div class="container">
+                                    <!-- resources/views/projects/index.blade.php -->
+
+                                    <!-- resources/views/projects/index.blade.php -->
+
                                     @if (!$projects->isEmpty())
                                         <a href="{{ route('certificate.download') }}" class="btn btn-primary"
-                                            style="margin-bottom: 20px ;float:right">Download
-                                             Certificate</a>
+                                            style="margin-bottom: 20px; float:right">Download Certificate</a>
                                     @endif
                                     <br>
                                     <table class="table table-bordered">
@@ -233,7 +245,7 @@
                                         </thead>
                                         <tbody>
                                             @foreach ($projects as $project)
-                                                @if ($amounts[$project->id] > 0)
+                                                @if (isset($amounts[$project->id]) && $amounts[$project->id] > 0)
                                                     <tr>
                                                         <td>{{ $project->title }}</td>
                                                         <td>{{ $project->location }}</td>
@@ -247,9 +259,6 @@
                                         </tbody>
                                     </table>
                                 </div>
-
-
-
 
 
 

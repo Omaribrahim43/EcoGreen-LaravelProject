@@ -40,7 +40,7 @@ class SingelProjectController extends Controller
     {
         if (auth()->user()) {
             $iduser = auth()->user()->id;
-    
+
             $project = user::findOrFail($iduser);
             $user = user::findOrFail($iduser);
             return view('frontend.Item_Project.singelProject.sections.item-popup', compact('project', 'user', 'id'));
@@ -67,10 +67,31 @@ class SingelProjectController extends Controller
     }
 
 
-    public function showDonation($id)
+    public function showDonation(Request $request, $id)
     {
+
+        $projectss = Project::all();
+
+        $projectProgress = [];
+
+        foreach ($projectss as $projects) {
+            $totalDonatedAmount = UserProject::where('project_id', $projects->id)->sum('donate_amount');
+            $progressPercentage = number_format(($totalDonatedAmount / ($projects->budget)) * 100, 2);
+
+            $projectProgress[$projects->id] = [
+                'name' => $projects->name,
+                'progress' => $progressPercentage,
+                'totalDonatedAmount' => $totalDonatedAmount,
+            ];
+        }
+        // dd($projectProgress);
+        $project = Project::find($id); // Retrieve the project
+        // dd($project);
+        $remainingAmount = $project->budget - $projectProgress[$project->id]['totalDonatedAmount'];
+
+
         $project = Project::findOrFail($id);
-        return view('frontend.Donation_Project.singelProject.singelProject', ['project' => $project], compact('id'));
+        return view('frontend.Donation_Project.singelProject.singelProject', ['project' => $project], compact('id', 'projectProgress', 'remainingAmount'));
     }
     public function showitem($id)
     {
@@ -103,7 +124,7 @@ class SingelProjectController extends Controller
 
     public function checkformDonation()
     {
-        $id=auth()->user();
+        $id = auth()->user();
         $user = User::where('id', $id);
         return view('frontend.Donation_Project.singelProject.sections.donationPopUp', ['user' => $user]);
     }
@@ -113,26 +134,51 @@ class SingelProjectController extends Controller
 
     public function storeformDonation(Request $request)
     {
-        
-        if ($request->has('donate_method') && $request->donate_amount != 0) {
-            $id = auth()->user()->id;
+        $projectss = Project::all();
+        $id = auth()->user()->id;
 
-            $user = UserProject::create([
-                'donate_amount' => $request->donate_amount,
-                'donate_method' => $request->donate_method,
-                'user_id' => $id,
-                'project_id' => (int) $request->input('project_id')
-            ]);
-            
-            $data['address'] = $request->address;
-            $data['phone'] = $request->phone;
-            User::where(['id' => $id])->update($data);
-            // if($request->donate_method=='PayPal'){
-            //     return redirect()->route('payment',['price'=>$request->donate_amount]);
-            // }
-            return view('frontend.layouts.thankyouPopUp');
+        $projectProgress = [];
+
+        foreach ($projectss as $projects) {
+            $totalDonatedAmount = UserProject::where('project_id', $projects->id)->sum('donate_amount');
+            $progressPercentage = number_format(($totalDonatedAmount / $projects->budget) * 100, 2);
+
+            $projectProgress[$projects->id] = [
+                'name' => $projects->name,
+                'progress' => $progressPercentage,
+                'totalDonatedAmount' => $totalDonatedAmount,
+            ];
         }
-        return redirect()->back()->with('error', 'please enter payment method and the amount');
+
+        if ($request->has('donate_method') && $request->donate_amount != 0) {
+            $project = Project::find($request->input('project_id')); // Retrieve the project
+            if (!$project) {
+                return redirect()->back()->with('error', 'Project not found');
+            }
+
+            // Calculate the remaining amount the user can donate
+            $remainingAmount = $project->budget - $projectProgress[$project->id]['totalDonatedAmount'];
+            // dd($remainingAmount);
+            if ($request->donate_amount <= $remainingAmount) {
+                $id = auth()->user()->id;
+
+                $user = UserProject::create([
+                    'donate_amount' => $request->donate_amount,
+                    'donate_method' => $request->donate_method,
+                    'user_id' => $id,
+                    'project_id' => (int) $request->input('project_id')
+                ]);
+
+                $data['address'] = $request->address;
+                $data['phone'] = $request->phone;
+                User::where(['id' => $id])->update($data);
+                return view('frontend.layouts.thankyouPopUp');
+            } else {
+                return redirect()->back()->with('error', 'The amount of donation exceeds the remaining amount allowed');
+            }
+        }
+
+        return redirect()->back()->with('error', 'Please enter a payment method and the amount');
     }
 
 
@@ -152,7 +198,7 @@ class SingelProjectController extends Controller
             $data['phone'] = $request->phone;
             User::where(['id' => $id])->update($data);
 
-            return view('frontend.layouts.thankyouPopUp');
+            return view('frontend.layouts.thx');
         }
 
         return redirect()->back();
@@ -175,7 +221,7 @@ class SingelProjectController extends Controller
             $data['phone'] = $request->phone;
             User::where(['id' => $id])->update($data);
 
-            return view('frontend.layouts.thankyouPopUp');
+            return view('frontend.layouts.thx');
         }
 
         return redirect()->back();

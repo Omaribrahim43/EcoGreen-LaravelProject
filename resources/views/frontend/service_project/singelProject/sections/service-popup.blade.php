@@ -1,4 +1,4 @@
-@extends('frontend.layouts.master_popUp')
+@extends('frontend.layouts.navsticky')
 
 @section('content')
     <div class="container">
@@ -19,7 +19,6 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <li>
                                 <input type="hidden" name="project_id" value="{{ $id }}"required>
-
                             </li>
                             <div class="form-group">
                                 <p>Name</p>
