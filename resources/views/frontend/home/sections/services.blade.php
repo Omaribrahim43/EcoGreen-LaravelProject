@@ -1,3 +1,4 @@
+use Illuminate\Support\Str;
 <section class="service sec-padd3" id="services">
     <div class="container">
         {{-- <div class="section-title center">
@@ -28,7 +29,21 @@
 
                                         <h3>{{ $item->name }}</h3> <br> 
                                      {{-- </a> --}}
-                                        <p>{{ $item->description }}</p>
+                                        {{-- <p>{{ $item->description }}</p> --}}
+                                        <p>
+                                            <?php
+                                            $description = strip_tags($item->description);
+                                            $limit = 150; // Adjust this to your desired character limit
+                                        
+                                            if (strlen($description) > $limit) {
+                                                $shortDescription = substr($description, 0, $limit) . '...';
+                                            } else {
+                                                $shortDescription = $description;
+                                            }
+                                            ?>
+                                        
+                                            {{ $shortDescription }}
+                                        </p>
                                         <br>
 
                                         <a href="{{ route('All.projects',$item->id) }}" class="thm-btn thm-tran-bg" >Donate Now</a>

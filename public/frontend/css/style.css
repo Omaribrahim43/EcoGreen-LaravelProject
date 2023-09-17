@@ -2118,7 +2118,7 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
     padding-bottom: 0px;
     border: 1px solid #f4f4f4;
     border-top: 0px;
-    height:280px!important
+    height:250px!important
 }
 
 .recent_projects { height:800px!important}

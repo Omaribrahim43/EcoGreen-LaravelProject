@@ -31,13 +31,27 @@
                                                 </a>
                                             @endif</h4>
                                     </a>
-                                    <p> {{ $item->short_description }}</p>
+                                    {{-- <p> {{ $item->short_description }}</p> --}}
+                                    <p>
+                                        <?php
+                                        $shortDescription = strip_tags($item->short_description);
+                                        $limit = 130; // Adjust this to your desired character limit
+                                    
+                                        if (strlen($shortDescription) > $limit) {
+                                            $shortDescription = substr($shortDescription, 0, $limit) . '...';
+                                        }
+                                        ?>
+                                    
+                                        {{ $shortDescription }}
+                                    </p>
+                                   
                                 </div>
                                 <div class="donate clearfix">
                                     <div class="donate"
                                         style="text-align: center; display:flex; justify-content:space-around"><span>
-                                            Goal:
-                                            {{ $item->budget }} JOD</span> 
+                                            
+                                            {{-- {{ $item->budget }} JOD</span>  --}}
+                                              {{ $item->category->name }} </span>
 
                                             @if ($item->category->id == 1)
                                             <a href="{{ route('show.Donation', ['id' => $item->id]) }}">

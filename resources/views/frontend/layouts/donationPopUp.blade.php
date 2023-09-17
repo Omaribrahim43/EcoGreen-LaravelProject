@@ -13,8 +13,6 @@
              <form action="{{ route('store.donation') }}" class="donate-form" method="post" novalidate="novalidate">
                  @csrf
                  <ul class="chicklet-list clearfix">
-                    <li>
-                        <input type="hidden" name="project_id" value="{{ $id }}" required >
                      <li>
                         <input type="hidden" name="project_id" value="2" required >
                         
@@ -66,8 +64,8 @@
                          <div class="col-md-12 col-sm-12 col-xs-12">
                              <div class="form-group">
                                  <p>Phone</p>
-                                 <input type="text" class="form-control" required="" value="{{ $user->phone }}"
-                                     name="phone">
+                                 <input type="text" class="form-control" required=""
+                                     value="{{ $user->phone }}" name="phone">
                              </div>
                          </div>
 
