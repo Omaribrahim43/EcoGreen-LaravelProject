@@ -33,9 +33,8 @@ Route::get('/testimonial', function () {
 Route::get('/Allprojects/{id?}', [AllProjectController::class, 'show'])->name('All.projects');
 
 // ----------singelproject----------
-Route::get('/open/form/{id}', [SingelProjectController::class, 'openForm'])->middleware(['auth', 'verified'])->name('open.form');
-Route::get('/open/service/form/{id}', [SingelProjectController::class, 'openFormservice'])->middleware(['auth', 'verified'])->name('open.Sform');
-Route::get('/open/item/form/{id}', [SingelProjectController::class, 'openFormitem'])->middleware(['auth', 'verified'])->name('open.Iform');
+
+
 
 Route::get('/Donation/singelProject/{id}', [SingelProjectController::class, 'showDonation'])->name('show.Donation');
 Route::get('/Item_Project.singelProject/{id}', [SingelProjectController::class, 'showitem'])->name('show.item');
@@ -50,9 +49,17 @@ Route::post('/Donation.storeform', [SingelProjectController::class, 'storeformDo
 Route::post('/item.storeform', [SingelProjectController::class, 'storeformitem'])->name('store.item');
 Route::post('/service.storeform', [SingelProjectController::class, 'storeformservice'])->name('sorte.service');
 
-Route::get('/open/help/form', [SingelProjectController::class, 'openFormhelp'])->middleware(['auth', 'verified'])->name('open.help.form');
 
 // Route::post('/Donation.Quickstoreform', [Quickhelp::class, 'QuickformDonation'])->name('store.Quick.donation');
 // Route::post('/item.Quickstoreform', [Quickhelp::class, 'Quickformitem'])->name('store.Quick.item');
 // Route::post('/service.Quickstoreform', [Quickhelp::class, 'Quickformservice'])->name('sorte.Quick.service');
 // Route::post('/project/Quickstoreform', [Quickhelp::class, 'storeQuickProject'])->name('sorte.Quick.project');
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('/open/form/{id}', [SingelProjectController::class, 'openForm'])->name('open.form');
+    Route::get('/open/service/form/{id}', [SingelProjectController::class, 'openFormservice'])->name('open.Sform');
+    Route::get('/open/item/form/{id}', [SingelProjectController::class, 'openFormitem'])->name('open.Iform');
+    Route::get('/open/help/form', [SingelProjectController::class, 'openFormhelp'])->name('open.help.form');
+
+});

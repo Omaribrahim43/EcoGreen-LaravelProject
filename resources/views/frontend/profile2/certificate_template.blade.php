@@ -103,8 +103,6 @@
                                 <p><strong>Start Date:</strong> {{ $project->start_day }}</p>
                                 <p><strong>End Date:</strong> {{ $project->end_day }}</p>
                                 <p><strong>Volunteering Days:</strong> {{ $project->volunteering_days }}</p>
-                                <img src="{{ public_path('frontend/images/logo/green_hands_logo-removebg-preview.png') }}"
-                                    alt="Logo" style="text-align: center">
 
                             </div>
                         </li>
@@ -112,6 +110,8 @@
                 @endforeach
             </ul>
         </div>
+        <img src="{{ public_path('frontend/images/logo/green_hands_logo-removebg-preview.png') }}" alt="Logo"
+            style="text-align: center">
     </div>
 </body>
 
